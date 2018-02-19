@@ -31,14 +31,15 @@ class EventsSection extends Component {
         <div >
             <Row style={{backgroundColor: '#DC3545', textAlign: 'left'}}>
               <Col md={3} style={{paddingTop: "20px", paddingLeft: "50px", textAlign: 'center'}}>
-                <h2 className="text-bold" style={{fontSize: '50px', color: 'white', marginBottom: '30px'}}>Events</h2>
+                <h2 className="text-bold" style={{fontSize: '50px', color: 'white', marginBottom: '30px'}}>Upcoming Events</h2>
                 <CountdownClock startTime={190000}/>
               </Col>
               <Col md={9}>
                 <div style={{backgroundColor: '#f1eded'}} className="inset-lg-left-20 inset-xl-left-110 fill-height">
                   <Timeline>
-                    {eventMany.map((event)=>(
+                    {eventMany.map((event, index)=>(
                       <TimelineEvent
+                        key = {index}
                         title={event.title}
                         titleStyle={event.isActive ? {fontWeight: "bold", fontSize: '40px', color: '#DC3545'} : {fontWeight: "bold", fontSize: '20px'}}
                         createdAt={new Date(event.date).toString()}

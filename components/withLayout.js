@@ -15,7 +15,7 @@ import Scripts from './common/Scripts/Scripts'
 //import '../static/html/css/style.css';
 
 
-export default function withLayout(Child) {
+export default function withLayout(Child, opts) {
   class WrappedComponent extends React.Component {
     static async getInitialProps(context) {
       let ChildProps = {};
@@ -30,6 +30,7 @@ export default function withLayout(Child) {
     }
 
     render() {
+      opts = opts || {}
       return (
         <div>
           <Head>
@@ -46,7 +47,7 @@ export default function withLayout(Child) {
           </Head>
           <div className="pagebody">
             <div className="page text-center">
-              <Header />
+              <Header active={opts.activePage || ''}/>
               <hr/>
               <BreakingNewsBar />
                 <Child {...this.props}/>

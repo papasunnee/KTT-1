@@ -32,7 +32,7 @@ const  NavDropdownItem = (props) => {
 const Navbar = (props) => {
   return (
     <ul className="rd-navbar-nav">
-      <NavItem active>Home</NavItem>
+      <NavItem active={props.active === 'home'}>Home</NavItem>
       <li><a href="#"><span>Mission</span></a>
         <ul className="rd-navbar-dropdown">
           <li><a href="/about"><span className="text-middle">Urgent Issues</span></a>
@@ -45,7 +45,7 @@ const Navbar = (props) => {
           </li>
         </ul>
       </li>
-      <NavItem link="/country">States</NavItem>
+      <NavItem link="/country" active={props.active === 'states'}>States</NavItem>
       <li><a href="#"><span>News</span></a>
         <ul className="rd-navbar-dropdown">
           <li><a href="/news"><span className="text-middle">KTT Television</span></a>

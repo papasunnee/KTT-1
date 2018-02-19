@@ -23,4 +23,4 @@ class StatePage extends Component {
   }
 }
 
-export default withLayout(StatePage)
+export default withLayout(StatePage, {activePage: 'states'})

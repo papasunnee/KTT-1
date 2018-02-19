@@ -1,4 +1,6 @@
 import {Component} from 'react'
+import {graphql} from 'react-apollo'
+import gql from 'graphql-tag'
 
 const Article = props => {
   return (
@@ -28,16 +30,31 @@ const Article = props => {
 }
 
 const Articles = props => {
+  const {newsMany} = props.data || [];
   return (
     <div>
-      <Article />
       <Article title={'You First: What it Really Means'}/>
-      <Article title={'Solving the Herdsmen crisis'}/>
-      <Article />
-      <Article title={'You First: What it Really Means'}/>
-      <Article title={'Solving the Herdsmen crisis'}/>
+      {newsMany.map((news, index)=>(
+        <Article key={index} title={news.title}/>
+      ))}
+      <Article />      
+      <Article title={'Solving the Herdsmen crisis'}/>           
     </div>
   )
 }
 
-export default Articles
+//export default Articles
+
+const gqlWrapper = gql `
+query rootQuery{
+  newsMany(limit: 4, sort:CREATEDAT_DESC) {
+    title
+    state
+  }
+}
+`
+export default graphql(gqlWrapper, {
+  props: ({ data }) => ({
+    data
+  })
+})(Articles)
