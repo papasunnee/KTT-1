@@ -27102,7 +27102,7 @@ hr {
 }
 
 .post-event ul li .icon {
-  color: #bfbfbf;
+  color: #12806b;
 }
 
 .post-event .btn {
@@ -27148,7 +27148,7 @@ hr {
 }
 
 .post-event-fullwidth .post-body .list-inline li {
-  color: #66b4f7;
+  color: white;
 }
 
 .post-event-fullwidth .post-body .list-inline li > a {
@@ -27223,7 +27223,7 @@ hr {
     color: #fff;
   }
   .post-event-fullwidth .post-body h4 a:hover {
-    color: #66b4f7;
+    color: #12806B;
   }
 }
 

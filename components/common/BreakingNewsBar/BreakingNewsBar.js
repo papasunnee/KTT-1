@@ -31,8 +31,8 @@ const BreakingNewsBar = (props) => {
             paddingRight: '0px'
           }}>
           <marquee direction="left" scrollamount="6" behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()">
-            {newsMany.map((news)=>(
-              <span>
+            {newsMany.map((news, index)=>(
+              <span key={index}>
                 <a href="/article" className="hvr-pop">{news.title}</a><a> **** </a>
               </span>
             ))}

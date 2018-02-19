@@ -29,7 +29,7 @@ const BottomNav = (props) => {
       <div className="rd-navbar-menu-wrap">
         <div className="rd-navbar-nav-wrap">
           <div className="rd-navbar-mobile-scroll">
-            <Navbar />
+            <Navbar active={props.active}/>
           </div>
         </div>
         {/*<!-- RD Navbar Search-->

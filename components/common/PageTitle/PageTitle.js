@@ -7,7 +7,7 @@ export default props => (
         <Row className="Header">
           <Breadcrumb style={{maxHeight: '40px'}}>
             {props.breadcrumbs.map((item)=>(
-              <Breadcrumb.Item active={item.active} link={item.link}>{item.title}</Breadcrumb.Item>
+              <Breadcrumb.Item active={item.active} href={item.link}>{item.title}</Breadcrumb.Item>
             ))}
           </Breadcrumb>
             {(props.isTelevisionPage) ?

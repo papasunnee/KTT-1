@@ -27,4 +27,4 @@ class HomePage extends Component {
   }
 }
 
-export default withLayout(HomePage)
+export default withLayout(HomePage, {activePage: 'home'})

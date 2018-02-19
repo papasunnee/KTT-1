@@ -6,11 +6,11 @@ import FaRss from 'react-icons/lib/fa/feed'
 import FaLang from 'react-icons/lib/fa/language'
 import {DropdownButton, MenuItem} from 'react-bootstrap'
 
-/*import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic'
 const LangTranslateScripts = dynamic(
   import ('./Scripts--'),
   {ssr: false}
-)*/
+)
 
 const iconStyles = {
   "color": "#FFFFFF"
@@ -40,8 +40,8 @@ const social = (props) => {
       </li>*/}
       <li>
         <div id="google_translate_element"></div>
-      </li>
-    {/*<LangTranslateScripts />*/}
+        <LangTranslateScripts />
+      </li>    
     </ul>
   )
 }

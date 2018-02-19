@@ -8,7 +8,7 @@ import Body from '../components/NewsPage/Body'
 
 const breadcrumbs = [
   {title: 'Home', link:'/'},
-  {title: 'Ktt Television', active: true},
+  {title: 'KTT Television', active: true},
 ]
 class NewsPage extends Component {
   render(){

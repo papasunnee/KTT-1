@@ -22,4 +22,4 @@ class CountryPage extends Component {
   }
 }
 
-export default withLayout(CountryPage)
+export default withLayout(CountryPage, {activePage: 'states'})

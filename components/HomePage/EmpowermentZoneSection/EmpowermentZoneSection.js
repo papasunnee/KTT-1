@@ -12,10 +12,15 @@ const EmpowermentZoneSection = (props) => {
               {/*<div className="inset-lg-left-20 inset-xl-left-110 events fill-height">*/}
               <div className="inset-lg-right-20 inset-xl-right-110 fill-height">
                 <article className="post post-event post-event-fullwidth">
-                  <div className="post-image-wrap"><img src="/static/html/images/pages/events-7-640x370.jpg" width="640" height="370" alt="" className="img-responsive"/>
+                  <div className="post-image-wrap"
+                    style={{
+                      backgroundImage: 'url(https://www.tolet.com.ng/blog/wp-content/uploads/2017/02/calabar-Nigeria.jpg)',
+                      minHeight: '350px',
+                      backgroundSize: '100%'
+                    }}>
+                    {/*<img src="/static/html/images/pages/events-7-640x370.jpg" width="640" height="370" alt="" className="img-responsive"/>*/}
                   </div>
                   <Video />
-
                 </article>
               </div>
             </Col>
