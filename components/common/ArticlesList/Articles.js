@@ -17,11 +17,11 @@ const Article = props => {
           fontSize: '27px',
           lineHeight: '27px'
         }}
-      ><a href={props.link || "#"}>{props.title ? props.title : 'Buhari does Something'}</a></p>
+      ><a href={props.link || "/article"}>{props.title ? props.title : 'Buhari does Something'}</a></p>
       <p style={{lineHeight: '14px', fontSize: '14px'}}>
         This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. aisa asdipa asidj
       </p>
-      <small><a href={props.link || "#"}>read more</a></small>
+      <small><a href={props.link || "/article"}>read more</a></small>
       <hr style={{marginTop: '10px'}}/>
     </div>
   )
@@ -39,3 +39,5 @@ const Articles = props => {
     </div>
   )
 }
+
+export default Articles

@@ -2,6 +2,7 @@ import {Component} from 'react'
 //import ParagraphText from './ParagraphText'
 //import FullImage from './FullImage/FullImage'
 import {Grid, Row, Col } from 'react-bootstrap'
+import ArticlesList from '../common/ArticlesList/ArticlesList'
 
 
 const VideoItem = props => {
@@ -50,34 +51,6 @@ const VideoItem = props => {
   )
 }
 
-
-const Article = props => {
-  return (
-    <div
-      style={{
-        color:'grey',
-        width: '100%',
-        textAlign: 'left',
-        position: 'relative',
-        display: 'block',
-        padding: '15px'
-      }}
-      >
-      <p style={{
-          fontWeight: '700',
-          fontSize: '27px',
-          lineHeight: '27px'
-        }}
-      ><a href={props.link || "#"}>{props.title ? props.title : 'Buhari does Something'}</a></p>
-      <p style={{lineHeight: '14px', fontSize: '14px'}}>
-        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. aisa asdipa asidj
-      </p>
-      <small><a href={props.link || "#"}>read more</a></small>
-      <hr style={{marginTop: '10px'}}/>
-    </div>
-  )
-}
-
 export default class Home extends Component {
   render(){
     return (
@@ -101,19 +74,8 @@ export default class Home extends Component {
               </Col>
             </Row>
           </Col>
-          <Col md={4}>
-            <div style={{padding: '0px 15px 15px'}}>
-              <h6 className="text-bold" style={{textAlign: 'left'}}>Articles</h6>
-              <hr className="divider divider-iron"/>
-            </div>
-            <div>
-              <Article />
-              <Article title={'You First: What it Really Means'}/>
-              <Article title={'Solving the Herdsmen crisis'}/>
-              <Article />
-              <Article title={'You First: What it Really Means'}/>
-              <Article title={'Solving the Herdsmen crisis'}/>
-            </div>
+          <Col md={4}>            
+            <ArticlesList title={'Articles'}/>
           </Col>
         </Row>
       </Grid>

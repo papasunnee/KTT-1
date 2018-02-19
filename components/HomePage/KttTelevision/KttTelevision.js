@@ -4,9 +4,10 @@ const ChoiceContent = (props) => {
   return (
     <section className="section-60 section-md-120 pre-section"
       style={{
-//        backgroundImage: "url('/static/images/ss-news-journalism.jpg')",
+//      backgroundImage: "url('/static/images/ss-news-journalism.jpg')",
         backgroundImage: "url('/static/images/fox-news-new-newsroom2.png')",
-        backgroundPositionY: "-30px"
+        backgroundPositionY: "-40px",
+        backgroundSize: "cover"
       }}
       >
       <div className="shell-wide">
