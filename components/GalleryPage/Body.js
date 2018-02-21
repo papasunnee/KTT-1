@@ -12,7 +12,7 @@ export default class Home extends Component {
     return (
       <Grid>
         <Row>
-          <Gallery />          
+          <Gallery />
         </Row>
       </Grid>
     )

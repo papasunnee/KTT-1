@@ -3,14 +3,14 @@ import Router from 'next/router'
 
 import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
-import HeroSection from '../components/NewsPage/HeroSection/HeroSection'
-import Body from '../components/NewsPage/Body'
+import HeroSection from '../components/KttvPage/HeroSection/HeroSection'
+import Body from '../components/KttvPage/Body'
 
 const breadcrumbs = [
   {title: 'Home', link:'/'},
   {title: 'KTT Television', active: true},
 ]
-class NewsPage extends Component {
+class KttvPage extends Component {
   render(){
     return (
       <div>
@@ -23,4 +23,4 @@ class NewsPage extends Component {
   }
 }
 
-export default withLayout(NewsPage)
+export default withLayout(KttvPage)
