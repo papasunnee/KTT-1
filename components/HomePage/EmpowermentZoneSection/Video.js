@@ -23,7 +23,7 @@ class video extends Component{
         </Head>
         <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='L61p2uyiMSo' onClose={() => this.setState({isOpen: false})} />
         <div className="post-body" style={{width: '100%', backgroundColor: "rgba(0, 0, 0, 0.63)"}}>
-          <h4 className="text-bold"><a href="" onClick={this.openModal}>Play video</a></h4>
+          <h4 className="text-bold"><a href="#" onClick={this.openModal}>Play video</a></h4>
           <ul className="list-inline list-inline-md">
             <li><span className="icon mdi mdi-calendar text-middle"></span>
               <time datetime="2017-04-30" className="text-middle">Feburary, 14</time>

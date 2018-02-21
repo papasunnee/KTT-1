@@ -14,7 +14,8 @@ const EmpowermentZoneSection = (props) => {
                 <article className="post post-event post-event-fullwidth">
                   <div className="post-image-wrap"
                     style={{
-                      backgroundImage: 'url(https://www.tolet.com.ng/blog/wp-content/uploads/2017/02/calabar-Nigeria.jpg)',
+                      //backgroundImage: 'url(https://www.tolet.com.ng/blog/wp-content/uploads/2017/02/calabar-Nigeria.jpg)',
+                      backgroundImage: 'url(/static/img/ktttv2.png)',
                       minHeight: '350px',
                       backgroundSize: '100%'
                     }}>

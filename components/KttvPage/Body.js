@@ -4,6 +4,33 @@ import {Component} from 'react'
 import {Grid, Row, Col } from 'react-bootstrap'
 import ArticlesList from '../common/ArticlesList/ArticlesList'
 
+const videos = [
+  {
+    title: "SKODSDS",
+    imgSrc: 'url("/static/images/news-image.jpg")',
+    description: ""
+  },{
+    title: "SKODSDS",
+    imgSrc: "",
+    description: ""
+  },{
+    title: "SKODSDS",
+    imgSrc: "",
+    description: ""
+  },{
+    title: "SKODSDS",
+    imgSrc: "",
+    description: ""
+  },{
+    title: "SKODSDS",
+    imgSrc: "",
+    description: ""
+  },{
+    title: "SKODSDS",
+    imgSrc: "",
+    description: ""
+  },
+]
 
 const VideoItem = props => {
   return (
@@ -13,7 +40,7 @@ const VideoItem = props => {
         minHeight:'270px',
         width: '100%',
         textAlign: 'left',
-        backgroundImage: 'url("/static/images/news-image.jpg")',
+        backgroundImage: props.imgSrc || 'url("/static/images/news-image.jpg")',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundSize: 'auto',
@@ -40,9 +67,9 @@ const VideoItem = props => {
               fontSize: '30px',
               lineHeight: '18px'
             }}
-          >News Title</p>
+          >{props.title || "News Title"}</p>
           <p style={{lineHeight: '13px', fontSize: '12px'}}>
-            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            {props.description || "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."}
           </p>
           <small><a href="#">read more</a></small>
         </div>
@@ -53,6 +80,11 @@ const VideoItem = props => {
 
 export default class Home extends Component {
   render(){
+    const videos1 = [], videos2 = [];
+    for (var i = 0; i < videos.length; i++) {
+      ((i+1)%2!==0) && videos1.push(videos[i]);
+      ((i+1)%2===0) && videos2.push(videos[i]);
+    }
     return (
       <Grid>
         <Row>
@@ -61,20 +93,18 @@ export default class Home extends Component {
             <hr className="divider divider-iron"/>
             <Row>
               <Col md={6}>
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
+                {videos1.map((video)=>(
+                  <VideoItem title={video.title} imgSrc={video.imgSrc} description={video.description}/>
+                ))}
               </Col>
               <Col md={6}>
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
+                {videos2.map((video)=>(
+                  <VideoItem title={video.title} imgSrc={video.imgSrc} description={video.description}/>
+                ))}
               </Col>
             </Row>
           </Col>
-          <Col md={4}>            
+          <Col md={4}>
             <ArticlesList title={'Articles'}/>
           </Col>
         </Row>

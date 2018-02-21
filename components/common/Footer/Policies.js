@@ -31,7 +31,7 @@ const policies=[
 ]
 const Policy = props => (
       <div style={{
-        backgroundColor: '#0000007d',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         textAlign: 'left',
         padding: '20px',
         width: '60%',
