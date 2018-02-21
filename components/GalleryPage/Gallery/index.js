@@ -29,8 +29,6 @@ const THUMBNAIL_IMAGES = [
 ];
 
 export default props => (
-  <div>
-    <h3>With Thumbnails</h3>
 		<Gallery images={THUMBNAIL_IMAGES.map(({ caption, id, orientation, useForDemo }) => ({
 			src: makeUnsplashSrc(id),
 			thumbnail: makeUnsplashThumbnail(id, orientation),
@@ -44,5 +42,4 @@ export default props => (
 			orientation,
 			useForDemo,
 		}))} showThumbnails />
-  </div>
 )

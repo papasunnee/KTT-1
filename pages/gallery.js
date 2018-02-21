@@ -3,21 +3,21 @@ import Router from 'next/router'
 
 import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
-import HeroSection from '../components/NewsPage/HeroSection/HeroSection'
-import Body from '../components/NewsPage/Body'
+import HeroSection from '../components/GalleryPage/HeroSection/HeroSection'
+import Body from '../components/GalleryPage/Body'
 
 const breadcrumbs = [
   {title: 'Home', link:'/'},
-  {title: 'KTT Television', active: true},
+  {title: 'Gallery', active: true},
 ]
 class GalleryPage extends Component {
   render(){
     return (
       <div>
-        <PageTitle breadcrumbs={breadcrumbs} title={"KTT Television"} isMediaPage isTelevisionPage>
-          <HeroSection />
-        </PageTitle>
+        <PageTitle breadcrumbs={breadcrumbs} title={"Gallery"} isMediaPage/>
+        <br/><br/>
         <Body />
+        <br/><br/>
       </div>
     )
   }
