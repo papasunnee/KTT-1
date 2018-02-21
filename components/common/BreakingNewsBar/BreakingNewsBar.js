@@ -4,7 +4,7 @@ import { Grid, Row, Col} from 'react-bootstrap'
 //import Marquee from 'react-text-marquee'
 
 const BreakingNewsBar = (props) => {
-  const {newsMany} = props.data;
+  const newsMany = props.data.newsMany || [];
 
   return (
     <Grid style={{
