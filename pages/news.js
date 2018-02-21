@@ -14,7 +14,7 @@ class NewsPage extends Component {
   render(){
     return (
       <div>
-        <PageTitle breadcrumbs={breadcrumbs} title={"KTT Television"} isMediaPage>
+        <PageTitle breadcrumbs={breadcrumbs} title={"KTT Television"} isMediaPage isTelevisionPage>
           <HeroSection />
         </PageTitle>
         <Body />
