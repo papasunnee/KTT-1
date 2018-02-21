@@ -13,11 +13,11 @@ const ChoiceContent = (props) => {
       <div className="shell-wide">
         <div className="range range-xs-center">
           <div className="cell-xs-12 cell-md-10 cell-xl-6">
-            <h2 className="text-bold" style={{color: '#393a3c'}}>KTT Television</h2>
+            <img src="/static/images/ktttv.png" alt="" width="200" height="100"/>            
             <p className="offset-top-50" style={{color: '#393a3c', fontWeight: '550'}}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla temporibus voluptates ipsa, ducimus est, aliquid vel harum eligendi totam dignissimos suscipit obcaecati. Praesentium obcaecati ad accusamus voluptatum consequuntur, accusantium?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla temporibus voluptates ipsa, ducimus est, aliquid vel harum eligendi totam dignissimos suscipit obcaecati. Praesentium obcaecati ad accusamus voluptatum consequuntur, accusantium?
             </p>
-            <div className="offset-top-20 offset-md-top-40"><a href="/news" className="btn btn-secondary" style={{borderColor: 'white', backgroundColor: '#12806B'}}>Check it out</a></div>
+            <div className="offset-top-20 offset-md-top-40"><a href="/news" className="btn btn-secondary" style={{borderColor: 'white', backgroundColor: '#09123A'}}>Check it out</a></div>
           </div>
         </div>
       </div>

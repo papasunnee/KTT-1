@@ -28,7 +28,7 @@ class video extends Component{
             <li><span className="icon mdi mdi-calendar text-middle"></span>
               <time datetime="2017-04-30" className="text-middle">Feburary, 14</time>
             </li>
-            <li><span className="icon mdi mdi-map-marker text-middle"></span><span className="text-middle">Nigeria</span></li>
+            <li><span className="icon mdi mdi-map-marker text-middle"></span><span className="text-middle">Calabar, Nigeria</span></li>
           </ul>
         </div>
       </div>

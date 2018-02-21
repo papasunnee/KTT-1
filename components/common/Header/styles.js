@@ -1,6 +1,6 @@
 const styles = {
   textGreen: '#005926',
-  lightTextGreen: '#12806B'
+  lightTextGreen: '#09123A'
 }
 
 export default styles

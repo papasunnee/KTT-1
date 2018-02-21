@@ -20,20 +20,21 @@ const BreakingNewsBar = (props) => {
             fontSize: '17px',
             color: 'white',
           }}>
-          RECENT TRENDS
+          BREAKING NEWS
         </Col>
         <Col md={10} id="news-bar"
           style={{
-            borderBottom: '2px solid #12806B',
-            borderTop: '1px solid #12806B',
+            borderBottom: '2px solid #09123A',
+            borderTop: '1px solid #09123A',
             backgroundColor: '#eeeef3',
             paddingLeft: '0px',
-            paddingRight: '0px'
+            paddingRight: '0px',
+            color : '#DC3545'
           }}>
           <marquee direction="left" scrollamount="6" behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()">
             {newsMany.map((news, index)=>(
               <span key={index}>
-                <a href="/article" className="hvr-pop">{news.title}</a><a> **** </a>
+                <a href="/article" className="hvr-pop" style={{color:'red'}}>{news.title}</a><a style={{color:'red'}}> **** </a>
               </span>
             ))}
             </marquee>

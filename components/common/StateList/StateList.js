@@ -4,12 +4,13 @@ import {Row, Col} from 'react-bootstrap'
 
 const StateList = props => {
   const {stateMany} = props.data;
+  console.log(stateMany);
   const states1 = [], states2 = [] ;
   for (var i = 0; i < stateMany.length; i++) {
     ((i+1)%2!==0) && states1.push(stateMany[i]);
     ((i+1)%2===0) && states2.push(stateMany[i]);
   }
-  console.log(states1);
+  //console.log(states1);
   /*console.log('stateprops');
   console.log(stateMany);*/
   return (
@@ -21,14 +22,14 @@ const StateList = props => {
         <Col xs={6} md={6}>
           <ul className="list list-marked">
             {states1.map((state, i)=>(
-              <li key={i}><a href="/state" className="text-primary">{state.name}</a></li>
+              <li key={i}><a href={"/country/"+state.name} className="text-primary">{state.name}</a></li>
             ))}
           </ul>
         </Col>
         <Col xs={6} md={6}>
           <ul className="list list-marked">
             {states2.map((state, i)=>(
-              <li key={i}><a href="/state" className="text-primary">{state.name}</a></li>
+              <li key={i}><a href={"/country/"+state.name} className="text-primary">{state.name}</a></li>
             ))}
           </ul>
         </Col>

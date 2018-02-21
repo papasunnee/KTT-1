@@ -22,7 +22,7 @@ const GetInvolvedSection = (props) => {
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
                   </p>
                   <a href="/" className="btn btn-white-outline offset-top-55"
-                    style={{backgroundColor: '#12806B'}}
+                    style={{backgroundColor: '#09123A'}}
                   >learn more</a>
                 </div>
               </div>

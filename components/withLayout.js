@@ -44,6 +44,7 @@ export default function withLayout(Child, opts) {
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
             <link rel="stylesheet" href="/static/css/styles.css"/>
             <link rel="stylesheet" href="/static/html/css/style.css"/>
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a8bfd531159be8a"></script>
           </Head>
           <div className="pagebody">
             <div className="page text-center">

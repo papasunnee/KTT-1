@@ -8,8 +8,7 @@ import TextBody from '../components/AboutPage/TextBody'
 
 const breadcrumbs = [
   {title: 'Home', link:'/'},
-  {title: 'About', link:'/about'},
-  {title: 'Urgent Issues', active: true},
+  {title: 'About KTT', active: true},  
 ]
 
 class AboutPage extends Component {
