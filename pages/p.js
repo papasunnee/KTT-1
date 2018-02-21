@@ -2,7 +2,7 @@ import {Component} from 'react'
 import Router from 'next/router'
 
 import withLayout from '../components/withLayout'
-import Gallery from '../components/GalleryPage/Gallery/Gallery'
+import Gallery from '../components/GalleryPage/Gallery/index'
 
 class HomePage extends Component {
   render(){
