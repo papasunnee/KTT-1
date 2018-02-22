@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
@@ -23,9 +24,17 @@ class GalleryPage extends Component {
   render(){
     return (
       <div>
+<<<<<<< HEAD
         {/*<PageTitle breadcrumbs={breadcrumbs} title={" "} isMediaPage/>*/}
         <BanImage />
         <br />
+=======
+        <Head>
+          <title>KTT4President | Gallery</title>
+        </Head>
+        <PageTitle breadcrumbs={breadcrumbs} title={"Gallery"} isMediaPage/>
+        <br/><br/>
+>>>>>>> 7b43608c372ce1bc85e9bfbf48e360c40bc4cdb3
         <Body />
         <br/><br/>
       </div>

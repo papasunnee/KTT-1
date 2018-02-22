@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
@@ -14,6 +15,9 @@ class CountryPage extends Component {
   render(){
     return (
       <div>
+        <Head>
+          <title>KTT4President | Nigeria</title>
+        </Head>
         <HeroSection />
         <PageTitle breadcrumbs={breadcrumbs}/>
         <TextBody />

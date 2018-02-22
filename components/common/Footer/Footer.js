@@ -89,7 +89,6 @@ const Footer = (props) => {
           <Row>
             <Col xs={12}>
               {/*<!--Footer Bottom-->*/}
-              <p class="privacylinks">
                 <a href="#">Privacy Policy</a>  <span>|</span>
                 <a href="#">Cookie Policy</a> <span>|</span>
                 <a href="#">Terms of Use</a> <span>|</span>
