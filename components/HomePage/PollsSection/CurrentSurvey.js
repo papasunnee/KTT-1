@@ -8,7 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 import {Row, Col} from 'react-bootstrap'
-import {sendCode, verifyCode} from './VerifyPhoneA'
+//import {sendCode, verifyCode} from './VerifyPhoneA'
 //import {sendCode, verifyCode} from './PhoneVerifyer'
 
 // Make sure react-tap-event-plugin only gets injected once
