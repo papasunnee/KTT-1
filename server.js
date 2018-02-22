@@ -23,12 +23,16 @@ app.prepare().then(() => {
 
   server.get('/poll-verification/start', (req, res) => {
     let phone = req.query.phone;
-    console.log(phone);
-    const response = verifyPhone.sendCode('08188555611');
-
-    /*let response = {
-      title: 'allProducts'
-    }*/
+    //console.log(phone);
+    const response = verifyPhone.sendCode(phone);    
+    res.json(response);
+  })
+  
+  server.get('/poll-verification/verify', (req, res) => {
+    let phone = req.query.phone,
+        code = req.query.code,
+    //console.log(phone);
+    const response = verifyPhone.verifyCode (phone, code);    
     res.json(response);
   })
 
