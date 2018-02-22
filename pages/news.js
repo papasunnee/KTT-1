@@ -14,7 +14,7 @@ class KttvPage extends Component {
   render(){
     return (
       <div>
-        <PageTitle breadcrumbs={breadcrumbs} title={"KTT Television"} isMediaPage isTelevisionPage>
+        <PageTitle breadcrumbs={breadcrumbs} title={" "} isMediaPage isTelevisionPage>
           <HeroSection />
         </PageTitle>
         <Body />

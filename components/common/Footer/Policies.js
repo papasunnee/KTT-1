@@ -1,31 +1,31 @@
 import { Carousel} from 'react-bootstrap'
 const policies=[
   {
-    title:'Leadership, Governance & Anti-Corruption',
+    title:'1. Leadership, Governance & Anti-Corruption',
     description: '', link: '/policy/leadership'
   },{
-    title:'Security, Law & Order',
+    title:'2. Security, Law & Order',
     description: '', link: '/policy/security'
   },{
-    title:'Infrastructure',
+    title:'3. Infrastructure',
     description: '', link: '/policy/infrastructure'
   },{
-    title:'Education',
+    title:'4. Education',
     description: '', link: '/policy/education'
   },{
-    title:'Economy',
+    title:'5. Economy',
     description: '', link: '/policy/economy'
   },{
-    title:'Health & Wellbeing',
+    title:'6. Health & Wellbeing',
     description: '', link: '/policy/health-and-Wellbeing'
   },{
-    title:'Technology',
+    title:'7. Technology',
     description: '', link: '/policy/technology'
   },{
-    title:'Implementation',
+    title:'8. Implementation',
     description: '', link: '/policy/implementation'
   },{
-    title:'Impact, Assesment & Results',
+    title:'9. Impact, Assesment & Results',
     description: '', link: '/policy/impact'
   },
 ]
@@ -34,7 +34,7 @@ const Policy = props => (
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         textAlign: 'left',
         padding: '20px',
-        width: '60%',
+        width: '80%',
         marginLeft: '60px'
       }}>
         <h3 style={{color: 'white',

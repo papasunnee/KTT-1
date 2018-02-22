@@ -26,9 +26,9 @@ class video extends Component{
           <h4 className="text-bold"><a href="#" onClick={this.openModal}>Play video</a></h4>
           <ul className="list-inline list-inline-md">
             <li><span className="icon mdi mdi-calendar text-middle"></span>
-              <time datetime="2017-04-30" className="text-middle">Feburary, 14</time>
+              <time datetime="2017-04-30" className="text-middle">Feburary, 21</time>
             </li>
-            <li><span className="icon mdi mdi-map-marker text-middle"></span><span className="text-middle">Calabar, Nigeria</span></li>
+            <li><span className="icon mdi mdi-map-marker text-middle"></span><span className="text-middle">Click Here To Watch Videos on KTT Television</span></li>
           </ul>
         </div>
       </div>
