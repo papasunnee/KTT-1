@@ -20,6 +20,7 @@ class HomePage extends Component {
       <div>
         <Head>
           <title>KTT4President</title>
+          <link href="https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield" rel="stylesheet"/>
         </Head>
         <HeroSection />
         <ChoiceContent title={firstTitle} content={captionContent}/>
