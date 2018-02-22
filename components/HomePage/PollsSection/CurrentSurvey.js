@@ -8,8 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 import {Row, Col} from 'react-bootstrap'
-//import {sendCode, verifyCode} from './VerifyPhoneA'
-//import {sendCode, verifyCode} from './PhoneVerifyer'
+import 'isomorphic-fetch'
 
 // Make sure react-tap-event-plugin only gets injected once
 // Needed for material-ui
@@ -56,7 +55,11 @@ class Index extends Component {
     if (this.state.phone) {
       if (phoneNoRegex.test(this.state.phone)){
         console.log('sending message');
-        sendCode(this.state.phone)
+        let res = await fetch(`/poll-verification/start?phone=${this.state.phone}`)
+        console.log(res);
+        let response = await res.json()
+        console.log(response);
+        //sendCode(this.state.phone)
         this.setState({
           open: true
         })
@@ -76,7 +79,11 @@ class Index extends Component {
 
   handleVerifyButton = () => {
     console.log('verify button pressed');
-    verifyCode(this.state.phone, this.state.verificationCode);
+    let res = await fetch(`/poll-verification/verify?phone=${this.state.phone}&code=${this.state.verificationCode}`)
+    console.log(res);
+    let response = await res.json()
+    console.log(response);
+    //verifyCode(this.state.phone, this.state.verificationCode);
   }
 
   handlePhoneChange = (event) => {
