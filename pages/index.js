@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import withLayout from '../components/withLayout'
 import HeroSection from '../components/HomePage/HeroSection/HeroSection'
@@ -17,6 +18,9 @@ class HomePage extends Component {
   render(){
     return (
       <div>
+        <Head>
+          <title>KTT4President</title>
+        </Head>
         <HeroSection />
         <ChoiceContent title={firstTitle} content={captionContent}/>
         <EmpowermentZoneSection />

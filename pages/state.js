@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
@@ -24,10 +25,13 @@ class StatePage extends Component {
     return {query, _breadcrumbs}
   }
   render(){
-    const {_breadcrumbs} = this.props;
+    const {_breadcrumbs, query} = this.props;
     const breadcrumbs = _breadcrumbs || defaultBreadcrumbs;
     return (
       <div>
+        <Head>
+          <title>KTT4President | {query.state}</title>
+        </Head>
         <HeroSection />
         <PageTitle breadcrumbs={breadcrumbs}/>
         <TextBody />

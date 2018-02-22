@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
@@ -14,6 +15,9 @@ class KttvPage extends Component {
   render(){
     return (
       <div>
+        <Head>
+          <title>KTT4President | KTT Television</title>
+        </Head>
         <PageTitle breadcrumbs={breadcrumbs} title={"KTT Television"} isMediaPage isTelevisionPage>
           <HeroSection />
         </PageTitle>
