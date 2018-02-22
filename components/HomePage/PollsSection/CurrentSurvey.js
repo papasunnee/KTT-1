@@ -50,7 +50,7 @@ class Index extends Component {
     })
   }
 
-  handleSubmitButton = () => {
+  handleSubmitButton = async () => {
     const phoneNoRegex = new RegExp("^0?(\\d{10})");
     if (this.state.phone) {
       if (phoneNoRegex.test(this.state.phone)){
@@ -77,7 +77,7 @@ class Index extends Component {
 
   }
 
-  handleVerifyButton = () => {
+  handleVerifyButton = async () => {
     console.log('verify button pressed');
     let res = await fetch(`/poll-verification/verify?phone=${this.state.phone}&code=${this.state.verificationCode}`)
     console.log(res);
