@@ -40,7 +40,9 @@ class Index extends Component {
       open: false,
       displayError: '',
       phone: '',
-      verificationCode: ''
+      verificationCode: '',
+      isVerified: false,
+      verificationMessage: '',
     }
   }
 
@@ -55,8 +57,13 @@ class Index extends Component {
     if (this.state.phone) {
       if (phoneNoRegex.test(this.state.phone)){
         console.log('sending message');
+        this.setState({
+          open: true
+        })
         let res = await fetch(`/poll-verification/start?phone=${this.state.phone}`)
+        console.log('res');
         console.log(res);
+        console.log('------------')
         let response = await res.json()
         console.log(response);
         //sendCode(this.state.phone)
@@ -64,7 +71,6 @@ class Index extends Component {
           open: true
         })
       } else {
-        console.log('wwww');
         this.setState({
           displayError: 'Enter a valid phone number'
         })
@@ -77,13 +83,34 @@ class Index extends Component {
 
   }
 
+  resetStateValues = (time) => {
+    setTimeout(()=>{this.setState({
+      open: false,
+      displayError: '',
+      verificationCode: '',
+      isVerified: false,
+      verificationMessage: ''
+    })}, time)
+
+  }
+
   handleVerifyButton = async () => {
     console.log('verify button pressed');
     let res = await fetch(`/poll-verification/verify?phone=${this.state.phone}&code=${this.state.verificationCode}`)
+    console.log('res');
     console.log(res);
-    let response = await res.json()
-    console.log(response);
-    //verifyCode(this.state.phone, this.state.verificationCode);
+    console.log('-----------res-----------');
+    try {
+      let response = await res.json()
+      if (response.success){
+        this.setState({isVerified: true, verificationMessage: 'your answer has been submitted'})
+        this.resetStateValues(3000);
+      } else {
+        this.setState({isVerified: false, verificationMessage: 'you have inputed the wrong verification code'})
+      }
+    } catch (e) {
+        this.setState({isVerified: false, verificationMessage: 'there was an issue verifying your phone'})
+    }
   }
 
   handlePhoneChange = (event) => {
@@ -95,7 +122,6 @@ class Index extends Component {
   };
 
   handleCodeChange = (event) => {
-    console.log(event.target.value);
     this.setState({verificationCode: event.target.value});
   };
 
@@ -126,6 +152,8 @@ class Index extends Component {
                   onChange={this.handleCodeChange}
                   //errorText={this.state.displayError}
                   hintText="Input verification code"
+                  errorText={this.state.verificationMessage}
+                  errorStyle={this.state.isVerified && {color: 'green'}}
                  />
               </Col>
               <Col md={6}>

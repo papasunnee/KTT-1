@@ -8,7 +8,7 @@ const ArticlesList = props => {
         <h6 className="text-bold" style={{textAlign: 'left'}}>{props.title || "Articles"}</h6>
         <hr className="divider divider-iron"/>
       </div>
-      <Articles />      
+      <Articles articles={props.articles}/>      
     </div>
   )
 }

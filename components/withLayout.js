@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { graphql} from 'react-apollo'
 import gql from 'graphql-tag'
+import 'isomorphic-fetch'
 
 import withData from '../lib/withData'
 
@@ -24,13 +25,20 @@ export default function withLayout(Child, opts) {
         ChildProps = await Child.getInitialProps(context)
       }
 
+      const baseUrl = context.req ? `${context.req.protocol}://${context.req.get('Host')}` : '';
+      //Loading articles from the411ng api
+      let res = await fetch(`${baseUrl}/fetch-breaking-articles`);
+      let articles = await res.json();
+
       return {
         ...ChildProps,
+        articles,
       }
     }
 
     render() {
-      opts = opts || {}
+      const opts = opts || {},
+      breakingNewsArticles = this.props.articles.gistMany;
       return (
         <div>
           <Head>
@@ -50,7 +58,7 @@ export default function withLayout(Child, opts) {
             <div className="page text-center">
               <Header active={opts.activePage || ''}/>
               <hr/>
-              <BreakingNewsBar />
+              <BreakingNewsBar articles={breakingNewsArticles}/>
                 <Child {...this.props}/>
               <Footer />
             </div>

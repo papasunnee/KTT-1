@@ -89,6 +89,8 @@ const VideoItem = props => {
 
 export default class Home extends Component {
   render(){
+    //console.log('this.props.articles');
+    //console.log(this.props.articles);
     const videos1 = [], videos2 = [];
     for (var i = 0; i < videos.length; i++) {
       ((i+1)%2!==0) && videos1.push(videos[i]);
@@ -114,7 +116,7 @@ export default class Home extends Component {
             </Row>
           </Col>
           <Col md={4}>
-            <ArticlesList title={'Articles'}/>
+            <ArticlesList title={'Articles'} articles={this.props.articles}/>
           </Col>
         </Row>
       </Grid>

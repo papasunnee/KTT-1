@@ -4,7 +4,18 @@ import { Grid, Row, Col} from 'react-bootstrap'
 //import Marquee from 'react-text-marquee'
 
 const BreakingNewsBar = (props) => {
-  const newsMany = props.data.newsMany || [];
+  const newsMany = props.data.newsMany || [],
+  articles = props.articles || [];
+  //combining articles from the411ng and ktt backend
+  let allItems = [...newsMany,...articles];
+  allItems.sort(function(a, b) {
+    a = new Date(a.publishedDate || a.createdAt);
+    b = new Date(b.publishedDate || b.createdAt);
+    return a>b ? -1 : a<b ? 1 : 0;
+  });
+  //select the first 10 items most recent items only
+  //console.log(allItems);
+  allItems = allItems.slice(0, 9);
 
   return (
     <Grid style={{
@@ -31,12 +42,22 @@ const BreakingNewsBar = (props) => {
             paddingRight: '0px',
             color : '#DC3545'
           }}>
-          <marquee direction="left" scrollamount="6" behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()">
-            {newsMany.map((news, index)=>(
+          <marquee direction="left" scrollamount="6" behavior="scroll" /*onmouseover="this.stop()" onmouseout="this.start()"*/>
+            {allItems.map((item, index)=>(
+              <span key={index}>
+                <a href={item.link || "/article"} target={item.link? "_blank" : ""} className="hvr-pop" style={{color:'red'}}>{item.title}</a><a style={{color:'red'}}> **** </a>
+              </span>
+            ))}
+            {/*{newsMany.map((news, index)=>(
               <span key={index}>
                 <a href="/article" className="hvr-pop" style={{color:'red'}}>{news.title}</a><a style={{color:'red'}}> **** </a>
               </span>
             ))}
+            {articles.map((article, index)=>(
+              <span key={index}>
+                <a href={article.link} className="hvr-pop" style={{color:'red'}}>{article.title}</a><a style={{color:'red'}}> **** </a>
+              </span>
+            ))}*/}
             </marquee>
         </Col>
       </Row>
@@ -50,6 +71,7 @@ query rootQuery{
   newsMany(limit: 10, filter: {isBreaking: true}, sort:CREATEDAT_DESC) {
     title
     state
+    createdAt
   }
 }
 `
