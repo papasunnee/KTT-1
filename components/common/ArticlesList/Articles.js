@@ -19,11 +19,11 @@ const Article = props => {
           fontSize: '27px',
           lineHeight: '27px'
         }}
-      ><a href={props.link || "/article"}>{props.title ? props.title : 'Buhari does Something'}</a></p>
+      ><a href={props.link || "/article"} target={props.link? "_blank" : "/article"}>{props.title ? props.title : 'Buhari does Something'}</a></p>
       <p style={{lineHeight: '14px', fontSize: '14px'}}>
-        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. aisa asdipa asidj
+        {props.brief || "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. aisa asdipa asidj"}
       </p>
-      <small><a href={props.link || "/article"}>read more</a></small>
+      <small><a href={props.link || "/article"} target={props.link? "_blank" : "/article"}>read more</a></small>
       <hr style={{marginTop: '10px'}}/>
     </div>
   )
@@ -31,14 +31,25 @@ const Article = props => {
 
 const Articles = props => {
   const {newsMany} = props.data || [];
+  const articles = props.articles || [];
+  //combining articles from the411ng and ktt backend
+  let allItems = [...newsMany,...articles];
+
+  allItems.sort(function(a, b) {
+    a = new Date(a.publishedDate || a.createdAt);
+    b = new Date(b.publishedDate || b.createdAt);
+    return a>b ? -1 : a<b ? 1 : 0;
+  });
+  //select the first 10 items most recent items only
+  //console.log(allItems);
+  allItems = allItems.slice(0, 9);
+
   return (
     <div>
       <Article title={'You First: What it Really Means'}/>
-      {newsMany.map((news, index)=>(
-        <Article key={index} title={news.title}/>
+      {allItems.map((item, index)=>(
+        <Article key={index} title={item.title} link={item.link} brief={item.brief}/>
       ))}
-      <Article />      
-      <Article title={'Solving the Herdsmen crisis'}/>           
     </div>
   )
 }
@@ -50,6 +61,7 @@ query rootQuery{
   newsMany(limit: 4, sort:CREATEDAT_DESC) {
     title
     state
+    createdAt
   }
 }
 `

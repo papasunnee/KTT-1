@@ -1,10 +1,11 @@
 const express = require('express')
 const next = require('next')
-const app = next({dev: process.env.NODE_ENV !== 'production'})
-//const app = next({dev: false})
+//const app = next({dev: process.env.NODE_ENV !== 'production'})
+const app = next({dev: false})
 const handle = app.getRequestHandler()
 const port = process.env.PORT || 3000
 const verifyPhone = require('./lib/VerifyPhone');
+const the411 = require('./lib/the411ng/apiPlugin');
 
 app.prepare().then(() => {
   const server = express();
@@ -43,6 +44,26 @@ app.prepare().then(() => {
       res.json(response);
     } catch (e) {
       res.json(response);
+    }
+  })
+
+  server.get('/fetch-breaking-articles', async (req, res) => {
+    console.log('fetching breaking');
+    try {
+      const articles = await the411.getBreakingArticles();
+      res.json(articles);
+    } catch (e) {
+      res.json(e);
+    }
+  })
+
+  server.get('/fetch-articles', async (req, res) => {
+    console.log('fetching articles list');
+    try {
+      const articles = await the411.getArticles();
+      res.json(articles);
+    } catch (e) {
+      res.json(e);
     }
   })
 

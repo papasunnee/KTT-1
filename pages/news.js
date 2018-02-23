@@ -6,13 +6,15 @@ import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
 import HeroSection from '../components/KttvPage/HeroSection/HeroSection'
 import Body from '../components/KttvPage/Body'
+import fetchArticleList from '../components/common/fetchArticleList'
 
 const breadcrumbs = [
   {title: 'Home', link:'/'},
   {title: 'KTT Television', active: true},
 ]
-class KttvPage extends Component {
+class KttvPage extends Component {  
   render(){
+    const articles = this.props.articles || [];
     return (
       <div>
         <Head>
@@ -21,7 +23,7 @@ class KttvPage extends Component {
         <PageTitle breadcrumbs={breadcrumbs} title={"KTT Television"} isMediaPage isTelevisionPage>
           <HeroSection />
         </PageTitle>
-        <Body />
+        <Body articles={articles.gistMany}/>
       </div>
     )
   }

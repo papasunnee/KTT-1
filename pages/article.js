@@ -15,6 +15,7 @@ const breadcrumbs = [
 
 class ArticlePage extends Component {
   render(){
+    const articles = this.props.articles || [];
     return (
       <div>
         <Head>
@@ -22,7 +23,7 @@ class ArticlePage extends Component {
         </Head>
         <HeroSection />
         <PageTitle title={"You First: What it Really Means"} breadcrumbs={breadcrumbs}/>
-        <TextBody />
+        <TextBody articles={articles.gistMany}/>
       </div>
     )
   }
