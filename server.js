@@ -1,7 +1,7 @@
 const express = require('express')
 const next = require('next')
-//const app = next({dev: process.env.NODE_ENV !== 'production'})
-const app = next({dev: false})
+const app = next({dev: process.env.NODE_ENV !== 'production'})
+//const app = next({dev: false})
 const handle = app.getRequestHandler()
 const port = process.env.PORT || 3000
 const verifyPhone = require('./lib/VerifyPhone');
@@ -21,19 +21,29 @@ app.prepare().then(() => {
     return app.render(req, res, '/policy', { policy: req.params.policy });
   })
 
-  server.get('/poll-verification/start', (req, res) => {
+  server.get('/poll-verification/start', async (req, res) => {
     let phone = req.query.phone;
     //console.log(phone);
-    const response = verifyPhone.sendCode(phone);    
-    res.json(response);
+    try {
+      const response = await verifyPhone.sendCode(phone);
+      console.log(response);
+      res.json(response);
+    } catch (e) {
+      res.json(response);
+    }
   })
-  
-  server.get('/poll-verification/verify', (req, res) => {
+
+  server.get('/poll-verification/verify', async (req, res) => {
     let phone = req.query.phone,
         code = req.query.code;
-    //console.log(phone);
-    const response = verifyPhone.verifyCode (phone, code);    
-    res.json(response);
+    console.log(code);
+    try {
+      const response = await verifyPhone.verifyCode (phone, code);
+      console.log(response);
+      res.json(response);
+    } catch (e) {
+      res.json(response);
+    }
   })
 
   server.get('*', (req, res) => {
