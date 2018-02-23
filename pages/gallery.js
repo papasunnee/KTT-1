@@ -12,9 +12,14 @@ const breadcrumbs = [
   {title: 'Gallery', active: true},
 ]
 
-const BanImage = (props) => {
+const BanImage = () => {
   return (
-    <div style={{width : '100%', height : '400px', backgroundImage : 'url(../static/images/gallery.jpg)'}}>
+    <div style={{
+      width : '100%',
+      height : '400px',
+      backgroundImage : 'url(../static/images/gallery.jpg)',
+      border : '1px solid #b2b2b2'
+      }}>
       <h2 style={{marginTop : '180px' , color : 'white' }}>A GREAT FUTURE FOR NIGERIA</h2>
     </div>
   )

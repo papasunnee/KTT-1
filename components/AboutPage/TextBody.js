@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import ParagraphText from './ParagraphText'
 import FullImage from './FullImage/FullImage'
+import Boxsection from './Boxsection/Boxsection'
 import {Grid, Row, Col } from 'react-bootstrap'
 
 export default class Home extends Component {
@@ -9,8 +10,9 @@ export default class Home extends Component {
       <div>
         <ParagraphText />
         <ParagraphText />
+        <Boxsection />
         {/*<TopText />*/}
-        <FullImage />
+        {/* <FullImage /> */}
         {/*<BottomText />*/}
         <ParagraphText />
         <ParagraphText />

@@ -18,6 +18,9 @@ class AboutPage extends Component {
       <div>
         <Head>
           <title>KTT4President | About KTT</title>
+          <link href="/static/css/profile/component.css" />
+          <script type="text/javascript" src="/static/js/profile/modernizr.custom.js"></script>
+          <script type="text/javascript" src="/static/js/profile/toucheffects.js"></script>
         </Head>
         <HeroSection />
         <PageTitle breadcrumbs={breadcrumbs}/>

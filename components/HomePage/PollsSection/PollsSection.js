@@ -57,16 +57,16 @@ export default class PollsSection extends Component{
 
     return(
       <section style={{
-        borderTopColor: 'red',
-        borderTopStyle: 'inset',
-        borderTopWidth: '3px',
+        borderTop: '3px inset red',
+        borderBottom: '5px inset #AB0000',
+        backgroundColor : '#F6F8FA' ,
         paddingTop: '30px'
       }}>
         <Head>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
         </Head>
         <MuiThemeProvider muiTheme={getMuiTheme({userAgent, ...muiTheme})}>
-          <Row style={{backgroundColor: /*'#2bbfd9'*/'white', color: 'black'}}>
+          <Row style={{backgroundColor: '#F6F8FA', color: 'black'}}>
             <Col md={6}>
               Poll
               <div style={{textAlign: 'left', padding: '30px',
