@@ -68,11 +68,6 @@ class ContactImage extends Component {
                         <div className="btn-lrg submit-btn">Send Message</div>
                     </div>
             </div>
-                
-
-
-
-
             </div>
         </div>
         <br/><br/>
