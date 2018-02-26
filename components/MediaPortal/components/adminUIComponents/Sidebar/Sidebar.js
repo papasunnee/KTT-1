@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
+//import {NavLink} from 'react-router-dom';
 import {Badge, Nav, NavItem, NavLink as RsNavLink} from 'reactstrap';
 import classNames from 'classnames';
 import nav from './_nav';
-import SidebarFooter from './../SidebarFooter';
-import SidebarForm from './../SidebarForm';
-import SidebarHeader from './../SidebarHeader';
-import SidebarMinimizer from './../SidebarMinimizer';
+import SidebarFooter from './../SidebarFooter/SidebarFooter';
+import SidebarForm from './../SidebarForm/SidebarForm';
+import SidebarHeader from './../SidebarHeader/SidebarHeader';
+import SidebarMinimizer from './../SidebarMinimizer/SidebarMinimizer';
 
 class Sidebar extends Component {
 
@@ -14,7 +14,7 @@ class Sidebar extends Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
-    this.activeRoute = this.activeRoute.bind(this);
+    //this.activeRoute = this.activeRoute.bind(this);
     this.hideMobile = this.hideMobile.bind(this);
   }
 
@@ -24,11 +24,11 @@ class Sidebar extends Component {
     e.target.parentElement.classList.toggle('open');
   }
 
-  activeRoute(routeName, props) {
+  /*activeRoute(routeName, props) {
     // return this.props.location.pathname.indexOf(routeName) > -1 ? 'nav-item nav-dropdown open' : 'nav-item nav-dropdown';
     return props.location.pathname.indexOf(routeName) > -1 ? 'nav-item nav-dropdown open' : 'nav-item nav-dropdown';
 
-  }
+  }*/
 
   hideMobile() {
     if (document.body.classList.contains('sidebar-mobile-show')) {
@@ -107,9 +107,9 @@ class Sidebar extends Component {
               <i className={classes.icon}></i>{item.name}{badge(item.badge)}
             </RsNavLink>
             :
-            <NavLink to={url} className={classes.link} activeClassName="active" onClick={this.hideMobile}>
+            <RsNavLink href={url} className={classes.link} activeClassName="active" onClick={this.hideMobile}>
               <i className={classes.icon}></i>{item.name}{badge(item.badge)}
-            </NavLink>
+            </RsNavLink>
           }
         </NavItem>
       )
@@ -118,7 +118,7 @@ class Sidebar extends Component {
     // nav dropdown
     const navDropdown = (item, key) => {
       return (
-        <li key={key} className={this.activeRoute(item.url, props)}>
+        <li key={key} className={'nav-item nav-dropdown'/*this.activeRoute(item.url, props)*/}>
           <a className="nav-link nav-dropdown-toggle" href="#" onClick={this.handleClick}><i className={item.icon}></i>{item.name}</a>
           <ul className="nav-dropdown-items">
             {navList(item.children)}

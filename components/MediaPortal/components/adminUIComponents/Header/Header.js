@@ -51,10 +51,10 @@ class Header extends Component {
             <NavLink href="#">Dashboard</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink href="#">Users</NavLink>
+            <NavLink href="#">Broadcasts</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink href="#">Settings</NavLink>
+            <NavLink href="#">Messages</NavLink>
           </NavItem>
         </Nav>
         <Nav className="ml-auto" navbar>
@@ -69,9 +69,6 @@ class Header extends Component {
           </NavItem>
           <HeaderDropdown/>
         </Nav>
-        <NavbarToggler className="d-md-down-none" onClick={this.asideToggle}>
-          <span className="navbar-toggler-icon"></span>
-        </NavbarToggler>
       </header>
     );
   }
