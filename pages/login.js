@@ -8,7 +8,7 @@ import Login from '../components/MediaPortal/views/Login/Login'
 class MediaAdminPage extends Component {
   render(){
     return (
-      <div className="animated fadeIn">
+      <div /*className="animated fadeIn"*/>
         <Head>
           <title>KTT4President | Media Portal Login</title>
         </Head>
