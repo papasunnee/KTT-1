@@ -1,9 +1,15 @@
 import { Grid, Row, Col} from 'react-bootstrap'
 import Social from '../Header/Social'
+import Policies from './Policies'
+import ChoiceContent from '../../HomePage/ChoiceContent/ChoiceContent'
+
 
 const Footer = (props) => {
   return (
-    <footer className="mainfooter" role="contentinfo" style={{marginTop: '30px'}}>
+    <div  style={{marginTop: '30px'}}>
+    <Policies />
+    <ChoiceContent />
+    <footer className="mainfooter" role="contentinfo">
       <div className="footer-middle">
       <Grid>
         <Row>
@@ -71,7 +77,7 @@ const Footer = (props) => {
                 <li>&nbsp;</li>
                <li>
                  <Social />
-               </li> 
+               </li>
               </ul>
             </div>
           </Col>
@@ -83,12 +89,19 @@ const Footer = (props) => {
           <Row>
             <Col xs={12}>
               {/*<!--Footer Bottom-->*/}
-              <p className="text-xs-center" style={{fontSize: '10px'}}>&copy; Copyright 2018 - Altitude Technology.  All rights reserved.</p>
+              <p className="privacylinks">
+                <a href="#">Privacy Policy</a>  <span>|</span>
+                <a href="#">Cookie Policy</a> <span>|</span>
+                <a href="#">Terms of Use</a> <span>|</span>
+                <a href="#">Disclaimer</a>
+              </p>
+              <p className="text-xs-center" style={{fontSize: '15px'}}>&copy; Copyright 2018 - KTT Presidential Campaign.  All rights reserved <span style={{color:'#DC3545'}}>|</span> Powered by <a style={{color : '#DC3545'}}>Altitude Technology </a> </p>
             </Col>
           </Row>
         </Grid>
       </div>
     </footer>
+    </div>
   )
 }
 export default Footer

@@ -21,7 +21,7 @@ export default class Home extends Component {
                 <div style={{
                   marginTop: '30px'
                 }}>
-                  <h1 style={{fontSize: '30px',color: '#12806B'}}>Kabiru Tanimu Turaki - KTT</h1>
+                  <h1 style={{fontSize: '30px',color: '#09123A'}}>Kabiru Tanimu Turaki - KTT</h1>
                   <h6 style={{marginTop: '0', color: 'grey'}}>
                     ktt slogan ktt Slogan ktt slogan ktt slogan ktt slogan ktt slogan ktt slogan ktt slogan
                   </h6>

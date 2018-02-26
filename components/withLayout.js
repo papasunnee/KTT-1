@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { graphql} from 'react-apollo'
 import gql from 'graphql-tag'
+import 'isomorphic-fetch'
 
 import withData from '../lib/withData'
 
@@ -15,7 +16,7 @@ import Scripts from './common/Scripts/Scripts'
 //import '../static/html/css/style.css';
 
 
-export default function withLayout(Child) {
+export default function withLayout(Child, opts) {
   class WrappedComponent extends React.Component {
     static async getInitialProps(context) {
       let ChildProps = {};
@@ -24,12 +25,20 @@ export default function withLayout(Child) {
         ChildProps = await Child.getInitialProps(context)
       }
 
+      const baseUrl = context.req ? `${context.req.protocol}://${context.req.get('Host')}` : '';
+      //Loading articles from the411ng api
+      let res = await fetch(`${baseUrl}/fetch-breaking-articles`);
+      let articles = await res.json();
+
       return {
         ...ChildProps,
+        articles,
       }
     }
 
     render() {
+      const opts = opts || {},
+      breakingNewsArticles = this.props.articles.gistMany;
       return (
         <div>
           <Head>
@@ -43,12 +52,13 @@ export default function withLayout(Child) {
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
             <link rel="stylesheet" href="/static/css/styles.css"/>
             <link rel="stylesheet" href="/static/html/css/style.css"/>
+            {/*<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59c55ee9a6332134"></script>*/}
           </Head>
           <div className="pagebody">
             <div className="page text-center">
-              <Header />
+              <Header active={opts.activePage || ''}/>
               <hr/>
-              <BreakingNewsBar />
+              <BreakingNewsBar articles={breakingNewsArticles}/>
                 <Child {...this.props}/>
               <Footer />
             </div>

@@ -10,7 +10,7 @@ const Header = (props) => {
           <div className="rd-navbar-inner">
             {/*<!-- RD Navbar Top Panel-->*/}
             <TopNav />
-            <BottomNav />
+            <BottomNav active={props.active}/>
           </div>
         </nav>
       </div>
