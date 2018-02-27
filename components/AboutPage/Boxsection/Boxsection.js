@@ -71,7 +71,7 @@ export default class Home extends Component {
                 <hr className="divider divider-iron"/>
                 <Row>
                 
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/5.png" alt="img05"/></div>
@@ -83,7 +83,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/6.png" alt="img06"/></div>
@@ -95,7 +95,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/5.png" alt="img05"/></div>
@@ -107,7 +107,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/2.png" alt="img02"/></div>
@@ -119,7 +119,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/4.png" alt="img04"/></div>
@@ -131,7 +131,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/4.png" alt="img04"/></div>
@@ -143,7 +143,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/1.png" alt="img01"/></div>
@@ -155,7 +155,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/3.png" alt="img03"/></div>
@@ -167,7 +167,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/3.png" alt="img03"/></div>
@@ -179,7 +179,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/5.png" alt="img05"/></div>
@@ -191,7 +191,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/6.png" alt="img06"/></div>
@@ -203,7 +203,7 @@ export default class Home extends Component {
                             </figure>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
                                 <div><img src="/static/images/profile/5.png" alt="img05"/></div>
@@ -218,13 +218,21 @@ export default class Home extends Component {
                 </Row>
             </Col>
             <Col md={4}>
-                <p>sklaskdl sldk lasdkas</p>
-                <p>sklaskdl sldk lasdkas</p>
-                <p>sklaskdl sldk lasdkas</p>
-                <p>sklaskdl sldk lasdkas</p>
-                <p>sklaskdl sldk lasdkas</p>
-                <p>sklaskdl sldk lasdkas</p>
-                <p>sklaskdl sldk lasdkas</p>
+                <div style={{
+                    margin : '65px 0px'
+                }}>
+                    <img src="/static/images/sidebanner.png" style={{
+                        width : '100%'
+                    }} />
+                </div>
+
+                <div style={{
+                    margin : '10px 0px'
+                }}>
+                    <img src="/static/images/turakigray.png" style={{
+                        width : '100%'
+                    }} />
+                </div>
             </Col>
             </Row>
         </Grid>
