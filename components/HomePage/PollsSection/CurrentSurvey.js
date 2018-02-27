@@ -52,7 +52,7 @@ class Index extends Component {
     })
   }
 
-  sendCode = () => {
+  sendCode = async () => {
     console.log('sending message');
     let res = await fetch(`/poll-verification/start?phone=${this.state.phone}`)
     //console.log(res);
@@ -67,7 +67,7 @@ class Index extends Component {
     const phoneNoRegex = new RegExp("^[0][0-9]\\d{9}$");
     if (this.state.phone) {
       if (phoneNoRegex.test(this.state.phone)){
-        this.sendCode();
+        await this.sendCode();
         this.setState({
           open: true
         })

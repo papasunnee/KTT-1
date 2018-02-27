@@ -6,7 +6,7 @@ import Widget04 from './Widget04';
 
 export default props => (
   <div>
-    <Row>
+    {/*<Row>
       <Col xs={12} sm={6} md={3}>
         <Widget03 dataBox={() => ({variant: "facebook", friends : "89k", feeds: "459"})}/>
       </Col>
@@ -19,11 +19,11 @@ export default props => (
       <Col xs={12} sm={6} md={3}>
         <Widget03 dataBox={() => ({variant: "google-plus", followers : "894", circles: "92"})}/>
       </Col>
-    </Row>
+    </Row>*/}
     <CardGroup className="mb-4">
       <Widget04 icon="icon-speech" color="info" header="12" value="50" invert>Messages</Widget04>
-      <Widget04 icon="icon-pie-chart" color="primary" header="18" value="25">Broadcasts</Widget04>
-      <Widget04 icon="icon-speedometer" color="danger" header="5:34:11" value="75" invert>Till Next Event</Widget04>
+      <Widget04 icon="icon-feed" color="primary" header="18" value="25">Broadcasts</Widget04>
+      <Widget04 icon="icon-clock" color="danger" header="5:34:11" value="75" invert>Till Next Event</Widget04>
       <Widget04 icon="icon-people" color="primary" header="87,500" value="100">Employers</Widget04>
       <Widget04 icon="icon-user-follow" color="success" header="139,019" value="100" invert>Employed</Widget04>
     </CardGroup>

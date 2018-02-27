@@ -12,7 +12,7 @@ export default {
     {
       name: 'Broadcasts',
       url: '/dashboard',
-      icon: 'icon-speedometer',
+      icon: 'icon-feed',
       badge: {
         variant: 'danger',
         text: '4 NEW'
@@ -21,7 +21,7 @@ export default {
     {
       name: 'Messages',
       url: '/dashboard',
-      icon: 'icon-speedometer',
+      icon: 'icon-envelope',
       badge: {
         variant: 'success',
         text: '5 NEW'
@@ -37,19 +37,19 @@ export default {
       class: ''             // optional class names space delimited list for title item ex: "text-center"
     },
     {
-      name: 'Tv Stations',
+      name: 'TV Stations',
       url: '/theme/colors',
-      icon: 'icon-drop',
+      icon: 'icon-screen-desktop',
     },
     {
       name: 'Newspaper',
       url: '/theme/typography',
-      icon: 'icon-pencil',
+      icon: 'icon-book-open',
     },
     {
       name: 'Radio Stations',
       url: '/theme/colors',
-      icon: 'icon-drop',
+      icon: 'icon-globe',
     },
     {
       name: 'Blogs',

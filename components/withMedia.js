@@ -3,14 +3,14 @@ import Head from 'next/head'
 /* import { graphql} from 'react-apollo'
 import gql from 'graphql-tag' */
 //import 'isomorphic-fetch'
-import {Container} from 'reactstrap';
+import { Container} from 'reactstrap';
 
-import withData from '../lib/withData'
+//import withData from '../lib/withData'
 import Breadcrumb from './MediaPortal/components/Breadcrumb/Breadcrumb'
 import Sidebar from './MediaPortal/components/adminUIComponents/Sidebar/Sidebar'
 import Header from './MediaPortal/components/adminUIComponents/Header/Header'
 
-export default function withMedia(Child, opts) {
+export default function withMedia(Child, options) {
   class WrappedComponent extends React.Component {
     static async getInitialProps(context) {
       let ChildProps = {};
@@ -31,8 +31,8 @@ export default function withMedia(Child, opts) {
 
     render() {
       console.log('opts');
-      console.log(opts);
-      const opts = opts || {
+      console.log(options);
+      const opts = options || {
         noLayout: false
       };
       //const breakingNewsArticles = this.props.articles.gistMany;
@@ -49,25 +49,21 @@ export default function withMedia(Child, opts) {
           <link rel="stylesheet" href="/static/css/media-portal/font-awesome.min.css"/>
           <link rel="stylesheet" href="/static/css/media-portal/simple-line-icons.css"/>
         </Head>
-        {(!opts.noLayout) ? (
-          <div className="app">
-              <Header/>
-              <div className="app-body">
-                <Sidebar/>
-                <main className="main">
-                  <Breadcrumb/>
-                  <Container fluid>
-                    <Child {...this.props}/>
-                  </Container>
-                </main>
-              </div>
-            </div>
-          ) : (
-            <Child {...this.props}/>
-          )
-        }
+        <div className="app">
+          <Header/>
+          <div className="app-body">
+            <Sidebar/>
+            <main className="main">
+              <Breadcrumb/>
+              <Container fluid>
+                <Child {...this.props}/>
+              </Container>
+            </main>
+          </div>
+        </div>
       </div>)
     }
   }
-  return withData(WrappedComponent)
+  //return withData(WrappedComponent)
+  return (WrappedComponent)
 }

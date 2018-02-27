@@ -2,13 +2,14 @@ import {Component} from 'react'
 //import Router from 'next/router'
 import Head from 'next/head'
 
-import withMedia from '../components/withMedia'
+import withMediaAppLogin from '../components/withMediaAppLogin'
 import Login from '../components/MediaPortal/views/Login/Login'
 
-class MediaAdminPage extends Component {
+class LoginPage extends Component {
   render(){
     return (
-      <div /*className="animated fadeIn"*/>
+      <div>
+      {/*<div className="animated fadeIn">*/}
         <Head>
           <title>KTT4President | Media Portal Login</title>
         </Head>
@@ -18,4 +19,4 @@ class MediaAdminPage extends Component {
   }
 }
 
-export default withMedia(MediaAdminPage, {noLayout: true})
+export default withMediaAppLogin(LoginPage)
