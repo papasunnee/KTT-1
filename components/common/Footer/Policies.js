@@ -2,31 +2,40 @@ import { Carousel} from 'react-bootstrap'
 const policies=[
   {
     title:'1. Leadership, Governance & Anti-Corruption',
-    description: '', link: '/policy/leadership'
+    description: '', link: '/policy/leadership',
+    imageSrc : '/static/images/leadership.png'
   },{
     title:'2. Security, Law & Order',
-    description: '', link: '/policy/security'
+    description: '', link: '/policy/security',
+    imageSrc : '/static/images/policy/lawandorder.png'
   },{
     title:'3. Infrastructure',
-    description: '', link: '/policy/infrastructure'
+    description: '', link: '/policy/infrastructure',
+    imageSrc : '/static/images/policy/infra.png'
   },{
     title:'4. Education',
-    description: '', link: '/policy/education'
+    description: '', link: '/policy/education',
+    imageSrc : '/static/images/policy/education.png'
   },{
     title:'5. Economy',
-    description: '', link: '/policy/economy'
+    description: '', link: '/policy/economy',
+    imageSrc : '/static/images/policy/economy.png'
   },{
     title:'6. Health & Wellbeing',
-    description: '', link: '/policy/health-and-Wellbeing'
+    description: '', link: '/policy/health-and-Wellbeing',
+    imageSrc : '/static/images/policy/health.png'
   },{
     title:'7. Technology',
-    description: '', link: '/policy/technology'
+    description: '', link: '/policy/technology',
+    imageSrc : '/static/images/policy/technology.png'
   },{
     title:'8. Implementation',
-    description: '', link: '/policy/implementation'
+    description: '', link: '/policy/implementation',
+    imageSrc : '/static/images/policy/implementation.png'
   },{
     title:'9. Impact, Assesment & Results',
-    description: '', link: '/policy/impact'
+    description: '', link: '/policy/impact',
+    imageSrc : '/static/images/policy/analysis.png'
   },
 ]
 const Policy = props => (
@@ -53,7 +62,7 @@ const PoliciesSection = (props) => {
       <Carousel controls={false}>
         {policies.map((policy, index)=>(
           <Carousel.Item key={index}>
-            <img alt="900x500" src={props.imageSrc || "/static/images/service-bg.jpg"} />
+            <img alt="900x500" src={policy.imageSrc || "/static/images/policy/service-bg.jpg"} />
             <Carousel.Caption style={{left: '0%'}}>
               <Policy title={policy.title} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla temporibus voluptates ipsa, ducimus est, aliquid vel harum eligendi totam dignissimos suscipit obcaecati.'}
                 buttonText={'Find Out How'} link={policy.link}/>
