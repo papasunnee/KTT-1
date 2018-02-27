@@ -52,21 +52,22 @@ class Index extends Component {
     })
   }
 
+  sendCode = async () => {
+    console.log('sending message');
+    let res = await fetch(`/poll-verification/start?phone=${this.state.phone}`)
+    //console.log(res);
+    let response = await res.json()
+    console.log(response);
+  }
+
   handleSubmitButton = async () => {
-    const phoneNoRegex = new RegExp("^0?(\\d{10})");
+    //var phoneNoRegex1 = new RegExp("^[0][0-9]\\d{9}$|^\\+234[0-9]\\d{9}$|^\\+234[0][0-9]\\d{9}$");
+    /*const phoneNoRegex = new RegExp("^0?(\\d{10})");
+    const phoneNoRegex = new RegExp("^0?(\\d{10})");*/
+    const phoneNoRegex = new RegExp("^[0][0-9]\\d{9}$");
     if (this.state.phone) {
       if (phoneNoRegex.test(this.state.phone)){
-        console.log('sending message');
-        this.setState({
-          open: true
-        })
-        let res = await fetch(`/poll-verification/start?phone=${this.state.phone}`)
-        console.log('res');
-        console.log(res);
-        console.log('------------')
-        let response = await res.json()
-        console.log(response);
-        //sendCode(this.state.phone)
+        await this.sendCode();
         this.setState({
           open: true
         })

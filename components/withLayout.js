@@ -46,7 +46,7 @@ export default function withLayout(Child, opts) {
             <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
             <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
             <meta charSet="utf-8"/>
-            <link rel="icon" href="wt_62309/images/favicon.ico" type="image/x-icon"/>
+            {/*<link rel="icon" href="wt_62309/images/favicon.ico" type="image/x-icon"/>*/}
             {/*<!-- Stylesheets-->*/}
             <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CLibre+Baskerville:300,400,400i,700,700i%7CLato:400,400i,700,900"/>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
