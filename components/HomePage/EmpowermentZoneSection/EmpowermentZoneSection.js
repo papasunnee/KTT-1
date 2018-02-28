@@ -51,7 +51,7 @@ const EmpowermentZoneSection = (props) => {
                     textShadow:'-1px -1px 0 #fff, 1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff'
                   }}>EMPOWERMENT ZONE</span>
               </div>
-              <div className="offset-top-20 offset-md-top-40"><a href="wt_62309/events.html" className="btn btn-secondary" style={{borderColor: 'white', backgroundColor: '#09123A'}}>JOIN THE MOVEMENT</a></div>
+              <div className="offset-top-20 offset-md-top-40"><a href="" className="btn btn-secondary" style={{borderColor: 'white', backgroundColor: '#09123A'}}>JOIN THE MOVEMENT</a></div>
             </Col>
           </Row>
           {/*<div className="cell-xs-10 cell-md-8 cell-lg-3 section-60 section-lg-120">

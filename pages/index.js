@@ -10,7 +10,7 @@ import ChoiceContent from '../components/HomePage/ChoiceContent/ChoiceContent'
 import GetInvolvedSection from '../components/HomePage/GetInvolvedSection/GetInvolvedSection'
 import EventsSection from '../components/HomePage/EventsSection/EventsSection'
 import Endorsements from '../components/HomePage/Endorsements/Endorsements'
-import PollsSection from '../components/HomePage/PollsSection/PollsSection'
+import PollResult from '../components/HomePage/PollsSection/PollResult'
 
 const firstTitle = 'Caption Text Here'
 const captionContent = 'Porem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla temporibus voluptates ipsa, ducimus est, aliquid vel harum eligendi totam dignissimos suscipit obcaecati. Praesentium obcaecati ad accusamus voluptatum consequuntur, accusantium?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla temporibus voluptates ipsa, ducimus est, aliquid vel harum eligendi totam dignissimos suscipit obcaecati. Praesentium obcaecati ad accusamus voluptatum'
@@ -27,7 +27,7 @@ class HomePage extends Component {
         <ChoiceContent title={firstTitle} content={captionContent}/>
         <EmpowermentZoneSection />
         <TurakiMessage />
-        <PollsSection />
+        <PollResult />
         <ChoiceContent />
         <GetInvolvedSection />
         {/*<EventsSection />

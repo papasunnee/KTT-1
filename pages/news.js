@@ -17,6 +17,9 @@ class KttvPage extends Component {
     const articles = this.props.articles || [];
     return (
       <div>
+        <Head>
+          <title>KTT4President | KTT Tv</title>
+        </Head>
         <PageTitle breadcrumbs={breadcrumbs} title={" "} isMediaPage isTelevisionPage>
           <HeroSection />
         </PageTitle>

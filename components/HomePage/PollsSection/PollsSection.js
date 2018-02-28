@@ -57,7 +57,7 @@ export default class PollsSection extends Component{
 
     return(
       <section style={{
-        borderTop: '3px inset red',
+        borderTop: '1px inset red',
         borderBottom: '5px inset #AB0000',
         backgroundColor : '#F6F8FA' ,
         paddingTop: '30px'
@@ -65,6 +65,9 @@ export default class PollsSection extends Component{
         <Head>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
         </Head>
+        <Row>
+            <h2 style={{margin : 'auto'}}>Online Polls</h2>
+        </Row>
         <MuiThemeProvider muiTheme={getMuiTheme({userAgent, ...muiTheme})}>
           <Row style={{backgroundColor: '#F6F8FA', color: 'black'}}>
             <Col md={6}>
