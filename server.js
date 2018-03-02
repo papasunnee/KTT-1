@@ -1,14 +1,19 @@
 const express = require('express')
 const next = require('next')
-const app = next({dev: process.env.NODE_ENV !== 'production'})
-//const app = next({dev: false})
+//const app = next({dev: process.env.NODE_ENV !== 'production'})
+const app = next({dev: false})
 const handle = app.getRequestHandler()
 const port = process.env.PORT || 3000
-const verifyPhone = require('./lib/VerifyPhone');
-const the411 = require('./lib/the411ng/apiPlugin');
+const verifyPhone = require('./lib/VerifyPhone')
+const bodyParser = require('body-parser')
+const the411 = require('./lib/the411ng/apiPlugin')
 
 app.prepare().then(() => {
   const server = express();
+
+  
+  server.use(bodyParser.json()); // support json encoded bodies
+  server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
   server.get('/', (req, res) => {
     return app.render(req, res, '/')
@@ -18,9 +23,13 @@ app.prepare().then(() => {
     return app.render(req, res, '/state', { state: req.params.state });
   })
 
-  server.get('/policy/:policy', (req, res) => {
-    return app.render(req, res, '/policy', { policy: req.params.policy });
+  server.get('/policy/:policy/:image', (req, res) => {
+    return app.render(req, res, '/policy', { policy: req.params.policy , imageSrc: req.params.image});
   })
+
+  // server.post('/policy', (req, res) => {
+  //     var policyTitle = req.body.policyTitle
+  //  })
 
   server.get('/poll-verification/start', async (req, res) => {
     let phone = req.query.phone;

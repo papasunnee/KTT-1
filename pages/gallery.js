@@ -29,6 +29,10 @@ class GalleryPage extends Component {
   render(){
     return (
       <div>
+        <Head>
+          <title>KTT4President | Gallery</title>
+        </Head>
+        
         {/*<PageTitle breadcrumbs={breadcrumbs} title={" "} isMediaPage/>*/}
         <BanImage />
         <br />

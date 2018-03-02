@@ -23,8 +23,6 @@ class AboutPage extends Component {
   }
   render(){
     const {_breadcrumbs, query} = this.props;
-    const title = query.policy || '';
-    const breadcrumbs = _breadcrumbs || defaultBreadcrumbs;
     return (
       <div>
         <HeroSection />
