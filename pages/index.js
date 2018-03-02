@@ -7,6 +7,7 @@ import HeroSection from '../components/HomePage/HeroSection/HeroSection'
 import EmpowermentZoneSection from '../components/HomePage/EmpowermentZoneSection/EmpowermentZoneSection'
 import TurakiMessage from '../components/HomePage/TurakiMessage/TurakiMessage'
 import ChoiceContent from '../components/HomePage/ChoiceContent/ChoiceContent'
+import TopChoice from '../components/HomePage/ChoiceContent/TopChoice'
 import GetInvolvedSection from '../components/HomePage/GetInvolvedSection/GetInvolvedSection'
 //import EventsSection from '../components/HomePage/EventsSection/EventsSection'
 //import Endorsements from '../components/HomePage/Endorsements/Endorsements'
@@ -15,8 +16,12 @@ import EventsSection from '../components/HomePage/EventsSection/EventsSection'
 import Endorsements from '../components/HomePage/Endorsements/Endorsements'
 import PollResult from '../components/HomePage/PollsSection/PollResult'
 
-const firstTitle = 'Caption Text Here'
-const captionContent = 'Porem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla temporibus voluptates ipsa, ducimus est, aliquid vel harum eligendi totam dignissimos suscipit obcaecati. Praesentium obcaecati ad accusamus voluptatum consequuntur, accusantium?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla temporibus voluptates ipsa, ducimus est, aliquid vel harum eligendi totam dignissimos suscipit obcaecati. Praesentium obcaecati ad accusamus voluptatum'
+const firstTitle = 'The Clock is Ticking'
+const captionContent = ['Support KABIRU TANIMU TURAKI: The ',
+ <span style={{color : 'red', fontWeight : 'bolder'}}><u>#1</u></span>,
+ ' contender for the PDP presidential nomination and presidential candidate for the 2019 presidential elections, ready to lead the country into an era of prosperity for all NIgerians. With your support, we will eradicate broken promises, political lies, hunger, poverty, wastage, incompetence, fraud, nepotism, terrorism, inequality and social injustice. Your support will lead to rebirth and total reconstruction of Nigeria. Our vision is strong, durable and achievable. This time around, its' ,
+ <span style={{color : 'red', fontWeight : 'bolder'}}> YOU FIRST</span>,
+'.']
 
 class HomePage extends Component {
   render(){
@@ -27,7 +32,7 @@ class HomePage extends Component {
           <link href="https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield" rel="stylesheet"/>
         </Head>
         <HeroSection />
-        <ChoiceContent title={firstTitle} content={captionContent}/>
+        <TopChoice title={firstTitle} content={captionContent}/>
         <EmpowermentZoneSection />
         <TurakiMessage />
         <PollResult />
