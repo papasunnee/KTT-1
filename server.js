@@ -1,7 +1,7 @@
 const express = require('express')
 const next = require('next')
-//const app = next({dev: process.env.NODE_ENV !== 'production'})
-const app = next({dev: false})
+//console.log(process.env);
+const app = next({dev: process.env.NODE_ENV !== 'production'})
 const handle = app.getRequestHandler()
 const port = process.env.PORT || 3000
 const verifyPhone = require('./lib/VerifyPhone')
@@ -11,7 +11,7 @@ const the411 = require('./lib/the411ng/apiPlugin')
 app.prepare().then(() => {
   const server = express();
 
-  
+
   server.use(bodyParser.json()); // support json encoded bodies
   server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
