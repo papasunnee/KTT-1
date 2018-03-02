@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+//import { withApollo, graphql, compose } from 'react-apollo'
 /*import { graphql} from 'react-apollo'
 import gql from 'graphql-tag'
 import 'isomorphic-fetch'*/
@@ -9,11 +10,12 @@ import withData from '../lib/withData'
 
 export default function withLayout(Child, opts) {
   class WrappedComponent extends React.Component {
-    static async getInitialProps(context) {
+    static async getInitialProps(context, apolloClient) {
+      //console.log(context);
       let ChildProps = {};
 
       if (Child.getInitialProps) {
-        ChildProps = await Child.getInitialProps(context)
+        ChildProps = await Child.getInitialProps(context, apolloClient)
       }
 
       return {

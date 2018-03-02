@@ -13,7 +13,7 @@ import Home from '../components/MediaPortal/Index'
   {title: 'Article', active: true},
 ]*/
 
-class MediaAdminPage extends Component {
+class MediaAdminPage extends Component {  
   render(){
     const articles = this.props.articles || [];
     return (

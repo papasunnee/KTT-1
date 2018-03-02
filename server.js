@@ -3,7 +3,7 @@ const next = require('next')
 const app = next({dev: process.env.NODE_ENV !== 'production'})
 const handle = app.getRequestHandler()
 const port = process.env.PORT || 3000
-const verifyPhone = require('./lib/VerifyPhone')
+const verifyPhone = require('./lib/twilio/VerifyPhone')
 const bodyParser = require('body-parser')
 const the411 = require('./lib/the411ng/apiPlugin')
 

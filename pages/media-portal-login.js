@@ -8,12 +8,13 @@ import Login from '../components/MediaPortal/views/Login/Login'
 
 class LoginPage extends Component {
   render(){
+    //console.log(this.props);
     return (
       <div className="animated fadeIn">
         <Head>
           <title>KTT4President | Media Portal Login</title>
         </Head>
-        <Login />
+        <Login title={'login'}/>
       </div>
     )
   }

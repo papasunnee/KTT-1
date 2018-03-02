@@ -1,28 +1,34 @@
 import React from 'react'
 import Head from 'next/head'
-/*import { graphql} from 'react-apollo'
-import gql from 'graphql-tag'*/
+import cookie from 'cookie'
+import { withApollo, graphql, compose } from 'react-apollo'
+import gql from 'graphql-tag'
 //import 'isomorphic-fetch'
 
 import withData from '../lib/withData'
+import redirect from '../lib/auth/redirect'
+import checkLoggedIn from '../lib/auth/checkLoggedIn'
 
 import { Container } from 'reactstrap'
 import Breadcrumb from './MediaPortal/components/Breadcrumb/Breadcrumb'
 import Sidebar from './MediaPortal/components/adminUIComponents/Sidebar/Sidebar'
 import Header from './MediaPortal/components/adminUIComponents/Header/Header'
 
-/*const Header = dynamic(import ('./MediaPortal/components/adminUIComponents/Header/Header'), { ssr: false })
-const Sidebar = dynamic(import ('./MediaPortal/components/adminUIComponents/Sidebar/Sidebar'), { ssr: false })
-const Breadcrumb = dynamic(import ('./MediaPortal/components/Breadcrumb/Breadcrumb'), { ssr: false })*/
-
-
 export default function withLayout(Child, opts) {
   class WrappedComponent extends React.Component {
-    static async getInitialProps(context) {
+    static async getInitialProps(context, apolloClient) {
       let ChildProps = {};
 
       if (Child.getInitialProps) {
-        ChildProps = await Child.getInitialProps(context)
+        ChildProps = await Child.getInitialProps(context, apolloClient)
+      }
+
+      //const { loggedInUser } = await checkLoggedIn(context, apolloClient)
+      const loggedInUser = {user: {name: 'aysopopu'}}
+      if (!loggedInUser.user) {
+        // If not signed in, send them somewhere more useful
+        console.log('You must be signed in');
+        //redirect(context, '/media-portal-login')
       }
 
       /*const baseUrl = context.req ? `${context.req.protocol}://${context.req.get('Host')}` : '';
@@ -32,21 +38,26 @@ export default function withLayout(Child, opts) {
 
       return {
         ...ChildProps,
+        loggedInUser
       }
     }
 
-    constructor(props){
-      super(props)
-      this.state = {show: false}
-    }
+    signout = () => {
+      console.log('signing out');
+      document.cookie = cookie.serialize('token', '', {
+        maxAge: -1 // Expire the cookie immediately
+      })
 
-    componentDidMount(){
-      this.setState({show: true})
-      //console.log(S.prototype);
-      //import { Container} from 'reactstrap'
+      // Force a reload of all the current queries now that the user is
+      // logged in, so we don't accidentally leave any state around.
+      this.props.client.cache.reset().then(() => {
+        // Redirect to a more useful page when signed out
+        redirect({}, '/media-portal-login')
+      })
     }
 
     render() {
+      console.log(this.props.data);
       const opts = opts || {};
 
       return (
@@ -78,5 +89,37 @@ export default function withLayout(Child, opts) {
       )
     }
   }
-  return withData(WrappedComponent)
+
+  /*const gqlWrapper = gql `
+  {
+    stateOne {
+       name
+     }
+  }
+  `*/
+
+  const gqlWrapper = gql `
+  {
+    viewer{
+      user {
+        email
+      }
+    }
+  }
+  `
+
+  return compose(
+    // withData gives us server-side graphql queries before rendering
+    withData,
+    // withApollo exposes `this.props.client` used when logging out
+    withApollo
+  )((graphql(gqlWrapper, {props: ({ data }) => ({data})})(WrappedComponent)))
+  /*return compose(
+    // withData gives us server-side graphql queries before rendering
+    withData,
+    // withApollo exposes `this.props.client` used when logging out
+    withApollo
+  )(WrappedComponent)*/
+  //return withData(WrappedComponent)
+  //(graphql(allData, {props: ({ data }) => ({data})})(WrappedComponent))
 }
