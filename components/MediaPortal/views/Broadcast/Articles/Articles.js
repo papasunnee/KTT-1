@@ -1,6 +1,6 @@
 import {Component} from 'react'
-import {graphql} from 'react-apollo'
-import gql from 'graphql-tag'
+/*import {graphql} from 'react-apollo'
+import gql from 'graphql-tag'*/
 
 const Article = props => {
   return (
@@ -30,8 +30,7 @@ const Article = props => {
 }
 
 const Articles = props => {
-  //console.log(props.data);
-  const {newsMany} = props.data || [];
+  /*const {newsMany} = props.data || [];
   const articles = props.articles || [];
   //combining articles from the411ng and ktt backend
   let allItems = [...newsMany,...articles];
@@ -43,21 +42,24 @@ const Articles = props => {
   });
   //select the first 10 items most recent items only
   //console.log(allItems);
-  allItems = allItems.slice(0, 9);
+  allItems = allItems.slice(0, 9);*/
 
   return (
     <div>
       <Article title={'You First: What it Really Means'}/>
-      {allItems.map((item, index)=>(
+      <Article title={'You First: What it Really Means'}/>
+      <Article title={'You First: What it Really Means'}/>
+      <Article title={'You First: What it Really Means'}/>
+      {/*allItems.map((item, index)=>(
         <Article key={index} title={item.title} link={item.link} brief={item.brief}/>
-      ))}
+      ))*/}
     </div>
   )
 }
 
 //export default Articles
 
-const gqlWrapper = gql `
+/*const gqlWrapper = gql `
 query rootQuery{
   newsMany(limit: 4, sort:CREATEDAT_DESC) {
     title
@@ -70,4 +72,6 @@ export default graphql(gqlWrapper, {
   props: ({ data }) => ({
     data
   })
-})(Articles)
+})(Articles)*/
+
+export default Articles

@@ -22,7 +22,7 @@ export default function withLayout(Child, opts) {
 
       return {
         ...ChildProps,
-        //articles,
+        //articles,s
       }
     }
 
@@ -48,7 +48,7 @@ export default function withLayout(Child, opts) {
             {/*<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59c55ee9a6332134"></script>*/}
           </Head>
           <div className="app">
-            <Header/>
+            <Header />
             <div className="app-body">
               <Sidebar/>
               <main className="main">

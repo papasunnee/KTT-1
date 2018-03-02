@@ -36,7 +36,7 @@ export default class NewMessage extends Component {
         <Col xs="12" sm="12" md="12">
           <Card className="card-accent-primary">
             <CardHeader>
-              Compose Message
+              <i className="icon-envelope-letter"></i><strong>Compose Message</strong>
               <Label className="switch switch-lg switch-text switch-info float-right mb-0">
                 <Input type="checkbox" className="switch-input" onClick={this.toggle}/>
                 <span className="switch-label" data-on="On" data-off="Off"></span>
@@ -70,7 +70,7 @@ export default class NewMessage extends Component {
                       </Col>
                     </FormGroup>
                     <FormGroup row>
-                      <Col md={{offset: 1}}>
+                      <Col md={{offset: 1, size: 11}}>
                         <Input type="textarea" name="textarea-input" id="textarea-input" rows="9"
                                      placeholder="Type your message"/>
                       </Col>

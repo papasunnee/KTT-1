@@ -34,9 +34,9 @@ export default class NewMessage extends Component {
     return (
       <Row>
         <Col xs="12" sm="12" md="12">
-          <Card className="card-accent-primary">
+          <Card className="card-accent-danger">
             <CardHeader>
-              Last Message Thread
+              <i className="icon-speech"></i><strong>Last Conversation Thread</strong>
               <Label className="switch switch-lg switch-text switch-info float-right mb-0">
                 <Input type="checkbox" className="switch-input" onClick={this.toggle}/>
                 <span className="switch-label" data-on="On" data-off="Off"></span>

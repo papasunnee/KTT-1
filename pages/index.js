@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import Router from 'next/router'
+//import Router from 'next/router'
 import Head from 'next/head'
 
 import withLayout from '../components/withLayout'
@@ -8,8 +8,8 @@ import EmpowermentZoneSection from '../components/HomePage/EmpowermentZoneSectio
 import TurakiMessage from '../components/HomePage/TurakiMessage/TurakiMessage'
 import ChoiceContent from '../components/HomePage/ChoiceContent/ChoiceContent'
 import GetInvolvedSection from '../components/HomePage/GetInvolvedSection/GetInvolvedSection'
-import EventsSection from '../components/HomePage/EventsSection/EventsSection'
-import Endorsements from '../components/HomePage/Endorsements/Endorsements'
+//import EventsSection from '../components/HomePage/EventsSection/EventsSection'
+//import Endorsements from '../components/HomePage/Endorsements/Endorsements'
 import PollsSection from '../components/HomePage/PollsSection/PollsSection'
 
 const firstTitle = 'Caption Text Here'

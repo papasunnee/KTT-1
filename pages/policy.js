@@ -28,7 +28,7 @@ class AboutPage extends Component {
     return (
       <div>
         <HeroSection />
-        <PageTitle title={title} breadcrumbs={breadcrumbs}/>
+          <PageTitle title={title} breadcrumbs={breadcrumbs}/>
         <TextBody />
       </div>
     )

@@ -1,9 +1,11 @@
 import {Component} from 'react'
 //import Router from 'next/router'
 import Head from 'next/head'
+//import dynamic from 'next/dynamic'
 
-import withMediaApp from '../components/withMediaApp'
+import withMedia from '../components/withMedia'
 import Home from '../components/MediaPortal/Index'
+//const Home = dynamic(import ('../components/MediaPortal/Index'), { ssr: false })
 
 /*const breadcrumbs = [
   {title: 'Home', link:'/'},
@@ -25,4 +27,4 @@ class MediaAdminPage extends Component {
   }
 }
 
-export default withMediaApp(MediaAdminPage)
+export default withMedia(MediaAdminPage)

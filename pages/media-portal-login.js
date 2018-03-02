@@ -4,12 +4,12 @@ import Head from 'next/head'
 
 import withMediaAppLogin from '../components/withMediaAppLogin'
 import Login from '../components/MediaPortal/views/Login/Login'
+//const Login = dynamic(import ('../components/MediaPortal/views/Login/Login'), { ssr: false })
 
 class LoginPage extends Component {
   render(){
     return (
-      <div>
-      {/*<div className="animated fadeIn">*/}
+      <div className="animated fadeIn">
         <Head>
           <title>KTT4President | Media Portal Login</title>
         </Head>

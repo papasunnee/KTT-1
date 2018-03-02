@@ -4,16 +4,7 @@ import Head from 'next/head'
 import gql from 'graphql-tag'
 import 'isomorphic-fetch'*/
 
-//import withData from '../lib/withData'
-
-/*import Header from './common/Header/Header'
-import BreakingNewsBar from './common/BreakingNewsBar/BreakingNewsBar'
-import Footer from './common/Footer/Footer'
-import Scripts from './common/Scripts/Scripts'*/
-
-//import 'bootstrap/dist/css/bootstrap.css';
-//import '../static/css/styles.css';
-//import '../static/html/css/style.css';
+import withData from '../lib/withData'
 
 
 export default function withLayout(Child, opts) {
@@ -27,12 +18,11 @@ export default function withLayout(Child, opts) {
 
       return {
         ...ChildProps,
-        //articles,
       }
     }
 
     render() {
-      console.log(opts);
+      //console.log(opts);
       const opts = opts || {};
       return (
         <div>
@@ -43,11 +33,7 @@ export default function withLayout(Child, opts) {
             {/*<link rel="icon" href="wt_62309/images/favicon.ico" type="image/x-icon"/>*/}
             {/*<!-- Stylesheets-->*/}
             <link rel="stylesheet" href="/static/css/media-portal/style.css"/>
-            <link rel="stylesheet" href="/static/css/meda-portal/dropdown-menu-right.css"/>
-            <link rel="stylesheet" href="/static/css/media-portal/flag-icon.min.css"/>
-            <link rel="stylesheet" href="/static/css/media-portal/font-awesome.min.css"/>
-            <link rel="stylesheet" href="/static/css/media-portal/simple-line-icons.css"/>
-            {/*<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59c55ee9a6332134"></script>*/}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css"/>
           </Head>
           <div>
             <Child {...this.props}/>
@@ -56,6 +42,6 @@ export default function withLayout(Child, opts) {
       )
     }
   }
-  //return withData(WrappedComponent)
-  return WrappedComponent
+
+  return withData(WrappedComponent)
 }
