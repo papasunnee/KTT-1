@@ -54,7 +54,7 @@ export default class NewMessage extends Component {
             <CardHeader>
               <i className="icon-feed"></i><strong>Latest Broadcast</strong>
               <Label className="switch switch-lg switch-text switch-info float-right mb-0">
-                <Input type="checkbox" className="switch-input" onClick={this.toggle}/>
+                <Input checked={this.state.collapse} type="checkbox" className="switch-input" onClick={this.toggle}/>
                 <span className="switch-label" data-on="On" data-off="Off"></span>
                 <span className="switch-handle"></span>
               </Label>

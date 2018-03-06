@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import cookie from 'cookie'
+import Router from 'next/router'
 import PropTypes from 'prop-types';
 import {
   Nav,
@@ -8,7 +10,6 @@ import {
   NavLink,
   Badge
 } from 'reactstrap';
-import HeaderDropdown from './HeaderDropdown';
 
 class Header extends Component {
 
@@ -36,6 +37,20 @@ class Header extends Component {
     document.body.classList.toggle('aside-menu-hidden');
   }
 
+  signout = () => {
+    console.log('signing out');
+    document.cookie = cookie.serialize('token', '', {
+      maxAge: -1 // Expire the cookie immediately
+    })
+
+    // Force a reload of all the current queries now that the user is
+    // logged in, so we don't accidentally leave any state around.
+    this.props.client.cache.reset().then(() => {
+      // Redirect to a more useful page when signed out
+      Router.replace('/media-portal-login')
+    })
+  }
+
   render() {
     return (
       <header className="app-header navbar">
@@ -59,10 +74,9 @@ class Header extends Component {
         </Nav>
         <Nav className="ml-auto" navbar>
           <NavItem className="d-md-down-none">
-            <NavLink href="#"><i className="icon-bell"></i><Badge pill color="danger">5</Badge></NavLink>
+            <NavLink href="#!" onClick={this.signout}>Logout <i className="icon-logout"></i></NavLink>
           </NavItem>
-          <HeaderDropdown/>
-          <div style={{minWidth: '20px'}}/>
+          <div style={{minWidth: '10px'}}/>
         </Nav>
       </header>
     );
