@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Row, Col} from 'react-bootstrap'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import Link from 'next/link'
+import FactSlider from './FactSlider'
 
 
 const styles = {
@@ -44,15 +45,16 @@ export default class PollResult extends Component{
                 bottom: '0',
                 right: '0'
               }}>
-                <h1 style={{marginTop : '15%', color : '#FFFFFF', textAlign : 'center'}}>FACTS FIRST</h1>
+                <h1 style={{marginTop : '18%', color : '#FFFFFF', textAlign : 'center'}}>FACTS FIRST</h1>
               </div>
             </Col>
             <Col md={9}>
-              <div style={{textAlign: 'left', padding: '30px'}}>
+              {/* <div style={{textAlign: 'left', padding: '30px'}}>
                  <div>
                     <h1 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>100% of Nigerians believe in a better future</h1>
                   </div>
-              </div>
+              </div> */}
+              <FactSlider/>
               <Row style={{
                   background : '#09123A' ,
                   height : '40px'
