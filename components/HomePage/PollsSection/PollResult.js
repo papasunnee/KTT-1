@@ -61,12 +61,10 @@ export default class PollResult extends Component{
               }}>
                   <p style={{margin : 'auto' , color : '#FFFFFF'}}>
                     To Participate in our Weekly National Polls, Click 
-                    <Link href='contact'>
-                     <a style={{
+                     <a href="/contact" style={{
                          textDecoration : 'none' ,
                          fontWeight : 'bolder'
                      }}>&nbsp;HERE</a>
-                    </Link>
                     <style jsx>{`
                         a:hover{
                             color : '#FFF'
