@@ -44,12 +44,13 @@ class Login extends Component {
       console.log(this.state);
       e.preventDefault()
       e.stopPropagation()
+
       this.props.login({
-        email: this.state.email,
-        password: this.state.password
+        email: this.state.email, //vanguard@ktt4president
+        password: this.state.password //a
       })
     }
-    console.log(this.props);
+    //console.log(this.props);
     return (
       <div className="app flex-row align-items-center">
         <Container>
@@ -96,16 +97,16 @@ class Login extends Component {
 }
 
 // The `signinUser` mutation
-const gqlWrapper = gql `
+/*const gqlWrapper = gql `
 mutation Login($email: String, $password: String) {
   login ( email: $email, password: $password ) {
     jwt
   }
 }
-`
+`*/
 
-//export default Login;
-export default compose(
+export default Login;
+/*export default compose(
   // withApollo exposes `this.props.client` used when logging out
   withApollo
 )(graphql(
@@ -128,6 +129,7 @@ export default compose(
               password: password
             }
           }).then(({ data }) => {
+            console.log('data');
             // Store the token in cookie
             const {jwt} = data.login
             document.cookie = cookie.serialize('token', jwt, {
@@ -149,4 +151,4 @@ export default compose(
         }
       })
     }
-  )(Login))
+  )(Login))*/

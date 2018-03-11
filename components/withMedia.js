@@ -23,12 +23,13 @@ export default function withLayout(Child, opts) {
         ChildProps = await Child.getInitialProps(context, apolloClient)
       }
 
-      //const { loggedInUser } = await checkLoggedIn(context, apolloClient)
-      const loggedInUser = {user: {name: 'aysopopu'}}
-      if (!loggedInUser.user) {
+      const { loggedInUser } = await checkLoggedIn(context, apolloClient)
+      console.log('loggedInUser---');
+      console.log(loggedInUser);
+      if (!loggedInUser.outlet) {
         // If not signed in, send them somewhere more useful
         console.log('You must be signed in');
-        //redirect(context, '/media-portal-login')
+        redirect(context, '/media-portal-login')
       }
 
       /*const baseUrl = context.req ? `${context.req.protocol}://${context.req.get('Host')}` : '';
@@ -38,7 +39,7 @@ export default function withLayout(Child, opts) {
 
       return {
         ...ChildProps,
-        loggedInUser
+        //loggedInUser
       }
     }
 
@@ -57,7 +58,8 @@ export default function withLayout(Child, opts) {
     }
 
     render() {
-      console.log(this.props.data);
+      //console.log('rendering');
+      //console.log(this.props);
       const opts = opts || {};
 
       return (
@@ -74,7 +76,7 @@ export default function withLayout(Child, opts) {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
           </Head>
           <div className="app">
-            <Header />
+            <Header client={this.props.client} />
             <div className="app-body">
               <Sidebar/>
               <main className="main">
@@ -92,34 +94,26 @@ export default function withLayout(Child, opts) {
 
   /*const gqlWrapper = gql `
   {
-    stateOne {
-       name
-     }
-  }
-  `*/
-
-  const gqlWrapper = gql `
-  {
     viewer{
       user {
         email
       }
     }
   }
-  `
+  `*/
 
-  return compose(
-    // withData gives us server-side graphql queries before rendering
-    withData,
-    // withApollo exposes `this.props.client` used when logging out
-    withApollo
-  )((graphql(gqlWrapper, {props: ({ data }) => ({data})})(WrappedComponent)))
   /*return compose(
     // withData gives us server-side graphql queries before rendering
     withData,
     // withApollo exposes `this.props.client` used when logging out
     withApollo
-  )(WrappedComponent)*/
+  )((graphql(gqlWrapper, {props: ({ data }) => ({data})})(WrappedComponent)))*/
+  return compose(
+    // withData gives us server-side graphql queries before rendering
+    withData,
+    // withApollo exposes `this.props.client` used when logging out
+    withApollo
+  )(WrappedComponent)
   //return withData(WrappedComponent)
   //(graphql(allData, {props: ({ data }) => ({data})})(WrappedComponent))
 }

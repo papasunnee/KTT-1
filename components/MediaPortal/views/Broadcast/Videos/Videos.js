@@ -108,8 +108,8 @@ class Videos extends Component{
           <link rel="stylesheet" href="/static/css/modal-video.css"/>
         </Head>
         <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='L61p2uyiMSo' onClose={() => this.setState({isOpen: false})} />
-        {videos.map((video)=>(
-          <VideoItem title={video.title} imgSrc={video.imgSrc} description={video.description} openModal={this.openModal}/>
+        {videos.map((video, index)=>(
+          <VideoItem key={index} title={video.title} imgSrc={video.imgSrc} description={video.description} openModal={this.openModal}/>
         ))}
         {/*videos1.map((video)=>(
           <VideoItem title={video.title} imgSrc={video.imgSrc} description={video.description}/>

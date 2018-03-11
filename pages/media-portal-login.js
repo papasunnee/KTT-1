@@ -14,7 +14,7 @@ class LoginPage extends Component {
         <Head>
           <title>KTT4President | Media Portal Login</title>
         </Head>
-        <Login title={'login'}/>
+        <Login title={'login'} {...this.props}/>
       </div>
     )
   }
