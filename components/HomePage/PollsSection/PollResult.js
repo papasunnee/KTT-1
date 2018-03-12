@@ -49,11 +49,6 @@ export default class PollResult extends Component{
               </div>
             </Col>
             <Col md={9}>
-              {/* <div style={{textAlign: 'left', padding: '30px'}}>
-                 <div>
-                    <h1 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>100% of Nigerians believe in a better future</h1>
-                  </div>
-              </div> */}
               <FactSlider/>
               <Row style={{
                   background : '#09123A' ,

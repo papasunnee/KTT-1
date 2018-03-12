@@ -37,9 +37,9 @@ class ContactImage extends Component {
                 <p style={{textAlign : 'left', marginTop : '60px'}}>
                     <span style={{color : '#DC3545', fontWeight : 'bold', fontSize : '40px'}}>PHONE</span><br/><small>&nbsp;&nbsp;&nbsp; 080-xxx-xxx-xx </small><br/>
                     <span style={{color : '#DC3545', fontWeight : 'bold', fontSize : '40px'}}>EMAIL</span><br/><small>&nbsp;&nbsp;&nbsp;info@ktt4president.org</small><br/>
-                    <span style={{color : '#DC3545', fontWeight : 'bold', marginTop : '20px', fontSize : '30px'}}>CAMPAIGN HEADQUARTERS</span><br/><small>&nbsp;&nbsp;&nbsp; xxx xxx xxx xxx xxx xxx</small><br/>
-                    <small>&nbsp;&nbsp;&nbsp; xxx xxx xxx xxx xxx xxx</small><br/>
-                    <small>&nbsp;&nbsp;&nbsp; xxx xxx xxx xxx xxx xxx</small><br/>
+                    <span style={{color : '#DC3545', fontWeight : 'bold', marginTop : '20px', fontSize : '30px'}}>CAMPAIGN HEADQUARTERS</span><br/><small>&nbsp;&nbsp;&nbsp; 40, Jimmy Carter Street,</small><br/>
+                    <small>&nbsp;&nbsp;&nbsp; Asokoro, Abuja,</small><br/>
+                    <small>&nbsp;&nbsp;&nbsp; Nigeria.</small><br/>
                 </p>
             </div>
 
