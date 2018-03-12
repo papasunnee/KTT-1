@@ -23,6 +23,16 @@ const captionContent = ['Support KABIRU TANIMU TURAKI: The ',
  <span style={{color : 'red', fontWeight : 'bolder'}}> YOU FIRST</span>,
 '.']
 
+const secondTitle = [
+  <small>NIGERIA NEEDS</small>,
+  <br/>,
+  <span style={{fontSize: '42px'}}>BOLD, FRESH & INTELLECTUAL LEADERSHIP</span>
+]
+
+const addClass = 'addClass'
+
+const thirdTitle = ['WORLD CLASS INFRASTRUCTURES']
+
 class HomePage extends Component {
   render(){
     return (
@@ -36,11 +46,11 @@ class HomePage extends Component {
         <EmpowermentZoneSection />
         <TurakiMessage />
         <PollResult />
-        <ChoiceContent />
+        <ChoiceContent addClass={addClass} title={secondTitle} />
         <GetInvolvedSection />
         {/*<EventsSection />
         <Endorsements />*/}
-        <ChoiceContent />
+        <ChoiceContent addClass={addClass}  title={thirdTitle} />
       </div>
     )
   }

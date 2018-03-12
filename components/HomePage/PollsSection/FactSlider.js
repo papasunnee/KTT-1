@@ -121,6 +121,28 @@ export default class FactSlider extends Component {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="item">
+                                    <div className="container">
+
+                                        <div className="row spacer-md">
+                                            <div className="col-sm-12 col-md-5 col-md-offset-1">
+
+                                                
+                                                <div className="content-left animated bounceInLeft slide-delay-1">
+                                                </div>
+
+                                                <h3 className="animated fadeInUpBig slide-delay-2 YellowText">
+                                                    Economic growth can produce forty million Jobs.
+                                                </h3>
+                                            </div>
+
+                                            <div className="col-sm-12 col-md-6">
+                                                <img className="img-responsive animated bounceInDown" src="/static/images/dice3.png" alt="" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

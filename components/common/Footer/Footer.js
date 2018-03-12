@@ -8,7 +8,7 @@ const Footer = (props) => {
   return (
     <div  style={{marginTop: '30px'}}>
     <Policies />
-    <ChoiceContent />
+    <ChoiceContent addClass='addClass' title='NIGERIA : A BEACON OF HOPE' />
     <footer className="mainfooter" role="contentinfo">
       <div className="footer-middle">
       <h4 style={{color : '#b2b2b2'}}>A New Nigeria, where</h4>
