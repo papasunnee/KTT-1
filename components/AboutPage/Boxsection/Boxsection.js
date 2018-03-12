@@ -74,7 +74,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/5.png" alt="img05"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img05"/></div>
                                 <figcaption>
                                     <h3>Education</h3>
                                     <span>KTT -19</span>
@@ -86,7 +86,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/6.png" alt="img06"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img06"/></div>
                                 <figcaption>
                                     <h3>Profession</h3>
                                     <span>KTT -19</span>
@@ -98,7 +98,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/5.png" alt="img05"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img05"/></div>
                                 <figcaption>
                                     <h3>Business</h3>
                                     <span>KTT -19</span>
@@ -110,7 +110,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/2.png" alt="img02"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img02"/></div>
                                 <figcaption>
                                     <h3>Politics</h3>
                                     <span>KTT -19</span>
@@ -122,7 +122,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/4.png" alt="img04"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img04"/></div>
                                 <figcaption>
                                     <h3>Family</h3>
                                     <span>KTT -19</span>
@@ -134,7 +134,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/4.png" alt="img04"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img04"/></div>
                                 <figcaption>
                                     <h3>Philantrophy</h3>
                                     <span>KTT -19</span>
@@ -146,7 +146,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/1.png" alt="img01"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img01"/></div>
                                 <figcaption>
                                     <h3>Hobbies & Travel</h3>
                                     <span>KTT -19</span>
@@ -158,7 +158,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/3.png" alt="img03"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img03"/></div>
                                 <figcaption>
                                     <h3>Public Service</h3>
                                     <span>KTT -19</span>
@@ -170,7 +170,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/3.png" alt="img03"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img03"/></div>
                                 <figcaption>
                                     <h3>Religion</h3>
                                     <span>KTT -19</span>
@@ -182,9 +182,9 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/5.png" alt="img05"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img05"/></div>
                                 <figcaption>
-                                    <h3>Religion</h3>
+                                    <h3>Chieftancy Titles</h3>
                                     <span>KTT -19</span>
                                     <Button className="anchor" bsStyle="link" onClick={this.handleShow}>Take a Look</Button>
                                 </figcaption>
@@ -194,7 +194,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/6.png" alt="img06"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img06"/></div>
                                 <figcaption>
                                     <h3>Honour & Awards</h3>
                                     <span>KTT -19</span>
@@ -206,7 +206,7 @@ export default class Home extends Component {
                     <Col md={6}>
                         <div class="grid cs-style-4">
                             <figure>
-                                <div><img src="/static/images/profile/5.png" alt="img05"/></div>
+                                <div><img src="/static/images/profile/pro.png" alt="img05"/></div>
                                 <figcaption>
                                     <h3>Tribe, Town & State</h3>
                                     <span>KTT -19</span>
@@ -227,7 +227,7 @@ export default class Home extends Component {
                 </div>
 
                 <div style={{
-                    margin : '10px 0px'
+                    margin : '90px 0px'
                 }}>
                     <img src="/static/images/turakigray.png" style={{
                         width : '100%'

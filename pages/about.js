@@ -17,16 +17,21 @@ const parameters = {
     paddingTop: '30px',
     paddingBottom: '30px'
   },
-  title : 'Kabiru Tanimu Turaki',
-  slogan : ['KTT advocate for the most radical, people-centric and wealth creation agenda in the history of Nigerian democracy. This ',
+  title : ['Kabiru Tanimu Turaki, ', 
+  <small>SAN</small>,
+  <br/>,
+  <small style={{fontSize : '16px'}}>FCIArb, FABs, FCIDA, HCH.Hm, MPIS, MHCA (Dan Masanin Gwandu, Zarumman Kabbi)</small>],
+  slogan : ['KTT advocate for the most radical, people-centric and wealth creation agenda in the history of Nigerian democracy. The ',
   <span style={{color : 'red', fontWeight : 'bolder'}}>YOU FIRST</span>,
   ' movement is unrivalled and unstoppable.'
-  ]
-
-  
+  ],
+  yearQuote : ' '
 }
 
+
+
 class AboutPage extends Component {
+   
   render(){
     return (
       <div>
@@ -37,12 +42,12 @@ class AboutPage extends Component {
           <script type="text/javascript" src="/static/js/profile/toucheffects.js"></script>
         </Head>
         <HeroSection />
-        <PageTitle breadcrumbs={breadcrumbs} slogan={parameters.slogan} title={parameters.title}/>
+        <PageTitle breadcrumbs={breadcrumbs} slogan={parameters.slogan} title={parameters.title} yearQuote={parameters.yearQuote}/>
       <Grid>
         <Row style={parameters.style}>
             <Col md={12}>
               <Row style={{textAlign: 'left'}}>
-              <h3>A STRONG AND VISIONARY LEADER</h3>
+              <h3 style={{marginBottom : '8px' }}><span style={{color : 'white' , backgroundColor : 'red', padding : '7px'}}>#</span> A STRONG AND VISIONARY LEADER</h3>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
@@ -64,7 +69,7 @@ class AboutPage extends Component {
         <Row style={parameters.style}>
             <Col md={12}>
               <Row style={{textAlign: 'left'}}>
-              <h3>A COMPASSIONATE AND SELFLESS LEADER</h3>
+              <h3 style={{marginBottom : '8px' }}><span style={{color : 'white' , backgroundColor : 'red', padding : '7px'}}>#</span> A COMPASSIONATE AND SELFLESS LEADER</h3>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
@@ -86,7 +91,7 @@ class AboutPage extends Component {
         <Row style={parameters.style}>
             <Col md={12}>
               <Row style={{textAlign: 'left'}}>
-              <h3>A GOD FEARING AND TRUSTWORTHY LEADER</h3>
+              <h3 style={{marginBottom : '8px' }}><span style={{color : 'white' , backgroundColor : 'red', padding : '7px'}}>#</span> A GOD FEARING AND TRUSTWORTHY LEADER</h3>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
@@ -108,7 +113,7 @@ class AboutPage extends Component {
         <Row style={parameters.style}>
             <Col md={12}>
               <Row style={{textAlign: 'left'}}>
-              <h3>A PATRIOTIC AND LAW ABIDING LEADER</h3>
+              <h3 style={{marginBottom : '8px' }}><span style={{color : 'white' , backgroundColor : 'red', padding : '7px'}}>#</span> A PATRIOTIC AND LAW ABIDING LEADER</h3>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
