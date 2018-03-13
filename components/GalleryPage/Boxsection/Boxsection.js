@@ -85,7 +85,56 @@ export default class Boxsection extends Component {
                         <div class="grid cs-style-4">
                             <img style={{width : '100%'}} src="/static/images/turaki.png" alt="img05"/>
                         </div>
-                    </Col>    
+                    </Col> 
+
+                    <Col md={6} style={{paddingRight : '1px', paddingBottom : '25px'}}>
+                        <h5>Schools <small><span>|</span> 2015-date</small></h5>
+                        <div class="grid cs-style-4">
+                        <img style={{width : '100%'}} src="/static/images/turaki2.png" alt="img05"/>
+                        </div>
+                    </Col>
+                    <Col md={6} style={{paddingLeft : '1px', paddingBottom : '25px'}}>
+                        <h5>Schools <small><span>|</span> 2019-2023</small></h5>
+                        <div class="grid cs-style-4">
+                            <img style={{width : '100%'}} src="/static/images/turaki.png" alt="img05"/>
+                        </div>
+                    </Col>  
+                    <Col md={6} style={{paddingRight : '1px', paddingBottom : '25px'}}>
+                        <h5>Roads <small><span>|</span> 2015-date</small></h5>
+                        <div class="grid cs-style-4">
+                        <img style={{width : '100%'}} src="/static/images/turaki2.png" alt="img05"/>
+                        </div>
+                    </Col>
+                    <Col md={6} style={{paddingLeft : '1px', paddingBottom : '25px'}}>
+                        <h5>Roads <small><span>|</span> 2019-2023</small></h5>
+                        <div class="grid cs-style-4">
+                            <img style={{width : '100%'}} src="/static/images/turaki.png" alt="img05"/>
+                        </div>
+                    </Col> 
+                    <Col md={6} style={{paddingRight : '1px', paddingBottom : '25px'}}>
+                        <h5>Government <small><span>|</span> 2015-date</small></h5>
+                        <div class="grid cs-style-4">
+                        <img style={{width : '100%'}} src="/static/images/turaki2.png" alt="img05"/>
+                        </div>
+                    </Col>
+                    <Col md={6} style={{paddingLeft : '1px', paddingBottom : '25px'}}>
+                        <h5>Government <small><span>|</span> 2019-2023</small></h5>
+                        <div class="grid cs-style-4">
+                            <img style={{width : '100%'}} src="/static/images/turaki.png" alt="img05"/>
+                        </div>
+                    </Col>  
+                    <Col md={6} style={{paddingRight : '1px', paddingBottom : '25px'}}>
+                        <h5>Housing <small><span>|</span> 2015-date</small></h5>
+                        <div class="grid cs-style-4">
+                        <img style={{width : '100%'}} src="/static/images/turaki2.png" alt="img05"/>
+                        </div>
+                    </Col>
+                    <Col md={6} style={{paddingLeft : '1px', paddingBottom : '25px'}}>
+                        <h5>Housing <small><span>|</span> 2019-2023</small></h5>
+                        <div class="grid cs-style-4">
+                            <img style={{width : '100%'}} src="/static/images/turaki.png" alt="img05"/>
+                        </div>
+                    </Col>  
                 </Row>
             </Col>
             <Col md={4}>

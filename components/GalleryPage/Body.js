@@ -12,6 +12,7 @@ export default class Home extends Component {
     return (
       <Grid>
         <Row>
+          <h3>Gallery</h3><br /><br />
           <Gallery />
         </Row>
       </Grid>

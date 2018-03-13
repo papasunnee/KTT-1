@@ -38,7 +38,7 @@ class GalleryPage extends Component {
         <BanImage />
         <br />
         <Boxsection />
-        <br />
+        <hr />
         <Body />
         <br/><br/>
       </div>
