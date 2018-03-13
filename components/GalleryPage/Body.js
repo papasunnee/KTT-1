@@ -12,7 +12,7 @@ export default class Home extends Component {
     return (
       <Grid>
         <Row>
-          <h3>Gallery</h3><br /><br />
+          <h3>KT TURAKI, A RELIABLE PARTY MEMBER. HE DID NOT DECAMP WHEN PDP LOST POWER, BUT REMAINED TO REFORM THE PARTY. HE IS A GENUINE POLITICAL MAESTRO</h3><br /><br />
           <Gallery />
         </Row>
       </Grid>
