@@ -5,6 +5,7 @@ import Head from 'next/head'
 import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
 import HeroSection from '../components/GalleryPage/HeroSection/HeroSection'
+import Boxsection from '../components/GalleryPage/Boxsection/Boxsection'
 import Body from '../components/GalleryPage/Body'
 
 const breadcrumbs = [
@@ -35,6 +36,8 @@ class GalleryPage extends Component {
         
         {/*<PageTitle breadcrumbs={breadcrumbs} title={" "} isMediaPage/>*/}
         <BanImage />
+        <br />
+        <Boxsection />
         <br />
         <Body />
         <br/><br/>

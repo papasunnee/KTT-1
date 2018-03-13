@@ -168,7 +168,7 @@ class Index extends Component {
              <p style={{margintop: '0px'}}><a href="#">Resend Code</a></p>
              <p style={{margintop: '0px'}}><a href="#">Change number or verification method</a></p>
           </Dialog>
-          <h3 style={{color: 'black', paddingBottom: '10px', marginTop : '-55px'}}>Are you better off today compared to three years ago?</h3>
+          <h3 style={{color: 'black', paddingBottom: '10px', marginTop : '-55px'}}>Are Nigerians better off today compared to three years ago?</h3>
           <RadioButtonGroup style={{color: 'white'}} name="shipSpeed" defaultSelected="1">
             <RadioButton
               value="1"

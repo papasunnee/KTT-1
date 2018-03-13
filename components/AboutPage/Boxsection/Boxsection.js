@@ -2,7 +2,7 @@ import {Component} from 'react'
 import Head from 'next/head'
 import {Grid, Row, Col, Modal , OverlayTrigger,Tooltip,Button} from 'react-bootstrap'
 
-export default class Home extends Component {
+export default class Boxsection extends Component {
 
     constructor(props, context) {
         super(props, context);

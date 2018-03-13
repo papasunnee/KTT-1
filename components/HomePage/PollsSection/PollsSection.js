@@ -101,7 +101,7 @@ export default class PollsSection extends Component{
               <div style={{textAlign: 'left', padding: '30px'}}>
                 {this.state.showCharts ?
                   (<div>
-                    <h3 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>Are you better off today compared to three years ago?</h3>
+                    <h3 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>Are Nigerians better off today compared to three years ago?</h3>
                     <ResultChart />
                   </div>) : (<div style={{marginBottom : '40px'}}>
                     <h2 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>98% of respondents are worse off today compared to three years ago.</h2>
