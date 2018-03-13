@@ -13,7 +13,7 @@ const breadcrumbs = [
   {title: 'Gallery', active: true},
 ]
 
-const BanImage = () => {
+const BanImage = (props) => {
   return (
     <div style={{
       width : '100%',

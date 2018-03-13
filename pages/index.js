@@ -9,9 +9,6 @@ import TurakiMessage from '../components/HomePage/TurakiMessage/TurakiMessage'
 import ChoiceContent from '../components/HomePage/ChoiceContent/ChoiceContent'
 import TopChoice from '../components/HomePage/ChoiceContent/TopChoice'
 import GetInvolvedSection from '../components/HomePage/GetInvolvedSection/GetInvolvedSection'
-//import EventsSection from '../components/HomePage/EventsSection/EventsSection'
-//import Endorsements from '../components/HomePage/Endorsements/Endorsements'
-//import PollsSection from '../components/HomePage/PollsSection/PollsSection'
 import EventsSection from '../components/HomePage/EventsSection/EventsSection'
 import Endorsements from '../components/HomePage/Endorsements/Endorsements'
 import PollResult from '../components/HomePage/PollsSection/PollResult'
@@ -26,7 +23,7 @@ const captionContent = ['Support KABIRU TANIMU TURAKI: The ',
 const secondTitle = [
   <small>NIGERIA NEEDS</small>,
   <br/>,
-  <span style={{fontSize: '42px'}}>BOLD, FRESH & INTELLECTUAL LEADERSHIP</span>
+  <span style={{fontSize: '42px'}}>FRESH, BOLD & INTELLECTUAL LEADERSHIP</span>
 ]
 
 const addClass = 'addClass'

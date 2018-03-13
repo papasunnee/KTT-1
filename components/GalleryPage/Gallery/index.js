@@ -1,17 +1,17 @@
 import Gallery from './Gallery';
 
-function makeUnsplashSrc (id) {
-	return `http://localhost:3000/static/images/gallery/${id}?dpr=2&auto=format&w=1024&h=1024`;
+function makeUnsplashSrc (id,baseURL) {
+	return `/static/images/gallery/${id}?dpr=2&auto=format&w=1024&h=1024`;
 }
-function makeUnsplashSrcSet (id, size) {
-	return `http://localhost:3000/static/images/gallery/${id}?dpr=2&auto=format&w=${size} ${size}w`;
+function makeUnsplashSrcSet (id, size,baseURL) {
+	return `/static/images/gallery/${id}?dpr=2&auto=format&w=${size} ${size}w`;
 }
-function makeUnsplashThumbnail (id, orientation = 'landscape') {
+function makeUnsplashThumbnail (id, orientation = 'landscape',baseURL) {
 	const dimensions = orientation === 'square'
 		? 'w=300&h=300'
 		: 'w=240&h=159';
 
-	return `http://localhost:3000/static/images/gallery/${id}?dpr=2&auto=format&crop=faces&fit=crop&${dimensions}`;
+	return `/static/images/gallery/${id}?dpr=2&auto=format&crop=faces&fit=crop&${dimensions}`;
 }
 
 const THUMBNAIL_IMAGES = [
@@ -34,7 +34,7 @@ const THUMBNAIL_IMAGES = [
 
 export default props => (
 		<Gallery images={THUMBNAIL_IMAGES.map(({ caption, id, orientation, useForDemo }) => ({
-			src: makeUnsplashSrc(id),
+			src: makeUnsplashSrc(id, props.baseURL),
 			thumbnail: makeUnsplashThumbnail(id, orientation),
 			srcSet: [
 				makeUnsplashSrcSet(id, 1024),
