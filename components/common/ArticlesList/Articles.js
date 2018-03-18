@@ -45,7 +45,8 @@ const Articles = props => {
   });
   //select the first 10 items most recent items only
   //console.log(allItems);
-  allItems = allItems.slice(0, 9);
+  //allItems = allItems.slice(0, 9);
+  allItems = allItems.slice(0, 4);
 
   return (
     <div>

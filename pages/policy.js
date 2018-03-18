@@ -52,14 +52,14 @@ class AboutPage extends Component {
               <ul style={{paddingTop : '30px' , color : 'white' , textAlign : 'left'}}>
                   <li>jksjksd fjsdkfjskl fjs kld ksfjsd fjk fsjd fjksd</li>
                   <li>jksjksd fjsdkfjskl fjs kld jdhf jksdhfjsd</li>
-                  <li>jksjksd fjsdkfjskl fjs kld kdjfks jfksdjfkl djflks fjk jfs</li>
+                  <li>jksjksd fjsd kfjskl fjs kld kdjfks jfksdjfkl djflks fjk jfs</li>
                   <li>jksjksd fjsdkfjskl fjs kld jkf jsd</li>
-                  <li>jksjksd fjsdkfjskl fjs kldkd jkf sdkfj skld fjlskd</li>
-                  <li>jksjksd fjsdkfjskl fjs kld  jkhfksd  djkh sdj h</li>
-                  <li>jksjksd fjsdkfjskl fjs kld jdhf jksdhfjsd</li>
-                  <li>jksjksd fjsdkfjskl fjs kld kdjfks jfksdjfkl djflks fjk jfs</li>
-                  <li>jksjksd fjsdkfjskl fjs kld jkf jsd</li>
-                  <li>jksjksd fjsdkfjskl fjs kldkd jkf sdkfj skld fjlskd</li>
+                  <li>jksjksd fjsdkfj skl fjs kldkd jkf sdkfj skld fjlskd</li>
+                  <li>jksjksd fjs dkfjskl fjs kld  jkhfksd  djkh sdj h</li>
+                  <li>jksjksd fjsdkf jskl fjs kld jdhf jksdhfjsd</li>
+                  <li>jksjksd fjsd kfjskl fjs kld kdjfks jfksdjfkl djflks fjk jfs</li>
+                  <li>jksjksd fjs dkfjskl fjs kld jkf jsd</li>
+                  <li>jksjksd fjsdkf jskl fjs kldkd jkf sdkfj skld fjlskd</li>
                 </ul>
               </div>
            </div>
