@@ -8,7 +8,7 @@ const Footer = (props) => {
   return (
     <div  style={{marginTop: '30px'}}>
     <Policies />
-    <ChoiceContent addClass='addClass' title='NIGERIA : A BEACON OF HOPE' />
+    <ChoiceContent addClass='addClass' title='NIGERIA : A BEACON OF HOPE' content = 'How can a nation, with so much respect and dedication to religion, in contrast be filled with lost hopes, shattered dreams, fear and insecurity, violence, corruption, deprivation, hunger, and injustice? Under my leadership, our country, Nigeria, must give hope to the poor, weak and vulnerable, boldness and freedom to speak the truth, expose and punish corruption without bias, reduce inequality, and secure our future as a nation. Nigeria will become a land of hope and opportunity. ' />
     <footer className="mainfooter" role="contentinfo">
       <div className="footer-middle">
       <h4 style={{color : '#b2b2b2'}}>A New Nigeria, where</h4>
