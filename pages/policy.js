@@ -28,11 +28,42 @@ class AboutPage extends Component {
     const breadcrumbs = _breadcrumbs || defaultBreadcrumbs
     return (
       <div>
-        <HeroSection />
-          <PageTitle title={title} breadcrumbs={breadcrumbs}/>
         <HeroSection imageSrc={imageSrc} />
-        <PageTitle title={title} breadcrumbs={breadcrumbs}/>
-        <TextBody />
+        <PageTitle title={title} breadcrumbs={breadcrumbs} yearQuote=' '/>
+        <div className="container">
+           <div className="row">
+              <div className="col-md-offset-6 col-md-6" style={{height : '300px', backgroundColor : '#C71E24'}}>
+                <ul style={{paddingTop : '30px' , color : 'white' , textAlign : 'left'}}>
+                  <li>jksjksd fjsdkfjskl fjs kld ksfjsd fjk fsjd fjksd</li>
+                  <li>jksjksd fjsdkfjskl fjs kld jdhf jksdhfjsd</li>
+                  <li>jksjksd fjsdkfjskl fjs kld kdjfks jfksdjfkl djflks fjk jfs</li>
+                  <li>jksjksd fjsdkfjskl fjs kld jkf jsd</li>
+                  <li>jksjksd fjsdkfjskl fjs kldkd jkf sdkfj skld fjlskd</li>
+                  <li>jksjksd fjsdkfjskl fjs kld  jkhfksd  djkh sdj h</li>
+                  <li>jksjksd fjsdkfjskl fjs kld jdhf jksdhfjsd</li>
+                  <li>jksjksd fjsdkfjskl fjs kld kdjfks jfksdjfkl djflks fjk jfs</li>
+                  <li>jksjksd fjsdkfjskl fjs kld jkf jsd</li>
+                  <li>jksjksd fjsdkfjskl fjs kldkd jkf sdkfj skld fjlskd</li>
+                </ul>
+              </div>
+           </div> 
+           <div className="row">
+              <div className=" col-md-6" style={{height : '300px', backgroundColor : '#1B4478'}}>
+              <ul style={{paddingTop : '30px' , color : 'white' , textAlign : 'left'}}>
+                  <li>jksjksd fjsdkfjskl fjs kld ksfjsd fjk fsjd fjksd</li>
+                  <li>jksjksd fjsdkfjskl fjs kld jdhf jksdhfjsd</li>
+                  <li>jksjksd fjsdkfjskl fjs kld kdjfks jfksdjfkl djflks fjk jfs</li>
+                  <li>jksjksd fjsdkfjskl fjs kld jkf jsd</li>
+                  <li>jksjksd fjsdkfjskl fjs kldkd jkf sdkfj skld fjlskd</li>
+                  <li>jksjksd fjsdkfjskl fjs kld  jkhfksd  djkh sdj h</li>
+                  <li>jksjksd fjsdkfjskl fjs kld jdhf jksdhfjsd</li>
+                  <li>jksjksd fjsdkfjskl fjs kld kdjfks jfksdjfkl djflks fjk jfs</li>
+                  <li>jksjksd fjsdkfjskl fjs kld jkf jsd</li>
+                  <li>jksjksd fjsdkfjskl fjs kldkd jkf sdkfj skld fjlskd</li>
+                </ul>
+              </div>
+           </div>
+        </div>
       </div>
     )
   }
