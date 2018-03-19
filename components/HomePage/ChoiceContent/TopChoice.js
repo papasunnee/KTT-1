@@ -1,7 +1,15 @@
 import React from 'react';
+import {graphql} from 'react-apollo'
+import gql from 'graphql-tag'
 import { Container, Row, Col } from 'reactstrap';
 import Timer from './Timer'
 const ChoiceContent = (props) => {
+    console.log(props.data);
+    let noCount=true;
+    const { nextEvent, currentTime=''} = props.data
+    if (nextEvent) {
+      noCount = false;
+    }
     return (
         <Container className="offset-top-50" style={{marginBottom : '30px'}}>
             <Row>
@@ -17,13 +25,29 @@ const ChoiceContent = (props) => {
                 </Col>
                 <Col xs={6} className="col-centered">
                     <p style={{marginTop : '9%', marginLeft : '100px'}}>
-                        Countdown to PDP Presidental Primaries 
-                        <Timer />
+                        {!noCount ? `Countdown to ${nextEvent.title}` : `Countdown to next major event`}
+                        <Timer nextEvent={nextEvent} noCount={noCount}/>
                     </p>
                 </Col>
             </Row>
         </Container>
     )
   }
-  export default ChoiceContent
-  
+
+// export default ChoiceContent
+
+export const CountdownQuery = gql`
+   query ViewerCandidateQuery{
+     currentTime
+      nextEvent {
+        title
+        date
+      }
+   }
+ `
+
+ export default graphql(CountdownQuery, {
+   props: ({ data }) => ({
+     data
+   })
+ })(ChoiceContent)

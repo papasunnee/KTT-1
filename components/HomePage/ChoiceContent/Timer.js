@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Countdown from 'react-countdown-now';
- 
+
 // Random component
 const Completionist = () => <span>You are good to go!</span>;
 const style = {
@@ -23,13 +23,13 @@ const style2 = {
     color : '#FFF',
     fontWeight : '100',
 }
- 
+
 // Renderer callback with condition
 const renderer = ({days, hours, minutes, seconds, completed }) => {
-  if (completed) {
+  /*if (completed) {
     // Render a completed state
     return <Completionist />;
-  } else {
+  } else {*/
     // Render a countdown
     return <div>
         <p style={style}>{days}
@@ -45,15 +45,16 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
             <p style={style2}>seconds</p>
         </p>
     </div>
-  }
+  // }
 };
- 
+
 
 class Page extends Component{
     render(){
         return(
     <Countdown
-        date={new Date("Aug 18, 2018 00:00:00").getTime()}
+        date={!this.props.noCount ? new Date(this.props.nextEvent.date).getTime() : Date.now()}
+        now={()=>!this.props.noCount ? new Date(this.props.nextEvent.currentTime).getTime() : Date.now() }
         renderer={renderer}
     />
     )}

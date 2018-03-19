@@ -1,12 +1,16 @@
 import Head from 'next/head'
 import {Component} from 'react'
+import {graphql} from 'react-apollo'
+import gql from 'graphql-tag'
 import ModalVideo from 'react-modal-video'
 
 class video extends Component{
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
-      isOpen: false
+      isOpen: false,
+      MONTHS : ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"]
     }
     this.openModal = this.openModal.bind(this)
   }
@@ -16,6 +20,8 @@ class video extends Component{
   }
 
   render () {
+    const { currentTime } = this.props.data
+    const t = new Date(currentTime);
     return (
       <div>
         <Head>
@@ -23,10 +29,10 @@ class video extends Component{
         </Head>
         <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='L61p2uyiMSo' onClose={() => this.setState({isOpen: false})} />
         <div className="post-body" style={{width: '100%', backgroundColor: "rgba(0, 0, 0, 0.63)"}}>
-          <h4 className="text-bold"><a href="#" onClick={this.openModal}>Play video</a></h4>
+          <h4 className="text-bold"><a href="#!" onClick={this.openModal}>Play video</a></h4>
           <ul className="list-inline list-inline-md">
             <li><span className="icon mdi mdi-calendar text-middle"></span>
-              <time datetime="2017-04-30" className="text-middle">March, 13</time>
+              <time datetime="2017-04-30" className="text-middle">{this.state.MONTHS[t.getMonth()]}, {t.getDate()}</time>
             </li>
             <li><span className="icon mdi mdi-map-marker text-middle"></span><span className="text-middle">Click Here To Watch Videos on KTT Television</span></li>
           </ul>
@@ -35,4 +41,15 @@ class video extends Component{
     )
   }
 }
-export default video
+// export default video
+export const gqlWrapper = gql`
+   query {
+     currentTime
+   }
+ `
+
+ export default graphql(gqlWrapper, {
+   props: ({ data }) => ({
+     data
+   })
+ })(video)
