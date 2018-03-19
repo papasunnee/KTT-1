@@ -39,7 +39,7 @@ export default function withLayout(Child, opts) {
 
       return {
         ...ChildProps,
-        //loggedInUser
+        loggedInUser
       }
     }
 
