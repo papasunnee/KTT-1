@@ -8,14 +8,20 @@ const Footer = (props) => {
   return (
     <div  style={{marginTop: '30px'}}>
     <Policies />
-    <ChoiceContent />
+    <ChoiceContent addClass='addClass' title='NIGERIA : A BEACON OF HOPE' content = 'How can a nation, with so much respect and dedication to religion, in contrast be filled with lost hopes, shattered dreams, fear and insecurity, violence, corruption, deprivation, hunger, and injustice? Under my leadership, our country, Nigeria, must give hope to the poor, weak and vulnerable, boldness and freedom to speak the truth, expose and punish corruption without bias, reduce inequality, and secure our future as a nation. Nigeria will become a land of hope and opportunity. ' />
     <footer className="mainfooter" role="contentinfo">
       <div className="footer-middle">
+      <h4 style={{color : '#b2b2b2'}}>A New Nigeria, where</h4>
+        <h1 style={{
+          textAlign : 'center' ,
+          color : '#ffffff',
+          fontWeight : 'bolder'
+        }}>NO ONE IS LEFT BEHIND <span style={{color : 'red'}}>!</span></h1>
       <Grid>
         <Row>
           <Col md={3} sm={6}>
             {/*<!--Column1-->*/}
-            <div className="footer-pad">
+            {/* <div className="footer-pad">
               <h5>Address</h5>
               <hr style={{ width : '20%' , padding : '0 !important', 'margin' : '0', border : ' 1px solid #DC3545'}}/>
               <address>
@@ -31,11 +37,11 @@ const Footer = (props) => {
                     </li>
                 </ul>
             </address>
-            </div>
+            </div> */}
           </Col>
           <Col md={3} sm={6}>
             {/*<!--Column1-->*/}
-            <div className="footer-pad">
+            {/* <div className="footer-pad">
               <h5>Services</h5>
               <hr style={{ width : '20%' , padding : '0 !important', 'margin' : '0', border : ' 1px solid #DC3545'}}/>
               <ul className="list-unstyled">
@@ -46,11 +52,11 @@ const Footer = (props) => {
                 <li><a href="#">Lorem Ipsum</a></li>
                 <li><a href="#">Lorem Ipsum</a></li>
               </ul>
-            </div>
+            </div> */}
           </Col>
           <Col md={3} sm={6}>
             {/*<!--Column1-->*/}
-            <div className="footer-pad">
+            {/* <div className="footer-pad">
               <h5> Information</h5>
               <hr style={{ width : '20%' , padding : '0 !important', 'margin' : '0', border : ' 1px solid #DC3545'}}/>
               <ul className="list-unstyled">
@@ -61,11 +67,11 @@ const Footer = (props) => {
                 <li><a href="#">Lorem Ipsum</a></li>
                 <li><a href="#">Lorem Ipsum</a></li>
               </ul>
-            </div>
+            </div> */}
           </Col>
           <Col md={3} sm={6}>
             {/*<!--Column1-->*/}
-            <div className="footer-pad">
+            {/* <div className="footer-pad">
               <h5>Live Twitter Feeds</h5>
               <hr style={{ width : '20%' , padding : '0 !important', 'margin' : '0', border : ' 1px solid #DC3545'}}/>
               <ul className="list-unstyled">
@@ -79,7 +85,7 @@ const Footer = (props) => {
                  <Social />
                </li>
               </ul>
-            </div>
+            </div> */}
           </Col>
         </Row>
       </Grid>

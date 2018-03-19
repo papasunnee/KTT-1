@@ -49,11 +49,6 @@ export default class PollResult extends Component{
               </div>
             </Col>
             <Col md={9}>
-              {/* <div style={{textAlign: 'left', padding: '30px'}}>
-                 <div>
-                    <h1 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>100% of Nigerians believe in a better future</h1>
-                  </div>
-              </div> */}
               <FactSlider/>
               <Row style={{
                   background : '#09123A' ,
@@ -61,12 +56,10 @@ export default class PollResult extends Component{
               }}>
                   <p style={{margin : 'auto' , color : '#FFFFFF'}}>
                     To Participate in our Weekly National Polls, Click 
-                    <Link href='contact'>
-                     <a style={{
+                     <a href="/contact" style={{
                          textDecoration : 'none' ,
                          fontWeight : 'bolder'
                      }}>&nbsp;HERE</a>
-                    </Link>
                     <style jsx>{`
                         a:hover{
                             color : '#FFF'

@@ -2,10 +2,10 @@ import { Component} from 'react'
 import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 
 const data = [
-      {name: 'Option 1', uv: 4000, votes: 2400, amt: 2300},
-      {name: 'Option 2', uv: 3000, votes: 1398, amt: 2210},
-      {name: 'Option 3', uv: 2000, votes: 9800, amt: 2290},
-      {name: 'Option 4', uv: 2780, votes: 3908, amt: 2000},
+      {name: 'No', uv: 4000, votes: 9800, amt: 2300},
+      {name: 'Yes', uv: 3000, votes: 2400, amt: 2210},
+      {name: 'Not Sure', uv: 2000, votes: 1398, amt: 2290},
+      // {name: 'Option 4', uv: 2780, votes: 3908, amt: 2000},
 ];
 
 class SimpleBarChart extends Component {
