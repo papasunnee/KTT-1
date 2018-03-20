@@ -21,7 +21,7 @@ const GetInvolvedSection = (props) => {
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
                   </p>
-                  <a href="/" className="btn btn-white-outline offset-top-55"
+                  <a href="/contact" className="btn btn-white-outline offset-top-55"
                     style={{backgroundColor: '#09123A'}}
                   >learn more</a>
                 </div>

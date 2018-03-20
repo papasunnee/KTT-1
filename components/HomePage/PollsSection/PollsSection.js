@@ -57,18 +57,21 @@ export default class PollsSection extends Component{
 
     return(
       <section style={{
-        borderTopColor: 'red',
-        borderTopStyle: 'inset',
-        borderTopWidth: '3px',
+        borderTop: '1px inset red',
+        borderBottom: '5px inset #AB0000',
+        backgroundColor : '#F6F8FA' ,
         paddingTop: '30px'
       }}>
         <Head>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
         </Head>
+        <Row>
+            <h2 style={{margin : 'auto'}}>Online Polls</h2>
+        </Row>
         <MuiThemeProvider muiTheme={getMuiTheme({userAgent, ...muiTheme})}>
-          <Row style={{backgroundColor: /*'#2bbfd9'*/'white', color: 'black'}}>
+          <Row style={{backgroundColor: '#F6F8FA', color: 'black'}}>
             <Col md={6}>
-              Poll
+              {/* Poll */}
               <div style={{textAlign: 'left', padding: '30px',
                 height: '70%',
                 borderRightColor: 'red',
@@ -98,10 +101,10 @@ export default class PollsSection extends Component{
               <div style={{textAlign: 'left', padding: '30px'}}>
                 {this.state.showCharts ?
                   (<div>
-                    <h3 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>Example Survey Question</h3>
+                    <h3 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>Are Nigerians better off today compared to three years ago?</h3>
                     <ResultChart />
-                  </div>) : (<div>
-                    <h1 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>100% of Nigerians believe in a better future</h1>
+                  </div>) : (<div style={{marginBottom : '40px'}}>
+                    <h2 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>98% of respondents are worse off today compared to three years ago.</h2>
                   </div>)
                 }
               </div>

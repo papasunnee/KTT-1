@@ -35,9 +35,9 @@ const Navbar = (props) => {
       <NavItem active={props.active === 'home'}>Home</NavItem>
       <NavItem link="/about" active={props.active === 'about'}>About KTT</NavItem>
       <NavItem link="/gallery" active={props.active === 'gallery'}>Gallery</NavItem>
-      <NavItem link="/news" active={props.active === 'tv'}>KT.TV</NavItem>
-      <NavItem link="/country" active={props.active === 'states'}>States</NavItem>
-      <NavItem link="/contact" active={props.active === 'states'}>Contact</NavItem>
+      <NavItem link="/news" active={props.active === 'tv'}>KTT.TV</NavItem>
+      {/*<NavItem link="/country" active={props.active === 'states'}>States</NavItem>*/}
+      <NavItem link="/contact" active={props.active === 'states'}>Get Involved</NavItem>
       <li>
         <a href="/Turaki Empowerment Zone" style={{color: '#393a3c'}}>
           <span style={{

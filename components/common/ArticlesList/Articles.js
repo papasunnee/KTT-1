@@ -30,10 +30,13 @@ const Article = props => {
 }
 
 const Articles = props => {
-  const {newsMany} = props.data || [];
+  //console.log(props.data);
+  //const {newsMany} = props.data || [];
   const articles = props.articles || [];
   //combining articles from the411ng and ktt backend
-  let allItems = [...newsMany,...articles];
+  //let allItems = [...newsMany,...articles];
+
+  let allItems = [...articles];
 
   allItems.sort(function(a, b) {
     a = new Date(a.publishedDate || a.createdAt);
@@ -42,7 +45,8 @@ const Articles = props => {
   });
   //select the first 10 items most recent items only
   //console.log(allItems);
-  allItems = allItems.slice(0, 9);
+  //allItems = allItems.slice(0, 9);
+  allItems = allItems.slice(0, 4);
 
   return (
     <div>
@@ -55,7 +59,6 @@ const Articles = props => {
 }
 
 //export default Articles
-
 const gqlWrapper = gql `
 query rootQuery{
   newsMany(limit: 4, sort:CREATEDAT_DESC) {

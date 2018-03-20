@@ -30,7 +30,7 @@ const EmpowermentZoneSection = (props) => {
               {/*<h2 className="text-bold" style={{fontSize: '50px', color: 'white'}}>TURAKI EMPOWERMENT ZONE</h2>*/}
               <div>
                   <span style={{
-                    fontSize: '60px',
+                    fontSize: '90px',
                     fontWeight: '500',
                     lineHeight: '1.2',
                     textAlign: 'center',
@@ -38,9 +38,9 @@ const EmpowermentZoneSection = (props) => {
                     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
                     color: '#dc3545',
                     textShadow:'-1px -1px 0 #dc3545, 1px -1px 0 #dc3545,-1px 1px 0 #dc3545,1px 1px 0 #dc3545'
-                  }}>KTT</span>
+                  }}>KTT.YEZ</span>
               </div>
-              <div>
+              {/* <div>
                   <span style={{
                     fontSize: '50px',
                     fontWeight: '300',
@@ -50,8 +50,8 @@ const EmpowermentZoneSection = (props) => {
                     color: '#fff',
                     textShadow:'-1px -1px 0 #fff, 1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff'
                   }}>EMPOWERMENT ZONE</span>
-              </div>
-              <div className="offset-top-20 offset-md-top-40"><a href="wt_62309/events.html" className="btn btn-secondary" style={{borderColor: 'white', backgroundColor: '#09123A'}}>JOIN THE MOVEMENT</a></div>
+              </div> */}
+              <div className="offset-top-20 offset-md-top-40"><a href="" className="btn btn-secondary" style={{borderColor: 'white', backgroundColor: '#09123A'}}>LET'S GET STARTED</a></div>
             </Col>
           </Row>
           {/*<div className="cell-xs-10 cell-md-8 cell-lg-3 section-60 section-lg-120">

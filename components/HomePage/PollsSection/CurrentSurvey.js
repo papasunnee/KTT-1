@@ -52,21 +52,22 @@ class Index extends Component {
     })
   }
 
+  sendCode = async () => {
+    console.log('sending message');
+    let res = await fetch(`/poll-verification/start?phone=${this.state.phone}`)
+    //console.log(res);
+    let response = await res.json()
+    console.log(response);
+  }
+
   handleSubmitButton = async () => {
-    const phoneNoRegex = new RegExp("^0?(\\d{10})");
+    //var phoneNoRegex1 = new RegExp("^[0][0-9]\\d{9}$|^\\+234[0-9]\\d{9}$|^\\+234[0][0-9]\\d{9}$");
+    /*const phoneNoRegex = new RegExp("^0?(\\d{10})");
+    const phoneNoRegex = new RegExp("^0?(\\d{10})");*/
+    const phoneNoRegex = new RegExp("^[0][0-9]\\d{9}$");
     if (this.state.phone) {
       if (phoneNoRegex.test(this.state.phone)){
-        console.log('sending message');
-        this.setState({
-          open: true
-        })
-        let res = await fetch(`/poll-verification/start?phone=${this.state.phone}`)
-        console.log('res');
-        console.log(res);
-        console.log('------------')
-        let response = await res.json()
-        console.log(response);
-        //sendCode(this.state.phone)
+        await this.sendCode();
         this.setState({
           open: true
         })
@@ -167,28 +168,28 @@ class Index extends Component {
              <p style={{margintop: '0px'}}><a href="#">Resend Code</a></p>
              <p style={{margintop: '0px'}}><a href="#">Change number or verification method</a></p>
           </Dialog>
-          <h3 style={{color: 'black', paddingBottom: '10px'}}>Example Survey Question</h3>
+          <h3 style={{color: 'black', paddingBottom: '10px', marginTop : '-55px'}}>Are Nigerians better off today compared to three years ago?</h3>
           <RadioButtonGroup style={{color: 'white'}} name="shipSpeed" defaultSelected="1">
             <RadioButton
               value="1"
-              label="Option 1"
+              label="No"
               style={styles.radioButton}
             />
             <RadioButton
               value="2"
-              label="Option 2"
+              label="Yes"
               style={styles.radioButton}
             />
             <RadioButton
               value="3"
-              label="Option 3"
+              label="Not Sure"
               style={styles.radioButton}
             />
-            <RadioButton
+            {/* <RadioButton
               value="4"
               label="Option 4"
               style={styles.radioButton}
-            />
+            /> */}
           </RadioButtonGroup>
           <Row style={{marginTop: '30px'}}>
             <Col md={6} style={{paddingTop: '15px'}}>

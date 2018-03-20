@@ -6,28 +6,37 @@ import ArticlesList from '../common/ArticlesList/ArticlesList'
 
 const videos = [
   {
-    title: "SKODSDS",
-    imgSrc: 'url("/static/images/news-image.jpg")',
+    title: "Title",
+    imgSrc: 'url("/static/images/smallvideobg.png")',
     description: ""
   },{
-    title: "SKODSDS",
-    imgSrc: "",
+    title: "Title",
+    imgSrc: 'url("/static/images/smallvideobg.png")',
     description: ""
   },{
-    title: "SKODSDS",
-    imgSrc: "",
+    title: "Title",
+    imgSrc: 'url("/static/images/smallvideobg.png")',
     description: ""
   },{
-    title: "SKODSDS",
-    imgSrc: "",
+    title: "Title",
+    imgSrc: 'url("/static/images/smallvideobg.png")',
     description: ""
   },{
-    title: "SKODSDS",
-    imgSrc: "",
+    title: "Title",
+    imgSrc: 'url("/static/images/smallvideobg.png")',
     description: ""
   },{
-    title: "SKODSDS",
-    imgSrc: "",
+    title: "Title",
+    imgSrc: 'url("/static/images/smallvideobg.png")',
+    description: ""
+  },
+  {
+    title: "Title",
+    imgSrc: 'url("/static/images/smallvideobg.png")',
+    description: ""
+  },{
+    title: "Title",
+    imgSrc: 'url("/static/images/smallvideobg.png")',
     description: ""
   },
 ]

@@ -18,9 +18,9 @@ class KttvPage extends Component {
     return (
       <div>
         <Head>
-          <title>KTT4President | KTT Television</title>
+          <title>KTT4President | KTT Tv</title>
         </Head>
-        <PageTitle breadcrumbs={breadcrumbs} title={"KTT Television"} isMediaPage isTelevisionPage>
+        <PageTitle breadcrumbs={breadcrumbs} title={" "} isMediaPage isTelevisionPage>
           <HeroSection />
         </PageTitle>
         <Body articles={articles.gistMany}/>
