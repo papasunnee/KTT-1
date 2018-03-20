@@ -5,15 +5,15 @@ import { Container, Row, Col } from 'reactstrap';
 import Timer from './Timer'
 const ChoiceContent = (props) => {
     console.log(props.data);
-    let noCount=true;
+    let isZero=true;
     const { nextEvent, currentTime=''} = props.data
     if (nextEvent) {
-      noCount = false;
+      isZero = false;
     }
     return (
         <Container className="offset-top-50" style={{marginBottom : '30px'}}>
             <Row>
-                <Col xs={6}>
+                <Col xs={6} md={6}>
                 <div className="text-justify">
                 <h2 className="text-bold">{props.title || "Caption Slogan text Here"}</h2>
                 <p>
@@ -23,11 +23,13 @@ const ChoiceContent = (props) => {
                 </p>
                 </div>
                 </Col>
-                <Col xs={6} className="col-centered">
-                    <p style={{marginTop : '9%', marginLeft : '100px'}}>
-                        {!noCount ? `Countdown to ${nextEvent.title}` : `Countdown to next major event`}
-                        <Timer nextEvent={nextEvent} noCount={noCount}/>
+                <Col xs={6} md={6} className="col-centered">
+                    <p style={{marginTop : '9%', width: '100%', textAlign:'center'}}>
+                        {!isZero ? `Countdown to ${nextEvent.title}` : `Countdown to next major event`}
                     </p>
+                    <div style={{marginLeft : '13%', width: '100%'}}>
+                      <Timer nextEvent={nextEvent} currentTime={currentTime} isZero={isZero}/>
+                    </div>
                 </Col>
             </Row>
         </Container>

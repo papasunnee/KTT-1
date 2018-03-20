@@ -32,18 +32,18 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
   } else {*/
     // Render a countdown
     return <div>
-        <p style={style}>{days}
+        <div style={style}>{days}
             <p style={style2}>days</p>
-        </p>
-        <p style={style}>{hours}
+        </div>
+        <div style={style}>{hours}
             <p style={style2}>hours</p>
-        </p>
-        <p style={style}>{minutes}
+        </div>
+        <div style={style}>{minutes}
             <p style={style2}>minutes</p>
-        </p>
-        <p style={style}>{seconds}
+        </div>
+        <div style={style}>{seconds}
             <p style={style2}>seconds</p>
-        </p>
+        </div>
     </div>
   // }
 };
@@ -51,10 +51,22 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
 
 class Page extends Component{
     render(){
+      console.log(this.props);
+      let date, now;
+      if (!this.props.isZero) {
+        date = new Date(this.props.nextEvent.date).getTime();
+        now = (new Date(this.props.currentTime)).getTime();
+        console.log(date);
+        console.log(now);
+      }
+      else{
+        date = Date.now();
+        now = Date.now();
+      }
         return(
     <Countdown
-        date={!this.props.noCount ? new Date(this.props.nextEvent.date).getTime() : Date.now()}
-        now={()=>!this.props.noCount ? new Date(this.props.nextEvent.currentTime).getTime() : Date.now() }
+        date={date}
+        //now={()=>now}
         renderer={renderer}
     />
     )}
