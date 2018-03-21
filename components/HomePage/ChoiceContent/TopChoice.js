@@ -4,7 +4,7 @@ import gql from 'graphql-tag'
 import { Container, Row, Col } from 'reactstrap';
 import Timer from './Timer'
 const ChoiceContent = (props) => {
-    console.log(props.data);
+    // console.log(props.data);
     let isZero=true;
     const { nextEvent, currentTime=''} = props.data
     if (nextEvent) {

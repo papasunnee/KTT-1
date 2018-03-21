@@ -51,13 +51,13 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
 
 class Page extends Component{
     render(){
-      console.log(this.props);
+      // console.log(this.props);
       let date, now;
       if (!this.props.isZero) {
         date = new Date(this.props.nextEvent.date).getTime();
         now = (new Date(this.props.currentTime)).getTime();
-        console.log(date);
-        console.log(now);
+        // console.log(date);
+        // console.log(now);
       }
       else{
         date = Date.now();
