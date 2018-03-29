@@ -54,7 +54,7 @@
     "build": "next build",
     "heroku-postbuild": "next build",
     "start": "NODE_ENV=production node server.js",
-    "start-win": "set NODE_ENV=production && node server.js",
+    "start-win": "set NODE_ENV=production&& node server.js",
     "export": "next export"
   },
   "devDependencies": {
