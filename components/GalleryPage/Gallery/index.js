@@ -1,49 +1,91 @@
 import Gallery from './Gallery';
+import {graphql} from 'react-apollo'
+import gql from 'graphql-tag'
 
-function makeUnsplashSrc (id,baseURL) {
+function _makeUnsplashSrc (id,baseURL) {
 	return `/static/images/gallery/${id}?dpr=2&auto=format&w=1024&h=1024`;
 }
-function makeUnsplashSrcSet (id, size,baseURL) {
+function _makeUnsplashSrcSet (id, size,baseURL) {
 	return `/static/images/gallery/${id}?dpr=2&auto=format&w=${size} ${size}w`;
 }
-function makeUnsplashThumbnail (id, orientation = 'landscape',baseURL) {
+function _makeUnsplashThumbnail (id, orientation = 'landscape',baseURL) {
 	const dimensions = orientation === 'square'
 		? 'w=300&h=300'
 		: 'w=240&h=159';
 
 	return `/static/images/gallery/${id}?dpr=2&auto=format&crop=faces&fit=crop&${dimensions}`;
 }
+function makeUnsplashSrc (url) {
+	return `${url}?dpr=2&auto=format&w=1024&h=1024`;
+	// return `${url}?dpr=2&auto=format&w=1024&h=1024`;
+}
+function makeUnsplashSrcSet (url, size) {
+	return `${url}?dpr=2&auto=format&w=${size} ${size}w`;
+	// return `${url}?dpr=2&auto=format&w=${size} ${size}w`;
+}
+function makeUnsplashThumbnail (url, orientation = 'landscape') {
+	const dimensions = orientation === 'square'
+		? 'w=300&h=300'
+		: 'w=240&h=159';
 
-const THUMBNAIL_IMAGES = [
-	{ id: '1.jpg', caption: 'Photo by KTT Media 2019', orientation: 'square', useForDemo: true },
-	{ id: '2.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '3.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '4.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '5.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '6.jpg', caption: 'Photo by KTT Media 2019', orientation: 'square', useForDemo: true },
-	{ id: '7.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '8.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '9.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '10.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '11.jpg', caption: 'Photo by KTT Media 2019', orientation: 'square', useForDemo: true },
-	{ id: '12.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '13.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '14.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-	{ id: '15.jpg', caption: 'Photo by KTT Media 2019', orientation: 'landscape', useForDemo: true },
-];
+	return `${url}?dpr=2&auto=format&crop=faces&fit=crop&${dimensions}`;
+	// return `${url}?dpr=2&auto=format&crop=faces&fit=crop&${dimensions}`;
+}
 
-export default props => (
-		<Gallery images={THUMBNAIL_IMAGES.map(({ caption, id, orientation, useForDemo }) => ({
-			src: makeUnsplashSrc(id, props.baseURL),
-			thumbnail: makeUnsplashThumbnail(id, orientation),
-			srcSet: [
-				makeUnsplashSrcSet(id, 1024),
-				makeUnsplashSrcSet(id, 800),
-				makeUnsplashSrcSet(id, 500),
-				makeUnsplashSrcSet(id, 320),
-			],
-			caption,
-			orientation,
-			useForDemo,
-		}))} showThumbnails />
-)
+const GalleryIndex = props => {
+	console.log('props');
+	console.log(props);
+	const { loading, galleryOne, error } = props.data;
+	if (loading) {
+		return (<div>Loading...</div>)
+	}
+	if (error) {
+		return (<div>There was an issue while fetching Images</div>)
+	}
+	let makesquareIndex = [];
+	let count=1;
+	for (var i = 0; i < galleryOne.images.length; i++) {
+		if (i%5===0) {
+			makesquareIndex.push(count)
+		}
+		count = count + 1;
+		// galleryOne.images[i]
+	}
+	console.log(makesquareIndex);
+
+	return (
+		<Gallery images={galleryOne.images.map(({ url }, index) => {
+
+			return ({
+				src: makeUnsplashSrc(url),
+				thumbnail: makeUnsplashThumbnail(url, ((index)%5==0? 'square': 'landscape')),
+				srcSet: [
+					makeUnsplashSrcSet(url, 1024),
+					makeUnsplashSrcSet(url, 800),
+					makeUnsplashSrcSet(url, 500),
+					makeUnsplashSrcSet(url, 320),
+				],
+				caption: 'Photo by KTT Media 2019',
+				orientation: ((index)%5==0? 'square': 'landscape'),
+				useForDemo: true,
+			})
+		})}
+		theme = {{container: {zIndex: 99999}}}
+		showThumbnails />
+	)
+}
+
+const gqlWrapper = gql `
+query rootQuery{
+	galleryOne(filter: {name: "KTT Gallery"}) {
+    images{
+      url
+    }
+  }
+}
+`
+export default graphql(gqlWrapper, {
+  props: ({ data }) => ({
+    data
+  })
+})(GalleryIndex)

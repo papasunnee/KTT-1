@@ -19,21 +19,18 @@ class MainVideos extends Component{
 
   render (){
     const HeroItem = (props) => (
-      <div>
-        <a onClick={this.openModal}>
-          <img style={{width: '100%', height: '600px'}} alt="900x600" src={props.imgSrc}/>
-        </a>
-        <Carousel.Caption>
-          <h2 style={{marginBottom: '50px' , marginTop : '-300px', color : '#ffffff'}}>{props.title}</h2>
-          <p>{props.description}</p>
-        </Carousel.Caption>
-      </div>
+      <a onClick={this.openModal}>
+        <div className="video-thumbnail">
+            <img style={{width: '100%', height: '600px'}} alt="900x600" src={props.imgSrc}/>
+            <Carousel.Caption>
+              <h2 style={{marginBottom: '50px' , marginTop : '-300px', color : '#ffffff'}}>{props.title}</h2>
+              <p>{props.description}</p>
+            </Carousel.Caption>
+        </div>
+      </a>
     )
     return (
       <div>
-        <Head>
-          <link rel="stylesheet" href="/static/css/modal-video.css"/>
-        </Head>
         <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='L61p2uyiMSo' onClose={() => this.setState({isOpen: false})} />
         <Carousel style={{width: "100%"}}>
           <Carousel.Item>
@@ -53,7 +50,7 @@ class MainVideos extends Component{
               description={"Nulla vitae elit libero, a pharetra augue mollis interdum."}
               imgSrc={"/static/images/tbbgg.png"}
             />
-          </Carousel.Item>          
+          </Carousel.Item>
         </Carousel>
       </div>
     )

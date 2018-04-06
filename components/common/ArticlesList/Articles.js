@@ -43,7 +43,7 @@ const Articles = props => {
     b = new Date(b.publishedDate || b.createdAt);
     return a>b ? -1 : a<b ? 1 : 0;
   });
-  //select the first 10 items most recent items only
+  //select the first 04 items most recent items only
   //console.log(allItems);
   //allItems = allItems.slice(0, 9);
   allItems = allItems.slice(0, 4);

@@ -57,18 +57,22 @@ class Gallery extends Component {
 
 		if (!images) return;
 
-		const gallery = images.filter(i => i.useForDemo).map((obj, i) => {
-			return (
-				<a
-					href={obj.src}
-					className={css(classes.thumbnail, classes[obj.orientation])}
-					key={i}
-					onClick={(e) => this.openLightbox(i, e)}
-				>
-					<img src={obj.thumbnail} className={css(classes.source)} />
-				</a>
-			);
-		});
+		const gallery = (
+			<div className="card-columns">
+				{images.filter(i => i.useForDemo).map((obj, i) => {
+					return (
+						<a
+							href={obj.src}
+							// className={css(classes.thumbnail, classes[obj.orientation])}
+							key={i}
+							onClick={(e) => this.openLightbox(i, e)}
+							>
+								<img src={obj.thumbnail} className={css(classes.source)} style = {{marginBottom: '10px'}}/>
+							</a>
+						);
+				})}
+		</div>
+	)
 
 		return (
 			<div className={css(classes.gallery)}>

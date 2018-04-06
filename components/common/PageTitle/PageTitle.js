@@ -4,7 +4,7 @@ export default props => (
   <Grid>
     <Row style={{paddingTop: '30px', paddingBottom: '30px'}}>
       <Col md={11}>
-        <Row>
+        <Row style={{paddingLeft: '15px', paddingRight: '15px'}}>
           <Breadcrumb style={{maxHeight: '40px'}}>
             {props.breadcrumbs.map((item)=>(
               <Breadcrumb.Item active={item.active} href={item.link}>{item.title}</Breadcrumb.Item>
