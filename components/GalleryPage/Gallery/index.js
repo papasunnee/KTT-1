@@ -2,19 +2,6 @@ import Gallery from './Gallery';
 import {graphql} from 'react-apollo'
 import gql from 'graphql-tag'
 
-function _makeUnsplashSrc (id,baseURL) {
-	return `/static/images/gallery/${id}?dpr=2&auto=format&w=1024&h=1024`;
-}
-function _makeUnsplashSrcSet (id, size,baseURL) {
-	return `/static/images/gallery/${id}?dpr=2&auto=format&w=${size} ${size}w`;
-}
-function _makeUnsplashThumbnail (id, orientation = 'landscape',baseURL) {
-	const dimensions = orientation === 'square'
-		? 'w=300&h=300'
-		: 'w=240&h=159';
-
-	return `/static/images/gallery/${id}?dpr=2&auto=format&crop=faces&fit=crop&${dimensions}`;
-}
 function makeUnsplashSrc (url) {
 	return `${url}?dpr=2&auto=format&w=1024&h=1024`;
 	// return `${url}?dpr=2&auto=format&w=1024&h=1024`;
@@ -33,8 +20,8 @@ function makeUnsplashThumbnail (url, orientation = 'landscape') {
 }
 
 const GalleryIndex = props => {
-	console.log('props');
-	console.log(props);
+	// console.log('props');
+	// console.log(props);
 	const { loading, galleryOne, error } = props.data;
 	if (loading) {
 		return (<div>Loading...</div>)
@@ -42,16 +29,7 @@ const GalleryIndex = props => {
 	if (error) {
 		return (<div>There was an issue while fetching Images</div>)
 	}
-	let makesquareIndex = [];
-	let count=1;
-	for (var i = 0; i < galleryOne.images.length; i++) {
-		if (i%5===0) {
-			makesquareIndex.push(count)
-		}
-		count = count + 1;
-		// galleryOne.images[i]
-	}
-	console.log(makesquareIndex);
+	// console.log(makesquareIndex);
 
 	return (
 		<Gallery images={galleryOne.images.map(({ url }, index) => {

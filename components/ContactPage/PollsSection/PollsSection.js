@@ -89,7 +89,7 @@ export default class PollsSection extends Component{
             </Col>
             <Col md={6}>
               <Row>
-                <Col md={8}>Results</Col>
+                <Col md={8}> <h4>Last weeks results</h4></Col>
                 <Col md={2}>
                   <Toggle
                     label="Toggle"
