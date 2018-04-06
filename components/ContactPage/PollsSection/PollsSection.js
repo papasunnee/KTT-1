@@ -1,11 +1,15 @@
 import { Component} from 'react'
 import Head from 'next/head'
+import {graphql} from 'react-apollo'
+import gql from 'graphql-tag'
+
 import { Row, Col} from 'react-bootstrap'
 import Toggle from 'material-ui/Toggle';
 import {deepOrange500} from 'material-ui/styles/colors'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+
 import CurrentSurvey from './CurrentSurvey'
 import ResultChart from './ResultChart'
 
@@ -29,7 +33,7 @@ const muiTheme = {
   }
 }
 
-export default class PollsSection extends Component{
+class PollsSection extends Component{
   static getInitialProps ({ req }) {
     // Ensures material-ui renders the correct css prefixes server-side
     let userAgent
@@ -54,7 +58,18 @@ export default class PollsSection extends Component{
 
   render(){
     const { userAgent } = this.props
+    const { loading, error, lastPolls } = this.props.data;
+  	if (loading) {
+  		return (<div>Loading...</div>)
+  	}
+  	if (error) {
+  		return (<div>There was an issue while fetching Polls try again later</div>)
+  	}
 
+    if(lastPolls.length===0){
+      return (<div>There are no currently available polls check again later</div>)
+    }
+    // console.log(lastPolls);
     return(
       <section style={{
         borderTop: '1px inset red',
@@ -68,50 +83,88 @@ export default class PollsSection extends Component{
         <Row>
             <h2 style={{margin : 'auto'}}>Online Polls</h2>
         </Row>
-        <MuiThemeProvider muiTheme={getMuiTheme({userAgent, ...muiTheme})}>
           <Row style={{backgroundColor: '#F6F8FA', color: 'black'}}>
-            <Col md={6}>
-              {/* Poll */}
-              <div style={{textAlign: 'left', padding: '30px',
-                height: '70%',
-                borderRightColor: 'red',
-                borderRightWidth: '4px',
-                borderRightStyle: 'inset',
-                margin: 'auto',
-                position: 'absolute',
-                top: '0',
-                left: '0',
-                bottom: '0',
-                right: '0'
-              }}>
-                <CurrentSurvey />
+            {(lastPolls[0])&&(
+              <Col md={6} style={{paddingTop: '10%'}}>
+                {/* Poll */}
+                <div style={{textAlign: 'left',
+                  height: '70%',
+                  borderRightColor: 'red',
+                  borderRightWidth: '4px',
+                  borderRightStyle: 'inset',
+                  margin: 'auto',
+                  // position: 'absolute',
+                  // top: '0',
+                  // left: '0',
+                  // bottom: '0',
+                  // right: '0'
+                }}>
+                <MuiThemeProvider muiTheme={getMuiTheme({userAgent, ...muiTheme})}>
+                  <CurrentSurvey poll={lastPolls[0]}/>
+                </MuiThemeProvider>
               </div>
             </Col>
-            <Col md={6}>
-              <Row>
-                <Col md={8}> <h4>Last weeks results</h4></Col>
-                <Col md={2}>
-                  <Toggle
-                    label="Toggle"
-                    onToggle={()=>this.toggleCharts()}
-                    //style={styles.toggle}
-                  />
-                </Col>
-              </Row>
-              <div style={{textAlign: 'left', padding: '30px'}}>
-                {this.state.showCharts ?
-                  (<div>
-                    <h3 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>Are Nigerians better off today compared to three years ago?</h3>
-                    <ResultChart />
-                  </div>) : (<div style={{marginBottom : '40px'}}>
-                    <h2 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>98% of respondents are worse off today compared to three years ago.</h2>
-                  </div>)
-                }
-              </div>
-            </Col>
+            )}
+            {(lastPolls[1])&&(
+              <Col md={6}style={{paddingTop: '5%'}}>
+                <Row>
+                  <Col md={7}> <h4>Last weeks results</h4></Col>
+                  <Col md={4}>
+                    <MuiThemeProvider muiTheme={getMuiTheme({userAgent, ...muiTheme})}>
+                      <Toggle
+                        label="Toggle charts"
+                        onToggle={()=>this.toggleCharts()}
+                        //style={styles.toggle}
+                      />
+                    </MuiThemeProvider>
+                  </Col>
+                </Row>
+                <div style={{textAlign: 'left', padding: '30px'}}>
+                  {this.state.showCharts ?
+                    (<div>
+                      <h3 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>{lastPolls[1].title}</h3>
+                      <ResultChart poll={lastPolls[1]}/>
+                    </div>) : (<div style={{marginBottom : '40px'}}>
+                      <h2 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>98% of respondents {lastPolls[1].tagLine}</h2>
+                    </div>)
+                  }
+                </div>
+              </Col>
+            )}
           </Row>
-        </MuiThemeProvider>
+
       </section>
     )
   }
 }
+
+const gqlWrapper = gql `
+query rootQuery{
+  lastPolls {
+    title
+    tagLine
+    totalVotes
+    aVotes
+    bVotes
+    cVotes
+    dVotes
+    option1{
+      text
+    }
+    option2{
+      text
+    }
+    option3{
+      text
+    }
+    option4{
+      text
+    }
+  }
+}
+`
+export default graphql(gqlWrapper, {
+  props: ({ data }) => ({
+    data
+  })
+})(PollsSection)

@@ -127,7 +127,7 @@ class Index extends Component {
   };
 
   render () {
-    const { userAgent } = this.props
+    // const { userAgent } = this.props
 
     const standardActions = (
       <FlatButton
@@ -136,10 +136,21 @@ class Index extends Component {
         onTouchTap={this.handleRequestClose}
       />
     )
+    const OPTIONS = [];
+    let showO3 = false, showO4 = false;
+    console.log(this.props.poll);
+    let poll = this.props.poll;
+    if (poll) {
+      (poll.option1.text) && OPTIONS.push({text: poll.option1.text, value: 'a'});
+      (poll.option2.text) && OPTIONS.push({text: poll.option2.text, value: 'b'});
+      (poll.option3.text) && OPTIONS.push({text: poll.option3.text, value: 'c'});
+      (poll.option4.text) && OPTIONS.push({text: poll.option4.text, value: 'd'});
+    }
+
 
     return (
       //09071816392
-        <div style={styles.container}>
+        <div style={styles.container} className="align-middle">
           <Dialog
             open={this.state.open}
             title={'Please enter the verification code we sent to <'+this.state.phone+'>'}
@@ -168,28 +179,20 @@ class Index extends Component {
              <p style={{margintop: '0px'}}><a href="#">Resend Code</a></p>
              <p style={{margintop: '0px'}}><a href="#">Change number or verification method</a></p>
           </Dialog>
-          <h3 style={{color: 'black', paddingBottom: '10px', marginTop : '-55px'}}>Are Nigerians better off today compared to three years ago?</h3>
-          <RadioButtonGroup style={{color: 'white'}} name="shipSpeed" defaultSelected="1">
-            <RadioButton
-              value="1"
-              label="No"
-              style={styles.radioButton}
-            />
-            <RadioButton
-              value="2"
-              label="Yes"
-              style={styles.radioButton}
-            />
-            <RadioButton
-              value="3"
-              label="Not Sure"
-              style={styles.radioButton}
-            />
+          <h3 style={{color: 'black', paddingBottom: '10px', marginTop : '-55px'}}>{poll.title}</h3>
+          <RadioButtonGroup style={{color: 'white'}} name="shipSpeed" >
             {/* <RadioButton
-              value="4"
-              label="Option 4"
+              value="a"
+              label={poll.option1.text}
               style={styles.radioButton}
             /> */}
+            {OPTIONS.map(({text, value})=>(
+              <RadioButton
+                value={value}
+                label={text}
+                style={styles.radioButton}
+              />)
+            )}
           </RadioButtonGroup>
           <Row style={{marginTop: '30px'}}>
             <Col md={6} style={{paddingTop: '15px'}}>

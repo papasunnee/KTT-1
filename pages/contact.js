@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
-import PollsSection from '../components/HomePage/PollsSection/PollsSection'
+import PollsSection from '../components/ContactPage/PollsSection/PollsSection'
 import ContactForm from '../components/ContactPage/ContactForm'
 import HeroSection from '../components/GalleryPage/HeroSection/HeroSection'
 
@@ -32,8 +32,8 @@ class ContactImage extends Component {
         <BanImage />
         <PollsSection />
 
-        <div className='container-fluid' style={{textAlign : 'left', padding : '90px 20px', margin : '0px', backgroundImage: 'url(/static/images/getInv.png)', backgroundSize : 'cover'}}>  
-        
+        <div className='container-fluid' style={{textAlign : 'left', padding : '90px 20px', margin : '0px', backgroundImage: 'url(/static/images/getInv.png)', backgroundSize : 'cover'}}>
+
         <h2>GET INVOLVED</h2>
         <ol style={{fontSize: '15px'}}>
           <li>Register to Vote before it is too late</li>
@@ -44,7 +44,7 @@ class ContactImage extends Component {
         </ol>
 
 
-        </div>        
+        </div>
 
         <div className='container'>
             <div className='col-md-6' style={{marginTop : '50px'}}>
@@ -69,12 +69,12 @@ class ContactImage extends Component {
             counter-reset: list;
             list-style: none;
           }
-          
+
           li {
             counter-increment: list;
             margin-bottom: 10px;
           }
-          
+
           li::before {
             content: counter(list, decimal-leading-zero);
             background: #2b4353;
@@ -95,7 +95,7 @@ class ContactImage extends Component {
     )
   }
 
-  
+
 }
 
 export default withLayout(ContactImage)
