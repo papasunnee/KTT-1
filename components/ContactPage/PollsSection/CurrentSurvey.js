@@ -98,9 +98,9 @@ class Index extends Component {
   handleVerifyButton = async () => {
     console.log('verify button pressed');
     let res = await fetch(`/poll-verification/verify?phone=${this.state.phone}&code=${this.state.verificationCode}`)
-    console.log('res');
-    console.log(res);
-    console.log('-----------res-----------');
+    // console.log('res');
+    // console.log(res);
+    // console.log('-----------res-----------');
     try {
       let response = await res.json()
       if (response.success){
@@ -137,9 +137,8 @@ class Index extends Component {
       />
     )
     const OPTIONS = [];
-    let showO3 = false, showO4 = false;
-    console.log(this.props.poll);
-    let poll = this.props.poll;
+    const { poll } = this.props;
+
     if (poll) {
       (poll.option1.text) && OPTIONS.push({text: poll.option1.text, value: 'a'});
       (poll.option2.text) && OPTIONS.push({text: poll.option2.text, value: 'b'});
