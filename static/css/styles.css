@@ -188,7 +188,7 @@ font-size: 10px !important ; }
   padding-top : 50px ;
   padding-bottom : 50px ;
   background-repeat: no-repeat ;
-  color: white; 
+  color: white;
 }
 
   .footer-middle h5{
@@ -222,3 +222,26 @@ font-size: 10px !important ; }
   border-top: 5px solid orange;
   background: white;
   color: black; }
+
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.video-thumbnail:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  content: "\f04b";
+  font-family: FontAwesome;
+  font-size: 100px;
+  color: #dc3545;
+  opacity: .8;
+  text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+}
+.video-thumbnail:hover:before {
+  color: #a92a36;
+}
