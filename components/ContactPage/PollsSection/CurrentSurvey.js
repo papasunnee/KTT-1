@@ -72,14 +72,14 @@ class Index extends Component {
   }
 
   sendCode = async () => {
-    console.log('sending message');
+    // console.log('sending message');
     let res = await fetch(`/poll-verification/start?phone=${this.state.phone}`)
     //console.log(res);
     let response = await res.json()
     // console.log(response);
   }
 
-  onVoteCreated = (voteId) => {
+  onVoteCreated = async (voteId) => {
     // console.log(voteId);
     await this.sendCode();
     if (voteId) {
@@ -137,9 +137,10 @@ class Index extends Component {
     try {
       const res = await fetch(`/poll-verification/verify?phone=${this.state.phone}&code=${this.state.verificationCode}`)
       const response = await res.json()
-      if (response.success){
-        //run verify vote mutation
-        updatePollVote({_id: this.state.pollVoteId, vote: this.state.selectedVote},()=>{
+      if (response){
+        if(response.success){
+          //run verify vote mutation
+          updatePollVote({_id: this.state.pollVoteId, vote: this.state.selectedVote},()=>{
             //onSuccess - Function runs from if database update succeeds
             this.setState({isVerified: true, verificationMessage: '🎉  your answer has been submitted, see you at the next poll'})
             this.resetStateValues(3000);
@@ -147,11 +148,17 @@ class Index extends Component {
             //onFailure - Function runs from if database update fails
             this.setState({isVerified: false, verificationMessage: '😞 Whoops!! there was an issue contacting the server try again later'})
           })
+        } else {
+          // console.log(response);
+          this.setState({isVerified: false, verificationMessage: 'you have inputed the wrong verification code'})
+        }
       } else {
         this.setState({isVerified: false, verificationMessage: 'you have inputed the wrong verification code'})
       }
     } catch (e) {
-        this.setState({isVerified: false, verificationMessage: 'there was an issue verifying your phone'})
+      // console.log('e');
+      // console.log(e);
+      this.setState({isVerified: false, verificationMessage: 'there was an issue verifying your phone'})
     }
   }
 
@@ -227,11 +234,12 @@ class Index extends Component {
               label={poll.option1.text}
               style={styles.radioButton}
             /> */}
-            {OPTIONS.map(({text, value})=>(
+            {OPTIONS.map(({text, value}, index)=>(
               <RadioButton
                 value={value}
                 label={text}
                 style={styles.radioButton}
+                key={index}
               />)
             )}
           </RadioButtonGroup>

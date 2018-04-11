@@ -10,7 +10,7 @@ class Index extends Component {
   }
 
   doSubmit = async () => {
-    console.log('clicked');
+    // console.log('clicked');
     this.props.handleVerifyButton((data, onSuccess, onFail)=>{
       // console.log(data);
       this.props.verifyPollVote(data, onSuccess, onFail);
@@ -48,7 +48,6 @@ export default graphql(create, {
       mutate({
         variables: { _id, vote }
       }).then(({ data: { pollVoteVerify: {recordId}}})=>{
-        console.log('success');
         // console.log(recordId);
         (onSuccess) && onSuccess(recordId);
       }).catch((err)=>{

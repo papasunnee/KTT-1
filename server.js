@@ -36,23 +36,23 @@ app.prepare().then(() => {
     //console.log(phone);
     try {
       const response = await verifyPhone.sendCode(phone);
-      console.log(response);
+      // console.log(response);
       res.json(response);
     } catch (e) {
-      res.json(response);
+      res.json(e);
     }
   })
 
   server.get('/poll-verification/verify', async (req, res) => {
     let phone = req.query.phone,
         code = req.query.code;
-    console.log(code);
+    // console.log(code);
     try {
       const response = await verifyPhone.verifyCode (phone, code);
-      console.log(response);
-      res.json(response);
+      // console.log(response);
+      // res.json(response);
     } catch (e) {
-      res.json(response);
+      res.json(e);
     }
   })
 
