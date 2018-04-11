@@ -139,8 +139,9 @@ class PollsSection extends Component{
 }
 
 const gqlWrapper = gql `
-query rootQuery{
+query LastPolls{
   lastPolls {
+    _id
     title
     tagLine
     totalVotes

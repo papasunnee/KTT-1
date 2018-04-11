@@ -11,13 +11,13 @@ import TopChoice from '../components/HomePage/ChoiceContent/TopChoice'
 import GetInvolvedSection from '../components/HomePage/GetInvolvedSection/GetInvolvedSection'
 import EventsSection from '../components/HomePage/EventsSection/EventsSection'
 import Endorsements from '../components/HomePage/Endorsements/Endorsements'
-import PollResult from '../components/HomePage/PollsSection/PollResult'
+import PollResult from '../components/ContactPage/PollsSection/PollResult'
 
 const firstTitle = 'The Clock is Ticking'
 const captionContent = ['Support KABIRU TANIMU TURAKI: The ',
  <span style={{color : 'red', fontWeight : 'bolder'}}><u>#1</u></span>,
- ' contender for the PDP presidential nomination and presidential candidate for the 2019 presidential elections, ready to lead the country into an era of ' , 
- <span style={{color : 'red', fontWeight : 'bold'}}>"Prosperity For All Nigerians"</span>, 
+ ' contender for the PDP presidential nomination and presidential candidate for the 2019 presidential elections, ready to lead the country into an era of ' ,
+ <span style={{color : 'red', fontWeight : 'bold'}}>"Prosperity For All Nigerians"</span>,
  '. With your support, we will eradicate broken promises, political lies, hunger, poverty, wastage, incompetence, fraud, nepotism, terrorism, inequality and social injustice. Your support will lead to rebirth and total reconstruction of Nigeria. Our vision is strong, durable and achievable. This time around, its' ,
  <span style={{color : 'red', fontWeight : 'bolder'}}> YOU FIRST</span>,
 '.']

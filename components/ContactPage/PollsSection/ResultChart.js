@@ -13,13 +13,13 @@ class SimpleBarChart extends Component {
     // this.props.poll
     let data = [];
     (this.props.poll.option1.text) && data.push({name: this.props.poll.option1.text,votes: this.props.poll.aVotes});
-    (this.props.poll.option2.text) && data.push({name: this.props.poll.option2.text,votes: this.props.poll.aVotes});
-    (this.props.poll.option3.text) && data.push({name: this.props.poll.option3.text,votes: this.props.poll.aVotes});
-    (this.props.poll.option4.text) && data.push({name: this.props.poll.option4.text,votes: this.props.poll.aVotes});
-    console.log(data);
+    (this.props.poll.option2.text) && data.push({name: this.props.poll.option2.text,votes: this.props.poll.bVotes});
+    (this.props.poll.option3.text) && data.push({name: this.props.poll.option3.text,votes: this.props.poll.cVotes});
+    (this.props.poll.option4.text) && data.push({name: this.props.poll.option4.text,votes: this.props.poll.dVotes});
+    // console.log(data);
   	return (
-    	<BarChart width={500} height={200} data={data}
-            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+    	<BarChart width={400} height={200} data={data}
+            margin={{top: 5, right: 5, left: 5, bottom: 5}}>
        <XAxis dataKey="name"/>
        <YAxis/>
        <CartesianGrid strokeDasharray="3 3"/>
