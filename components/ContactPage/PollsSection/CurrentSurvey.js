@@ -9,6 +9,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 import {Row, Col} from 'react-bootstrap'
 import 'isomorphic-fetch'
+import SubmitButton from './SubmitButton'
+import VerifyButton from './VerifyButton'
 
 // Make sure react-tap-event-plugin only gets injected once
 // Needed for material-ui
@@ -28,9 +30,10 @@ const styles = {
 const muiTheme = {
   palette: {
     accent1Color: deepOrange500,
-
   }
 }
+
+const phoneNoRegex = new RegExp("^[0][0-9]\\d{9}$");
 
 class Index extends Component {
   constructor (props, context) {
@@ -43,7 +46,23 @@ class Index extends Component {
       verificationCode: '',
       isVerified: false,
       verificationMessage: '',
+      selectedVote: '',
+      pollVoteId: null
     }
+
+    this.changeOption = this.changeOption.bind(this)
+    this.sendCode = this.sendCode.bind(this)
+    this.handleRequestClose = this.handleRequestClose.bind(this)
+    this.onVoteCreated = this.onVoteCreated.bind(this)
+    this.onVoteFail = this.onVoteFail.bind(this)
+    this.handleSubmitButton = this.handleSubmitButton.bind(this)
+    this.resetStateValues = this.resetStateValues.bind(this)
+    this.handleVerifyButton = this.handleVerifyButton.bind(this)
+  }
+
+  changeOption(e,value) {
+    // console.log(value);
+    this.setState({selectedVote: value, displayError: false})
   }
 
   handleRequestClose = () => {
@@ -60,26 +79,37 @@ class Index extends Component {
     console.log(response);
   }
 
-  handleSubmitButton = async () => {
-    //var phoneNoRegex1 = new RegExp("^[0][0-9]\\d{9}$|^\\+234[0-9]\\d{9}$|^\\+234[0][0-9]\\d{9}$");
-    /*const phoneNoRegex = new RegExp("^0?(\\d{10})");
-    const phoneNoRegex = new RegExp("^0?(\\d{10})");*/
-    const phoneNoRegex = new RegExp("^[0][0-9]\\d{9}$");
-    if (this.state.phone) {
+  onVoteCreated = (voteId) => {
+    // console.log('agsaaaa');
+    // console.log(voteId);
+    // console.log('aa');
+    // await this.sendCode();
+    if (voteId) {
+      this.setState({ open: true, pollVoteId: voteId })
+    }
+  }
+
+  onVoteFail = (message) => {
+    //function runs when the api doesnt create the vote
+    this.setState({ displayError: message })
+  }
+
+  handleSubmitButton = async (createPollVote) => {
+    if (this.state.phone && this.state.selectedVote) {
       if (phoneNoRegex.test(this.state.phone)){
-        await this.sendCode();
-        this.setState({
-          open: true
-        })
+        // console.log(this.state.phone);
+        // console.log(this.props.poll);
+        createPollVote({
+          phoneNumber: this.state.phone,
+          vote: this.state.selectedVote,
+          poll: this.props.poll._id
+        }, this.onVoteCreated, this.onVoteFail);
       } else {
-        this.setState({
-          displayError: 'Enter a valid phone number'
-        })
+        this.setState({displayError: 'Enter a valid phone number'})
       }
     } else {
-      this.setState({
-        displayError: 'This field is required'
-      })
+      (!this.state.phone) && this.setState({displayError: 'This field is required'});
+      (!this.state.selectedVote) && this.setState({displayError: 'You must select an option'});
     }
 
   }
@@ -95,23 +125,41 @@ class Index extends Component {
 
   }
 
-  handleVerifyButton = async () => {
-    console.log('verify button pressed');
-    let res = await fetch(`/poll-verification/verify?phone=${this.state.phone}&code=${this.state.verificationCode}`)
-    // console.log('res');
-    // console.log(res);
-    // console.log('-----------res-----------');
-    try {
-      let response = await res.json()
-      if (response.success){
-        this.setState({isVerified: true, verificationMessage: 'your answer has been submitted'})
+  handleVerifyButton = async (updatePollVote) => {
+    // console.log('verify button pressed');
+    updatePollVote({_id: this.state.pollVoteId, vote: this.state.selectedVote},
+      //onSuccess - Function runs from if database update succeeds
+      ()=>{
+        this.setState({isVerified: true, verificationMessage: '🎉  your answer has been submitted, see you at the next poll'})
         this.resetStateValues(3000);
-      } else {
-        this.setState({isVerified: false, verificationMessage: 'you have inputed the wrong verification code'})
-      }
-    } catch (e) {
-        this.setState({isVerified: false, verificationMessage: 'there was an issue verifying your phone'})
-    }
+      },
+      //onFailure - Function runs from if database update fails
+      ()=>{
+        this.setState({isVerified: false, verificationMessage: '😞 Whoops!! there was an issue contacting the server try again later'})
+      })
+    // try {
+    //   const res = await fetch(`/poll-verification/verify?phone=${this.state.phone}&code=${this.state.verificationCode}`)
+    //   const response = await res.json()
+    //   if (response.success){
+    //     // this.setState({isVerified: true, verificationMessage: 'your answer has been submitted'})
+    //     // this.resetStateValues(2000);
+    //     //run mutation
+    //     updatePollVote({_id: this.state.pollVoteId, vote: this.state.selectedVote},
+    //     //onSuccess
+    //     ()=>{
+    //       this.setState({isVerified: true, verificationMessage: 'your answer has been submitted'})
+    //       this.resetStateValues(2000);
+    //     },
+    //     //onFailure
+    //     ()=>{
+    //       this.setState({isVerified: true, verificationMessage: 'there was an issue contacting the server try again later'})
+    //     })
+    //   } else {
+    //     this.setState({isVerified: false, verificationMessage: 'you have inputed the wrong verification code'})
+    //   }
+    // } catch (e) {
+    //     this.setState({isVerified: false, verificationMessage: 'there was an issue verifying your phone'})
+    // }
   }
 
   handlePhoneChange = (event) => {
@@ -164,22 +212,23 @@ class Index extends Component {
                   //errorText={this.state.displayError}
                   hintText="Input verification code"
                   errorText={this.state.verificationMessage}
-                  errorStyle={this.state.isVerified && {color: 'green'}}
+                  errorStyle={{color: this.state.isVerified ? 'green' : 'red'}}
                  />
               </Col>
               <Col md={6}>
-                <a href="#!" className="btn btn-white-outline"
+                {/* <a href="#!" className="btn btn-white-outline"
                   onClick={this.handleVerifyButton}
                   style={{borderColor: 'white', backgroundColor: '#09123A'}}
-                >Verify</a>
+                >Verify</a> */}
+                <VerifyButton handleVerifyButton={this.handleVerifyButton}/>
               </Col>
             </Row>
-             <p style={{marginBottom: '10px',marginTop: '15px'}}>didn't receive a code?</p>
-             <p style={{margintop: '0px'}}><a href="#">Resend Code</a></p>
-             <p style={{margintop: '0px'}}><a href="#">Change number or verification method</a></p>
+             {/* <p style={{marginBottom: '10px',marginTop: '15px'}}>didn't receive a code?</p>
+             <p style={{margintop: '0px'}}><a href="#">Resend Code</a></p> */}
+             <p style={{margintop: '0px'}}><a href="#" onClick={this.handleRequestClose}>Change number</a></p>
           </Dialog>
           <h3 style={{color: 'black', paddingBottom: '10px', marginTop : '-55px'}}>{poll.title}</h3>
-          <RadioButtonGroup style={{color: 'white'}} name="shipSpeed" >
+          <RadioButtonGroup style={{color: 'white'}} name="shipSpeed" onChange={this.changeOption}>
             {/* <RadioButton
               value="a"
               label={poll.option1.text}
@@ -194,17 +243,18 @@ class Index extends Component {
             )}
           </RadioButtonGroup>
           <Row style={{marginTop: '30px'}}>
-            <Col md={6} style={{paddingTop: '15px'}}>
+            <Col md={6} xs={6} style={{paddingTop: '15px'}}>
               <TextField
                 onChange={this.handlePhoneChange}
                 hintText="Enter Phone Number"
                 errorText={this.state.displayError}
                />
             </Col>
-            <Col md={6}>
-              <a href="#!" className="btn btn-white-outline" onClick={this.handleSubmitButton}
+            <Col md={6} xs={6}>
+              {/*<a href="#!" className="btn btn-white-outline" onClick={this.handleSubmitButton}
                 style={{borderColor: 'white', backgroundColor: '#09123A'}}
-              >Submit Answer</a>
+              >Submit Answer</a>*/}
+              <SubmitButton handleSubmitButton={this.handleSubmitButton} />
             </Col>
           </Row>
         </div>
@@ -213,3 +263,29 @@ class Index extends Component {
 }
 
 export default Index
+// const create = gql`
+//   mutation updatePost($id: ID!, $votes: Int) {
+//     updatePost(id: $id, votes: $votes) {
+//       id
+//       __typename
+//       votes
+//     }
+//   }
+// `
+//
+// export default graphql(create, {
+//   props: ({ ownProps, mutate }) => ({
+//     upvote: (id, votes) =>
+//       mutate({
+//         variables: { id, votes },
+//         optimisticResponse: {
+//           __typename: 'Mutation',
+//           updatePost: {
+//             __typename: 'Post',
+//             id: ownProps.id,
+//             votes: ownProps.votes + 1
+//           }
+//         }
+//       })
+//   })
+// })(Index)
