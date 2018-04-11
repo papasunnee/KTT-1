@@ -76,14 +76,12 @@ class Index extends Component {
     let res = await fetch(`/poll-verification/start?phone=${this.state.phone}`)
     //console.log(res);
     let response = await res.json()
-    console.log(response);
+    // console.log(response);
   }
 
   onVoteCreated = (voteId) => {
-    // console.log('agsaaaa');
     // console.log(voteId);
-    // console.log('aa');
-    // await this.sendCode();
+    await this.sendCode();
     if (voteId) {
       this.setState({ open: true, pollVoteId: voteId })
     }
@@ -126,40 +124,35 @@ class Index extends Component {
   }
 
   handleVerifyButton = async (updatePollVote) => {
-    // console.log('verify button pressed');
-    updatePollVote({_id: this.state.pollVoteId, vote: this.state.selectedVote},
-      //onSuccess - Function runs from if database update succeeds
-      ()=>{
-        this.setState({isVerified: true, verificationMessage: '🎉  your answer has been submitted, see you at the next poll'})
-        this.resetStateValues(3000);
-      },
-      //onFailure - Function runs from if database update fails
-      ()=>{
-        this.setState({isVerified: false, verificationMessage: '😞 Whoops!! there was an issue contacting the server try again later'})
-      })
-    // try {
-    //   const res = await fetch(`/poll-verification/verify?phone=${this.state.phone}&code=${this.state.verificationCode}`)
-    //   const response = await res.json()
-    //   if (response.success){
-    //     // this.setState({isVerified: true, verificationMessage: 'your answer has been submitted'})
-    //     // this.resetStateValues(2000);
-    //     //run mutation
-    //     updatePollVote({_id: this.state.pollVoteId, vote: this.state.selectedVote},
-    //     //onSuccess
-    //     ()=>{
-    //       this.setState({isVerified: true, verificationMessage: 'your answer has been submitted'})
-    //       this.resetStateValues(2000);
-    //     },
-    //     //onFailure
-    //     ()=>{
-    //       this.setState({isVerified: true, verificationMessage: 'there was an issue contacting the server try again later'})
-    //     })
-    //   } else {
-    //     this.setState({isVerified: false, verificationMessage: 'you have inputed the wrong verification code'})
-    //   }
-    // } catch (e) {
-    //     this.setState({isVerified: false, verificationMessage: 'there was an issue verifying your phone'})
-    // }
+    // updatePollVote({_id: this.state.pollVoteId, vote: this.state.selectedVote},
+    //   //onSuccess - Function runs from if database update succeeds
+    //   ()=>{
+    //     this.setState({isVerified: true, verificationMessage: '🎉  your answer has been submitted, see you at the next poll'})
+    //     this.resetStateValues(3000);
+    //   },
+    //   //onFailure - Function runs from if database update fails
+    //   ()=>{
+    //     this.setState({isVerified: false, verificationMessage: '😞 Whoops!! there was an issue contacting the server try again later'})
+    //   })
+    try {
+      const res = await fetch(`/poll-verification/verify?phone=${this.state.phone}&code=${this.state.verificationCode}`)
+      const response = await res.json()
+      if (response.success){
+        //run verify vote mutation
+        updatePollVote({_id: this.state.pollVoteId, vote: this.state.selectedVote},()=>{
+            //onSuccess - Function runs from if database update succeeds
+            this.setState({isVerified: true, verificationMessage: '🎉  your answer has been submitted, see you at the next poll'})
+            this.resetStateValues(3000);
+          },()=>{
+            //onFailure - Function runs from if database update fails
+            this.setState({isVerified: false, verificationMessage: '😞 Whoops!! there was an issue contacting the server try again later'})
+          })
+      } else {
+        this.setState({isVerified: false, verificationMessage: 'you have inputed the wrong verification code'})
+      }
+    } catch (e) {
+        this.setState({isVerified: false, verificationMessage: 'there was an issue verifying your phone'})
+    }
   }
 
   handlePhoneChange = (event) => {
