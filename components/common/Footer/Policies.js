@@ -52,7 +52,7 @@ const Policy = props => (
           fontWeight: '600',
           paddingBottom: '10px'
         }}>{props.title}</h3>
-        <p style={{fontWeight: '600', fontSize: '20px'}}>{props.description}</p>
+        <p style={{fontWeight: '600', fontSize: '17px'}}>{props.description}</p>
         <div className="offset-top-20 offset-md-top-40">
         <Link  href={"/policy/"+ props.title + "/" + props.imageSrc}>
           <a className="btn btn-secondary" style={{borderColor: 'white', backgroundColor: '#09123A'}}>{props.buttonText}</a>
@@ -64,10 +64,10 @@ const Policy = props => (
 const PoliciesSection = (props) => {
   return (
     <div>
-      <Carousel controls={false}>
+      <Carousel /*tyle={{minHeight: '300px'}}*/ controls={false}>
         {policies.map((policy, index)=>(
-          <Carousel.Item key={index}>
-            <img alt="900x500" src={`/static/images/policy/${policy.imageSrc}.png` || "/static/images/policy/service-bg.jpg"} />
+          <Carousel.Item key={index} style={{minHeight: '374px', backgroundSize: 'contain', backgroundImage: `url(/static/images/policy/${policy.imageSrc}.png)`}}>
+            {/* <img alt="900x500" src={`/static/images/policy/${policy.imageSrc}.png` || "/static/images/policy/service-bg.jpg"} /> */}
             <Carousel.Caption style={{left: '0%'}}>
               <Policy title={policy.title} imageSrc={policy.imageSrc} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla temporibus voluptates ipsa, ducimus est, aliquid vel harum eligendi totam dignissimos suscipit obcaecati.'}
                 buttonText={'Find Out How'} link={policy.link}/>

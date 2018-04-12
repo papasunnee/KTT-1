@@ -4,21 +4,37 @@ import Countdown from 'react-countdown-now';
 
 // Random component
 const Completionist = () => <span>You are good to go!</span>;
+/*const styles = {
+  li: {
+    display: 'inline-block',
+    fontSize: '1em',
+    listStyleType: 'none',
+    padding: '1em',
+    textTransform: 'uppercase',
+  },
+  span: {
+    display: 'block',
+    fontSize: '4rem'
+  }
+}*/
+
 const style = {
     border : '1px solid #FFF',
     padding : '20px',
+    margin : '2px',
     borderRadius : '4px',
     background: 'linear-gradient(to bottom right,#4E707C, #000)',
-    width : '100px',
-    float : 'left',
+    width : '110px',
+    display: 'inline-block',
+    // float : 'left',
     color : '#F2F2F2',
-    fontSize : '30px',
-    fontWeight : 'bolder',
-    margin : 'auto'
+    fontSize : '4rem',
+    // fontWeight : 'bolder',
+    // margin : 'auto'
 }
 
 const style2 = {
-    fontSize : '11px',
+    fontSize : '0.3em',
     margin : 'auto',
     color : '#FFF',
     fontWeight : '100',
@@ -45,6 +61,12 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
             <p style={style2}>seconds</p>
         </div>
     </div>
+    // return <ul>
+    //   <li style={styles.li}><span style={styles.span} id="days">{days}</span>days</li>
+    //   <li style={styles.li}><span style={styles.span} id="hours">{hours}</span>Hours</li>
+    //   <li style={styles.li}><span style={styles.span} id="minutes">{minutes}</span>Minutes</li>
+    //   <li style={styles.li}><span style={styles.span} id="seconds">{seconds}</span>Seconds</li>
+    // </ul>
   // }
 };
 

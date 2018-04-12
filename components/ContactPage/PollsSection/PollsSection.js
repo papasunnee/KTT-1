@@ -146,7 +146,7 @@ class PollsSection extends Component{
           {(lastPolls[1])&&(
             <Col md={6}style={{paddingTop: '5%'}}>
               <Row>
-                <Col md={7} xs={12}> <h4>Last weeks results</h4></Col>
+                <Col md={12} xs={12}> <h4>Last weeks results</h4></Col>
                 <Col md={3} xs={4} xsOffset={8}>
                   <MuiThemeProvider muiTheme={getMuiTheme({userAgent, ...muiTheme})}>
                     <Toggle
@@ -161,7 +161,7 @@ class PollsSection extends Component{
               </Row>
               <div style={{textAlign: 'left', padding: '30px'}}>
                 {this.state.showCharts ?
-                  (<div>
+                  (<div style={{width: '100%', height: '230px'}}>
                     <h3 style={{color: 'black', textAlign: 'center', paddingBottom: '10px'}}>{lastPolls[1].title}</h3>
                     <ResultChart poll={lastPolls[1]}/>
                   </div>) : (<div style={{marginBottom : '40px'}} id="tagline">

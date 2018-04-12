@@ -26,11 +26,11 @@ const EmpowermentZoneSection = (props) => {
               </div>
             </Col>
             {/*<Col md={6} className="cell-xs-10 cell-md-8 cell-lg-3 section-60 section-lg-120">*/}
-            <Col md={6} style={{paddingTop: "50px", marginLeft: '-25px'}}>
+            <Col md={6} style={{padding: "50px", /*marginLeft: '-25px'*/}}>
               {/*<h2 className="text-bold" style={{fontSize: '50px', color: 'white'}}>TURAKI EMPOWERMENT ZONE</h2>*/}
               <div>
                   <span style={{
-                    fontSize: '90px',
+                    fontSize: '70px',
                     fontWeight: '500',
                     lineHeight: '1.2',
                     textAlign: 'center',

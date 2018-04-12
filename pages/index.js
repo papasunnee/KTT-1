@@ -25,7 +25,7 @@ const captionContent = ['Support KABIRU TANIMU TURAKI: The ',
 const secondTitle = [
   <small>NIGERIA NEEDS</small>,
   <br/>,
-  <span style={{fontSize: '42px'}}>FRESH, BOLD & INTELLECTUAL LEADERSHIP</span>
+  <span style={{fontSize: '36px'}}>FRESH, BOLD & INTELLECTUAL LEADERSHIP</span>
 ]
 
 const secondContent = 'Regardless of which political affiliation we belong, most Nigerians believe our leadership is corrupt, divisive, inept and unintelligent. The agendas and strategies are old, tired and unproductive and cannot meet the 21st century challenges. If elected, we will install a leadership made of patriotic Nigerians with proven talents and abilities regardless of age, religion, tribe or party affiliation. We need leadership who truly believes that our diversity is a source of national strength and thus embraces it when it comes to appointments, policies and implementations.'
@@ -34,7 +34,7 @@ const addClass = 'addClass'
 
 const thirdTitle = [<small>NIGERIA NEEDS</small>,
 <br/>,
-<span style={{fontSize: '42px'}}>WORLD CLASS INFRASTRUCTURES</span>]
+<span style={{fontSize: '36px'}}>WORLD CLASS INFRASTRUCTURES</span>]
 
 const thirdContent = 'Our hospitals, Schools, roads, bridges, railways, electricity, water supply, security, are a serious disgrace and embarrassment. Promises to rebuild and attend to these critical sectors have been ignored while trillion have been wasted or looted. Under my leadership, we will set our priorities right. It’s YOU FIRST. There will be no need to travel overseas to experience what it means to enjoy good infrastructures. Nigeria will take a giant leap to construct and maintain critical infrastructures. Every Nigerian deserve good infrastructures. '
 

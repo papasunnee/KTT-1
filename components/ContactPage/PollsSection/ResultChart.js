@@ -1,5 +1,5 @@
 import { Component} from 'react'
-import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts'
 
 /*const data = [
       {name: 'No', uv: 4000, votes: 9800, amt: 2300},
@@ -18,15 +18,17 @@ class SimpleBarChart extends Component {
     (this.props.poll.option4.text) && data.push({name: this.props.poll.option4.text,votes: this.props.poll.dVotes});
     // console.log(data);
   	return (
-    	<BarChart width={400} height={200} data={data}
-            margin={{top: 5, right: 5, left: 5, bottom: 5}}>
-       <XAxis dataKey="name"/>
-       <YAxis/>
-       <CartesianGrid strokeDasharray="3 3"/>
-       <Tooltip/>
-       <Legend />
-       <Bar dataKey="votes" fill="#8884d8" />
-      </BarChart>
+			<ResponsiveContainer>
+				<BarChart width={400} height={200} data={data}
+					margin={{top: 5, right: 15, left: 15, bottom: 15}}>
+					<XAxis dataKey="name"/>
+					<YAxis/>
+					<CartesianGrid strokeDasharray="3 3"/>
+					<Tooltip/>
+					<Legend />
+					<Bar dataKey="votes" fill="#8884d8" />
+				</BarChart>
+			</ResponsiveContainer>
     );
   }
 }
