@@ -51,8 +51,8 @@ export default function withLayout(Child, opts) {
   }
 
   const gqlWrapper = gql `
-  mutation Login($email: String, $password: String) {
-    login ( email: $email, password: $password ) {
+  mutation Login($email: String!, $password: String!) {
+    login ( username: $email, password: $password ) {
       jwt
     }
   }
@@ -77,7 +77,7 @@ export default function withLayout(Child, opts) {
         }) => ({
           // `login` is the name of the prop passed to the component
           login: ({email, password}) => {
-
+            console.log(email);
             loginWithEmail({
               variables: {
                 email: email,
@@ -85,6 +85,7 @@ export default function withLayout(Child, opts) {
               }
             }).then(({ data }) => {
               console.log('data');
+              console.log(data);
               // Store the token in cookie
               const {jwt} = data.login
               document.cookie = cookie.serialize('token', jwt, {

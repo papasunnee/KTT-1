@@ -2,8 +2,8 @@ import {Component} from 'react'
 //import Router from 'next/router'
 import Head from 'next/head'
 
-import withMediaAppLogin from '../components/withMediaAppLogin'
-import Login from '../components/MediaPortal/views/Login/Login'
+import withMediaAppLogin from '../../components/withMediaAppLogin'
+import Login from '../../components/MediaPortal/views/Login/Login'
 //const Login = dynamic(import ('../components/MediaPortal/views/Login/Login'), { ssr: false })
 
 class LoginPage extends Component {

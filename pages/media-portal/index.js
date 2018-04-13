@@ -3,8 +3,8 @@ import {Component} from 'react'
 import Head from 'next/head'
 //import dynamic from 'next/dynamic'
 
-import withMedia from '../components/withMedia'
-import Home from '../components/MediaPortal/Index'
+import withMedia from '../../components/withMedia'
+import Home from '../../components/MediaPortal/Index'
 //const Home = dynamic(import ('../components/MediaPortal/Index'), { ssr: false })
 
 /*const breadcrumbs = [
@@ -13,7 +13,7 @@ import Home from '../components/MediaPortal/Index'
   {title: 'Article', active: true},
 ]*/
 
-class MediaAdminPage extends Component {  
+class MediaAdminPage extends Component {
   render(){
     const articles = this.props.articles || [];
     return (
