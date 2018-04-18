@@ -199,6 +199,7 @@ class Index extends Component {
       //09071816392
         <div style={styles.container} className="align-middle">
           <Dialog
+            style={{zIndex: "150000"}}
             open={this.state.open}
             title={'Please enter the verification code we sent to <'+this.state.phone+'>'}
             /*actions={standardActions}*/
