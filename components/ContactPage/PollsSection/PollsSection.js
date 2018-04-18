@@ -123,7 +123,7 @@ class PollsSection extends Component{
         </Row>
         <Row style={{/*backgroundColor: '#F6F8FA',*/ color: 'black', paddingBottom: '15px'}}>
           {(lastPolls[0])&&(
-            <Col md={6} style={{paddingTop: '10%'}}>
+            <Col md={6} style={{paddingTop: '7%'}}>
               {/* Poll */}
               <div style={{textAlign: 'left',
                 height: '70%',
@@ -144,7 +144,7 @@ class PollsSection extends Component{
           </Col>
           )}
           {(lastPolls[1])&&(
-            <Col md={6}style={{paddingTop: '5%'}}>
+            <Col md={6}style={{paddingTop: '2%'}}>
               <Row>
                 <Col md={12} xs={12}> <h4>Last weeks results</h4></Col>
                 <Col md={3} xs={4} xsOffset={8}>
@@ -183,7 +183,6 @@ query LastPolls{
   lastPolls {
     _id
     title
-    tagLine
     totalVotes
     aVotes
     bVotes
