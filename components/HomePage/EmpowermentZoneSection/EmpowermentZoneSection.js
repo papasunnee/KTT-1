@@ -38,7 +38,7 @@ const EmpowermentZoneSection = (props) => {
                     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
                     color: '#dc3545',
                     textShadow:'-1px -1px 0 #dc3545, 1px -1px 0 #dc3545,-1px 1px 0 #dc3545,1px 1px 0 #dc3545'
-                  }}>KTT.YEZ</span>
+                  }}>KTT. YEZ</span>
               </div>
               {/* <div>
                   <span style={{

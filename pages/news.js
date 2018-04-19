@@ -18,7 +18,7 @@ class KttvPage extends Component {
     return (
       <div>
         <Head>
-          <title>KTT4President | KTT Tv</title>
+          <title>KTT4President | KTT Television</title>
           <link rel="stylesheet" href="/static/css/modal-video.css"/>
           {/* <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"/> */}
         </Head>

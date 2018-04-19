@@ -24,7 +24,7 @@ const style = {
     margin : '2px',
     borderRadius : '4px',
     background: 'linear-gradient(to bottom right,#4E707C, #000)',
-    width : '110px',
+    width : '120px',
     display: 'inline-block',
     // float : 'left',
     color : '#F2F2F2',
@@ -47,19 +47,33 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
     return <Completionist />;
   } else {*/
     // Render a countdown
-    return <div>
+    return <div className="timer" >
+      <div className="half-time">
         <div style={style}>{days}
-            <p style={style2}>days</p>
+          <p style={style2}>days</p>
         </div>
         <div style={style}>{hours}
-            <p style={style2}>hours</p>
+          <p style={style2}>hours</p>
         </div>
+      </div>
+      <div className="half-time">
         <div style={style}>{minutes}
-            <p style={style2}>minutes</p>
+          <p style={style2}>minutes</p>
         </div>
         <div style={style}>{seconds}
-            <p style={style2}>seconds</p>
+          <p style={style2}>seconds</p>
         </div>
+      </div>
+      <style jsx>{`
+        @media (min-width: 992px){
+          .half-time {
+            width: 50%;
+          }
+          .timer{
+            display: inline-flex;
+          }
+        }
+      `}</style>
     </div>
     // return <ul>
     //   <li style={styles.li}><span style={styles.span} id="days">{days}</span>days</li>

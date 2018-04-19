@@ -12,11 +12,11 @@ const Footer = (props) => {
     <footer className="mainfooter" role="contentinfo">
       <div className="footer-middle">
       <h4 style={{color : '#b2b2b2'}}>A New Nigeria, where</h4>
-        <h1 style={{
+        <h2 style={{
           textAlign : 'center' ,
           color : '#ffffff',
           fontWeight : 'bolder'
-        }}>NO ONE IS LEFT BEHIND <span style={{color : 'red'}}>!</span></h1>
+        }}>NO ONE IS LEFT BEHIND <span style={{color : 'red'}}>!</span></h2>
       <Grid>
         <Row>
           <Col md={3} sm={6}>

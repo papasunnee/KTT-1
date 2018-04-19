@@ -58,7 +58,7 @@ class Gallery extends Component {
 		if (!images) return;
 
 		const gallery = (
-			<div className="card-columns">
+			<div className="card-columns" style={{columnGap: '0.5rem'}}>
 				{images.filter(i => i.useForDemo).map((obj, i) => {
 					return (
 						<a
@@ -67,7 +67,7 @@ class Gallery extends Component {
 							key={i}
 							onClick={(e) => this.openLightbox(i, e)}
 							>
-								<img src={obj.thumbnail} className={css(classes.source)} style = {{marginBottom: '10px'}}/>
+								<img src={obj.thumbnail} className={css(classes.source)} style = {{marginBottom: '0.5rem'}}/>
 							</a>
 						);
 				})}

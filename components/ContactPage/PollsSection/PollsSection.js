@@ -3,7 +3,7 @@ import Head from 'next/head'
 import {graphql} from 'react-apollo'
 import gql from 'graphql-tag'
 
-import { Row, Col} from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import Toggle from 'material-ui/Toggle';
 import {deepOrange500} from 'material-ui/styles/colors'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
