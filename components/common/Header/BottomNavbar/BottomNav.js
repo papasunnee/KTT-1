@@ -22,7 +22,8 @@ const BottomNav = (props) => {
         {/*<!-- Navbar Brand-->*/}
         <div className="rd-navbar-brand">
           <a href="/" style={{'color': '#393a3c'}}>
-          <img src="/static/img/PDP-logo-50x33.png" alt="" width="37" height="26"/><span>KTT 2019</span>
+          {/*<img src="/static/img/PDP-logo-50x33.png" alt="" width="37" height="26"/><span>KTT 2019</span>*/}
+          <img src="/static/img/kttlogo.png" alt="" width="200" height="70"/>
           </a>
         </div>
       </div>

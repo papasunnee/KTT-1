@@ -27102,7 +27102,7 @@ hr {
 }
 
 .post-event ul li .icon {
-  color: #12806b;
+  color: #09123A;
 }
 
 .post-event .btn {
@@ -27223,7 +27223,7 @@ hr {
     color: #fff;
   }
   .post-event-fullwidth .post-body h4 a:hover {
-    color: #12806B;
+    color: #09123A;
   }
 }
 
@@ -34243,7 +34243,7 @@ html .owl-nav {
   font-size: 24px;
   line-height: 46px;
   color: #FFF;
-  background: #e13523;
+  background: #dc3545;
   border-radius: 50%;
   position: fixed;
   right: 15px;
@@ -34259,7 +34259,7 @@ html .owl-nav {
 
 .ui-to-top:hover {
   color: #fff;
-  background: #ce2d1c;
+  background: #dc3545;
   text-decoration: none;
 }
 
@@ -37500,7 +37500,7 @@ a.pswp__share--download:hover {
   opacity: 0;
   background: #fff;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
-  border-top: 3px solid #12806B;
+  border-top: 3px solid #09123A;
 }
 
 .rd-navbar-default.rd-navbar-static .rd-navbar-dropdown li a, .rd-navbar-default.rd-navbar-fullwidth .rd-navbar-dropdown li a, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-dropdown li a, .rd-navbar-top-panel.rd-navbar-fullwidth .rd-navbar-dropdown li a, .rd-navbar-default.rd-navbar-static .rd-navbar-megamenu li a, .rd-navbar-default.rd-navbar-fullwidth .rd-navbar-megamenu li a, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-megamenu li a, .rd-navbar-top-panel.rd-navbar-fullwidth .rd-navbar-megamenu li a {
@@ -37577,7 +37577,7 @@ a.pswp__share--download:hover {
   font-weight: 400;
   text-transform: none;
   padding: 1px 4px;
-  color: #12806B;
+  color: #09123A;
 }
 
 .rd-navbar-default.rd-navbar-static .rd-navbar-dropdown li > a:hover, .rd-navbar-default.rd-navbar-fullwidth .rd-navbar-dropdown li > a:hover, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-dropdown li > a:hover, .rd-navbar-top-panel.rd-navbar-fullwidth .rd-navbar-dropdown li > a:hover, .rd-navbar-default.rd-navbar-static .rd-navbar-dropdown li > a:focus, .rd-navbar-default.rd-navbar-fullwidth .rd-navbar-dropdown li > a:focus, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-dropdown li > a:focus, .rd-navbar-top-panel.rd-navbar-fullwidth .rd-navbar-dropdown li > a:focus, .rd-navbar-default.rd-navbar-static .rd-navbar-megamenu li > a:hover, .rd-navbar-default.rd-navbar-fullwidth .rd-navbar-megamenu li > a:hover, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-megamenu li > a:hover, .rd-navbar-top-panel.rd-navbar-fullwidth .rd-navbar-megamenu li > a:hover, .rd-navbar-default.rd-navbar-static .rd-navbar-megamenu li > a:focus, .rd-navbar-default.rd-navbar-fullwidth .rd-navbar-megamenu li > a:focus, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-megamenu li > a:focus, .rd-navbar-top-panel.rd-navbar-fullwidth .rd-navbar-megamenu li > a:focus {
@@ -40005,13 +40005,13 @@ a.pswp__share--download:hover {
 }
 
 .rd-navbar-top-panel.rd-navbar-static.rd-navbar-with-panel .rd-navbar-nav > li > a:hover, .rd-navbar-top-panel.rd-navbar-fullwidth.rd-navbar-with-panel .rd-navbar-nav > li > a:hover {
-  color: #12806B;
+  color: #09123A;
 }
 
 .rd-navbar-top-panel.rd-navbar-static.rd-navbar-with-panel .rd-navbar-nav > li.focus > a,
 .rd-navbar-top-panel.rd-navbar-static.rd-navbar-with-panel .rd-navbar-nav > li.active > a, .rd-navbar-top-panel.rd-navbar-fullwidth.rd-navbar-with-panel .rd-navbar-nav > li.focus > a,
 .rd-navbar-top-panel.rd-navbar-fullwidth.rd-navbar-with-panel .rd-navbar-nav > li.active > a {
-  color: #12806B;
+  color: #09123A;
 }
 
 .rd-navbar-top-panel.rd-navbar-static.rd-navbar-with-panel .rd-navbar-inner, .rd-navbar-top-panel.rd-navbar-fullwidth.rd-navbar-with-panel .rd-navbar-inner {
@@ -40364,7 +40364,7 @@ a.pswp__share--download:hover {
 
 .rd-navbar-top-panel.rd-navbar-static.rd-navbar-with-panel .rd-navbar-top-panel:after, .rd-navbar-top-panel.rd-navbar-static.rd-navbar-with-panel .rd-navbar-top-panel:before {
   height: 50px;
-  background: #12806B;
+  background: #09123A;
 }
 
 .rd-navbar-top-panel.rd-navbar-static.rd-navbar-with-panel .rd-navbar-bottom-panel {

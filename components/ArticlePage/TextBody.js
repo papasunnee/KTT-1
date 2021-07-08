@@ -18,17 +18,17 @@ export default class Home extends Component {
                 <Row>
                 <FullImage />
                 </Row>
-              </Grid>*/}      
+              </Grid>*/}
               {/*<BottomText />*/}
               <ParagraphText />
               <ParagraphText />
             </div>
           </Col>
           <Col md={4}>
-            <ArticlesList title={'More Articles'}/>
+            <ArticlesList title={'More Articles'} articles={this.props.articles}/>
           </Col>
         </Row>
-      </Grid>      
+      </Grid>
     )
   }
 }

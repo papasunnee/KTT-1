@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import withLayout from '../components/withLayout'
 import PageTitle from '../components/common/PageTitle/PageTitle'
@@ -14,11 +15,15 @@ const breadcrumbs = [
 
 class ArticlePage extends Component {
   render(){
+    const articles = this.props.articles || [];
     return (
       <div>
+        <Head>
+          <title>KTT4President | Article</title>
+        </Head>
         <HeroSection />
         <PageTitle title={"You First: What it Really Means"} breadcrumbs={breadcrumbs}/>
-        <TextBody />
+        <TextBody articles={articles.gistMany}/>
       </div>
     )
   }
