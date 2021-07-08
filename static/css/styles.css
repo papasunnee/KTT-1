@@ -74,6 +74,41 @@
   -webkit-transform: translateY(-8px);
   transform: translateY(-8px); }
 
+  /* Choice content style */
+
+  .addClass{
+    -webkit-animation: color-change 10s infinite;
+    -moz-animation: color-change 10s infinite;
+    -o-animation: color-change 10s infinite;
+    -ms-animation: color-change 10s infinite;
+    animation: color-change 10s infinite;
+}
+@-webkit-keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+@-moz-keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+@-ms-keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+@-o-keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+@keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+
 /* slideUp */
 .slideUp {
   animation-name: slideUp;
@@ -122,14 +157,39 @@ footer a:hover {
   color: white; }
 
 .footer-bottom {
-  background: #052620;
-  padding: 0.5em; }
+  background: #010822 ;
+  padding: 3.5em;
+letter-spacing: 2px;
+font-size: 10px !important ; }
+
+
+.footer-bottom a{
+  letter-spacing : 2px ;
+  font-weight: 200 ;
+  color : #b2b2b2 ;
+}
+
+.privacylinks{
+  font-weight: 100 !important ;
+  margin: 20px ;
+}
+
+.privacylinks span{
+  color: #DC3545 ;
+  font-weight: bolder ;
+  font-size: 14px !important ;
+  margin: auto 10px ;
+}
 
 .footer-middle {
-  background: #12806B;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  color: white; }
+  background : #09123A ;
+  background-image: url('../img/footer.jpg');
+  background-size: cover ;
+  padding-top : 50px ;
+  padding-bottom : 50px ;
+  background-repeat: no-repeat ;
+  color: white;
+}
 
   .footer-middle h5{
     color :#fff ;
@@ -162,3 +222,26 @@ footer a:hover {
   border-top: 5px solid orange;
   background: white;
   color: black; }
+
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.video-thumbnail:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  content: "\f04b";
+  font-family: FontAwesome;
+  font-size: 100px;
+  color: #dc3545;
+  opacity: .8;
+  text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+}
+.video-thumbnail:hover:before {
+  color: #a92a36;
+}

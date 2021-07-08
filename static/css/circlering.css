@@ -1,0 +1,98 @@
+.siren_wrapper {
+    height: 130px;
+    width: 130px;
+}
+.iu-box {
+      position: absolute;
+    display: block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    border-style: solid;
+    border-width: 0px;
+}
+.box_siren {    background-color: #FFEFF0;
+    background-position: center center;
+    background-size: 100% 100%;
+    border-radius: 118px;
+    bottom: 0px;
+    height: 126px;
+    left: 0px;
+    margin: auto;
+    right: 0px;
+    top: 0px;
+    width: 126px;}
+    
+   .box_siren_step0 {
+    background-image: url(/resource/project/tc_status_ev_icon3em.png);
+    background-position: center center;
+    background-size: 100% 100%;
+    border-radius: 118px;
+    bottom: 0px;
+    height: 86px;
+    left: 0px;
+    margin: auto;
+    right: 0px;
+    top: 0px;
+    width: 86px;
+}
+.box_siren_step1 {
+    background-color: #FEBCC0;
+    background-position: center center;
+    background-size: 100% 100%;
+    border-radius: 118px;
+    bottom: 0px;
+    height: 96px;
+    left: 0px;
+    margin: auto;
+    right: 0px;
+    top: 0px;
+    width: 96px;
+}.box_siren_step2 {
+    background-color: #FFD3D6;
+    background-position: center center;
+    background-size: 100% 100%;
+    border-radius: 118px;
+    bottom: 0px;
+    height: 106px;
+    left: 0px;
+    margin: auto;
+    right: 0px;
+    top: 0px;
+    width: 106px;
+}.box_siren_step3 {
+    background-color: #FFE0E2;
+    background-position: center center;
+    background-size: 100% 100%;
+    border-radius: 118px;
+    bottom: 0px;
+    height: 116px;
+    left: 0px;
+    margin: auto;
+    right: 0px;
+    top: 0px;
+    width: 116px;
+}.box_siren_step4 {
+    background-color: #FFEFF0;
+    background-position: center center;
+    background-size: 100% 100%;
+    border-radius: 118px;
+    bottom: 0px;
+    height: 126px;
+    left: 0px;
+    margin: auto;
+    right: 0px;
+    top: 0px;
+    width: 126px;
+}
+   .box_siren_step1 {animation:alert_ani 2s infinite; -webkit-animation:alert_ani1 2s infinite;}
+.box_siren_step2 {animation:alert_ani 2s infinite; -webkit-animation:alert_ani2 2s infinite;}
+.box_siren_step3 {animation:alert_ani 2s infinite; -webkit-animation:alert_ani3 2s infinite;}
+ .box_siren_step4 {animation:alert_ani 2s infinite; -webkit-animation:alert_ani4 2s infinite;}
+@keyframes alert_ani4 {0%   {width:0px; height: 0px}  100%   {width:126px; height: 126px;}}
+@-webkit-keyframes alert_ani4 {0%   {width:0px; height: 0px}  100%   {width:126px; height: 126px;}}
+@keyframes alert_ani3 {0%   {width:0px; height: 0px}  100%   {width:116px; height: 116px;}}
+@-webkit-keyframes alert_ani3 {0%   {width:0px; height: 0px}  100%   {width:116px; height: 116px;}}
+@keyframes alert_ani2 {0%   {width:0px; height: 0px}  100%   {width:106px; height: 106px;}}
+@-webkit-keyframes alert_ani2 {0%   {width:0px; height: 0px}  100%   {width:106px; height: 106px;}}
+@keyframes alert_ani1 {0%   {width:0px; height: 0px}  100%   {width:96px; height: 96px;}}
+@-webkit-keyframes alert_ani1 {0%   {width:0px; height: 0px}  100%   {width:96px; height: 96px;}}

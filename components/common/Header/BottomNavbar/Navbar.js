@@ -32,33 +32,17 @@ const  NavDropdownItem = (props) => {
 const Navbar = (props) => {
   return (
     <ul className="rd-navbar-nav">
-      <NavItem active>Home</NavItem>
-      <li><a href="#"><span>Mission</span></a>
-        <ul className="rd-navbar-dropdown">
-          <li><a href="/about"><span className="text-middle">Urgent Issues</span></a>
-          </li>
-          <li><a href="/about"><span className="text-middle">First 30 Days</span></a>
-          </li>
-          <li><a href="/about"><span className="text-middle">Our Manifesto</span></a>
-          </li>
-          <li><a href="/about"><span className="text-middle">About KTT</span></a>
-          </li>
-        </ul>
-      </li>
-      <NavItem link="/country">States</NavItem>
-      <li><a href="#"><span>News</span></a>
-        <ul className="rd-navbar-dropdown">
-          <li><a href="/news"><span className="text-middle">KTT Television</span></a>
-          </li>
-          <li><a href="/news"><span className="text-middle">Gallery</span></a>
-          </li>
-        </ul>
-      </li>
+      <NavItem active={props.active === 'home'}>Home</NavItem>
+      <NavItem link="/about" active={props.active === 'about'}>About KTT</NavItem>
+      <NavItem link="/gallery" active={props.active === 'gallery'}>Gallery</NavItem>
+      <NavItem link="/news" active={props.active === 'tv'}>KTT.TV</NavItem>
+      {/*<NavItem link="/country" active={props.active === 'states'}>States</NavItem>*/}
+      <NavItem link="/contact" active={props.active === 'states'}>Get Involved</NavItem>
       <li>
         <a href="/Turaki Empowerment Zone" style={{color: '#393a3c'}}>
           <span style={{
             padding: '12px',
-            backgroundColor: '#12806B',
+            backgroundColor: '#09123A',
             color: 'white'
           }}> Empowerment Zone</span>
         </a>

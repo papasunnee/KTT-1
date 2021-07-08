@@ -1,4 +1,3 @@
 node_modules
 .next
-html/def/wt_62309
-static/html/images
+.env
